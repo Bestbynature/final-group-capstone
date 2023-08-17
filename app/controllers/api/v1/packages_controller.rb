@@ -1,9 +1,10 @@
-class PackagesController < ApplicationController
+class Api::V1::PackagesController < ApplicationController
   before_action :set_package, only: %i[ show edit update destroy ]
 
   # GET /packages or /packages.json
   def index
     @packages = Package.all
+    render json: @packages
   end
 
   # GET /packages/1 or /packages/1.json
