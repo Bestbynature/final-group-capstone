@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  resources :packages
-  resources :flights
-  resources :users
+  # resources :packages
+  # resources :flights
+  # resources :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
   root "root#index"
+  match '*path', to: 'root#index', via: :all
 end
