@@ -108,6 +108,50 @@ font-family: 'Tektur', cursive;
 
 }
 
+/* Splash Screen */
+
+
+.splash-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 85vh;
+}
+
+.splash-container img {
+  margin: auto;
+  width: 200px;
+  height: 200px;
+}
+
+.splash-buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sign-in-btn,
+.sign-up-btn {
+  padding: 10px 15px;
+  font-family: 'Proxima Nova Bold', sans-serif;
+  font-size: 15px;
+  width: 10vw;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+}
+
+.sign-in-btn {
+  background-color: #3878c2;
+  color: #fff;
+}
+
+.sign-up-btn {
+  background-color: rgba(0, 0, 0, 0);
+  color: #434b54;
+}
  .item {
     max-height: 90%;
     min-width: 25%;
