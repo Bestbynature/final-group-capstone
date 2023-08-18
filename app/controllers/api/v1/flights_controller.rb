@@ -1,9 +1,10 @@
-class FlightsController < ApplicationController
+class Api::V1::FlightsController < ApplicationController
   before_action :set_flight, only: %i[ show edit update destroy ]
 
   # GET /flights or /flights.json
   def index
     @flights = Flight.all
+    render json: @flights
   end
 
   # GET /flights/1 or /flights/1.json
