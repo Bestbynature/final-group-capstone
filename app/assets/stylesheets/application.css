@@ -109,17 +109,33 @@ font-family: 'Tektur', cursive;
 }
 
  .item {
-    max-height: 20rem;
-    min-width: 33%;
-    padding: 2rem;
+    max-height: 90%;
+    min-width: 25%;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
  }
 
  .item img {
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 60%;
     object-fit: cover;
-    border-radius: 2rem;
+    border-radius: 1rem;
     /* pointer-events: none; */
+ }
+
+ .text {
+   margin-top: 0.5rem;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
+
+ .text > p {
+   font-size: 0.7rem;
+   color: #9e9e9e;
+   margin: 0.3rem 0;
  }
 
  .inner-carousel {
@@ -129,26 +145,55 @@ font-family: 'Tektur', cursive;
  .outer-carousel {
    cursor: grab;
    overflow: hidden;
+   height: 100%;
  }
 
  .carousel {
    display: grid;
-   grid-template-columns: 10% 80% 10%;
+   grid-template-columns: 7% 86% 7%;
+   grid-template-rows: 20vh 60vh 20vh;
    max-width: 100%;
    justify-content: center;
    align-items: center;
 
  }
+
+ .carousel-header {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   height: 100%;
+   justify-content: end;
+ }
+
+ .circle-cont {
+   width: 100%;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+  }
+ 
+  .circle {
+   width: 2rem;
+   height: 2rem;
+   border-radius: 50%;
+   margin-right: 0.7rem;
+   border: 2px solid #9e9e9e;
+   color: #9e9e9e;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  }
  
  .left, .right {
    background-color: #efefef;
    color: white;
-   width: 5rem;
-   height: 5rem;
+   width: 4rem;
+   height: 3rem;
    display: flex;
    justify-content: center;
    align-items: center;
-   font-size: 4rem;
+   font-size: 3rem;
    border-radius: 0 2rem 2rem 0;
  }
 

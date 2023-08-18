@@ -1,28 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 import App from "./components/App";
-// import Navbar from './components/Navbar';
+import store from './redux/store';
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-      <BrowserRouter>
+    <BrowserRouter>
+      <Provider store={store}>
         <App />
-      </BrowserRouter>
+      </Provider>
+    </BrowserRouter>
   </React.StrictMode>,
 );
-// document.addEventListener('DOMContentLoaded', () => {
-//   ReactDOM.render(
-//    <BrowserRouter>
-//    <Navbar/>,
-//    <Routes>
-//    <Route>
-//       <Route path="/" component={App} />
-//     </Route>
-//     </Routes>
-//     </BrowserRouter>,
-//   )
-// })
+

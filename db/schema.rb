@@ -23,7 +23,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_18_112817) do
     t.integer "available_slots"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.jsonb "packages", default: []
     t.index ["user_id"], name: "index_flights_on_user_id"
   end
 
