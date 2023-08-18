@@ -4,7 +4,7 @@ class Api::V1::FlightsController < ApplicationController
   # GET /flights or /flights.json
   def index
     @flights = Flight.all
-    render json: @flights
+    render json: @flights, status: :ok
   end
 
   # GET /flights/1 or /flights/1.json
