@@ -1,12 +1,10 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// import App from "./components/App";
+// import Navbar from './components/Navbar';
+import './index'
+// import './components/styles/navbar.css';
 
-function App() {
-  return (<h1>Hello World!</h1>);
-}
 
-ReactDOM.render(
-  <App/>,
-  document.getElementById('root'),
-);
