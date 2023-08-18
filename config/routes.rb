@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  # resources :packages
+  # resources :flights
+  # resources :users
   resources :reserved_flights
   resources :packages
   resources :flights
@@ -7,6 +10,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "root#index"
+  match '*path', to: 'root#index', via: :all
   namespace :api do
     namespace :v1 do
       resources :users
