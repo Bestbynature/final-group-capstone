@@ -12,7 +12,101 @@
  *
  *= require_tree .
  *= require_self
+
+ font-family: 'Lato', sans-serif;
+font-family: 'Roboto Mono', monospace;
+font-family: 'Rubik', sans-serif;
+font-family: 'Tektur', cursive;
+
  */
+
+
+
+ @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Roboto+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Rubik:ital,wght@0,300;1,300&family=Tektur:wght@400;500;600;700;800&display=swap');
+
+
+ *,body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+ }
+
+ a{
+  text-decoration: none;
+ }
+
+ ul{
+  list-style: none;
+ }
+
+ /* #########  Navbar  ########## */
+/* Styles for the entire app container */
+.App {
+ display: grid;
+ grid-template-columns: 200px auto; /* 200px for the navbar, auto for the content */
+ height: 100vh; /* Make the app container take full viewport height */
+}
+
+/* Styles for the navbar */
+.navbar {
+ background-color: #fff;
+ box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+ color: #fff;
+ width: 100%; /* Let grid handle the width */
+ height: 100%; /* Make the navbar take full height */
+ font-family: 'Lato', sans-serif;
+}
+
+/* Styles for the navigation links */
+.navlink {
+ padding: 20px;
+ margin-top: 30%;
+}
+
+.brand{
+ color: black;
+ margin: 15px 20px;
+ padding: 10px 20px;
+}
+.navbar .brand a {
+ font-size: 26px;
+ font-weight: 600;
+}
+
+.navbar .brand a:hover {
+ font-size: 26px;
+ font-weight: 600;
+}
+
+
+.navbar li {
+ padding: 10px;
+}
+
+.navbar .navlink li a {
+ text-decoration: none;
+ color: #333;
+ font-size: large;
+ font-weight: 600;
+ padding: 10px;
+}
+
+.navbar .navlink li:hover {
+ color: #fff;
+ background-color: aqua;
+}
+
+/* Add styling for active link if needed */
+.navbar a.active {
+ font-weight: bold;
+}
+
+/* Styles for the main content area */
+.main-content {
+ padding: 20px;
+
+}
 
  .item {
     max-height: 20rem;

@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Reserved flights</h1>
+
+<div id="reserved_flights">
+  <% @reserved_flights.each do |reserved_flight| %>
+    <%= render reserved_flight %>
+    <p>
+      <%= link_to "Show this reserved flight", reserved_flight %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New reserved flight", new_reserved_flight_path %>
