@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :reserved_flights
   resources :packages
   resources :flights
   resources :users
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
       resources :users
       resources :flights
       resources :packages
+      resources :reserved_flights
     end
   end
 end

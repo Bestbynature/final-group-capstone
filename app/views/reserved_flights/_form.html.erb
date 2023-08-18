@@ -1,0 +1,32 @@
+<%= form_with(model: reserved_flight) do |form| %>
+  <% if reserved_flight.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(reserved_flight.errors.count, "error") %> prohibited this reserved_flight from being saved:</h2>
+
+      <ul>
+        <% reserved_flight.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.label :package_id, style: "display: block" %>
+    <%= form.text_field :package_id %>
+  </div>
+
+  <div>
+    <%= form.label :flight_id, style: "display: block" %>
+    <%= form.text_field :flight_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
