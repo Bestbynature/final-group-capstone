@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "root#index"
-  match '*path', to: 'root#index', via: :all
+  # match '*path', to: 'root#index', via: :all
   namespace :api do
     namespace :v1 do
       resources :users
