@@ -70,3 +70,7 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+gem 'cancancan'
+gem 'devise', '~> 4.9'
+gem 'faker', '~> 2.18', require: false
+gem 'letter_opener', group: :development
