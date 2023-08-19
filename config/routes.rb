@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   # resources :packages
   # resources :flights
   # resources :users
-  resources :reserved_flights
-  resources :packages
-  resources :flights
-  resources :users
+  # resources :reserved_flights
+  # resources :packages
+  # resources :flights
+  # resources :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   authenticated :user do
     root 'root#index', as: :authenticated_root

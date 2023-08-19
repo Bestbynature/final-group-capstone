@@ -12,11 +12,10 @@ const Flights = () => {
   
   useEffect(() => {
     dispatch(fetchFlights());
+    setTimeout(() => {
+      dispatch(setcwidth(carouselRef.current.scrollWidth - carouselRef.current.offsetWidth));
+    }, 2000);
   }, [dispatch]);
-  
-  useEffect(() => {
-    dispatch(setcwidth(carouselRef.current.scrollWidth - carouselRef.current.offsetWidth));
-  }, [cwidth, dispatch]);
   
   const moveCarousel = (direction) => {
     const percentage = 0.5;
@@ -35,17 +34,16 @@ const Flights = () => {
 
   return (
     <div className='carousel'>
-      <div>&nbsp;</div>
+    <div></div>
       <div className='carousel-header'>
         <h1>Flight Destinations</h1>
         <p>Please select a travel destination</p>
       </div>
       <div>&nbsp;</div>
-      <div className='button-slot'>
-        <div className={active === 'left' ? "left clickactive" : "left"} onClick={()=>moveCarousel('left')}>
-        <i class="fa-solid fa-caret-left"></i>
-        </div>
+      <div className={active === 'left' ? "left clickactive" : "left"} onClick={()=>moveCarousel('left')}>
+        <i className="fa-solid fa-caret-left"></i>
       </div>
+      {/* </div> */}
       
       <motion.div ref={carouselRef} className='outer-carousel' whileTap={{cursor: "grabbing"}} onScroll={()=>dispatch(setcwidth(carouselRef.current.scrollWidth - carouselRef.current.offsetWidth))}>
         <motion.div drag="x" dragConstraints={{right: 0, left: -cwidth}} className="inner-carousel">
@@ -68,10 +66,8 @@ const Flights = () => {
           })}
         </motion.div>
       </motion.div>
-      <div className="button-slot">
-        <div className={active === 'right' ? "right clickactive" : "right"} onClick={()=>moveCarousel('right')}>
-          <i class="fa-solid fa-caret-right"></i>
-        </div>
+      <div className={active === 'right' ? "right clickactive" : "right"} onClick={()=>moveCarousel("right")}>
+        <i className="fa-solid fa-caret-right"></i>
       </div>
       <div>&nbsp;</div>
       <div>&nbsp;</div>

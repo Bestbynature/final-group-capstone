@@ -93,7 +93,7 @@ font-family: 'Tektur', cursive;
 
 .navbar .navlink li:hover {
  color: #fff;
- background-color: aqua;
+ background-color: #98bf11;
 }
 
 /* Add styling for active link if needed */
@@ -153,9 +153,12 @@ font-family: 'Tektur', cursive;
   background-color: rgba(0, 0, 0, 0);
   color: #434b54;
 }
+
+/* Styles for the main Flights page */
+
  .item {
-    max-height: 90%;
-    min-width: 25%;
+    height: 100%;
+    min-width: 15rem;
     padding: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -164,7 +167,7 @@ font-family: 'Tektur', cursive;
 
  .item img {
     width: 90%;
-    height: 60%;
+    height: 70%;
     object-fit: cover;
     border-radius: 1rem;
     /* pointer-events: none; */
@@ -185,12 +188,15 @@ font-family: 'Tektur', cursive;
 
  .inner-carousel {
     display: flex;
+    height: 100%;
  }
 
  .outer-carousel {
    cursor: grab;
    overflow: hidden;
    height: 100%;
+   width: 95%;
+   margin: 0 auto;
  }
 
  .carousel {
@@ -200,7 +206,6 @@ font-family: 'Tektur', cursive;
    max-width: 100%;
    justify-content: center;
    align-items: center;
-
  }
 
  .carousel-header {
@@ -249,10 +254,170 @@ font-family: 'Tektur', cursive;
  .right {
     border-radius: 2rem 0 0 2rem;
  }
-f
+
  .clickactive {
    background-color: #98bf11;
  }
+
+ /* styles for the reserve form */
+
+ .reserve-form {
+  background: url('./images/reserve-background.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+ }
+
+ .overlay {
+  background-color: rgba(152, 191, 17, 0.8);
+  padding: 2rem;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+ }
+
+ .mag {
+  background-color: #fff;
+  width: 4rem;
+  height: 3rem;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+
+ .mag > i {
+  font-size: 2rem;
+  color: #98bf11;
+  transform: rotate(90deg);
+ }
+
+ .minus {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+ }
+
+ .minus > hr {
+  width: 2rem;
+  border: 4px solid #fff;
+  margin-bottom: 5px;
+  border-radius: .2rem;
+ }
+
+ .middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+
+ .form {
+  width: 95%;
+  min-height: 50%;
+  color: #d5e88f;
+  font-family: 'Lato', sans-serif;
+ }
+
+ .form > h2 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #f5f7f1
+ }
+
+ .form > p {
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  line-height: 1.7rem;
+  word-spacing: 0.2rem;
+  color: #d9e3b6
+}
+
+ .form > hr {
+  margin: 1rem auto;
+  width: 80%;
+  border: 1px solid #d5e88f;
+ }
+
+ .form > form {
+  width: 90%;
+  display: grid;
+  grid-gap: 1.2rem;
+  justify-content: center;
+  grid-template-columns: repeat(5, 12vw);
+  margin: 2rem auto;
+ }
+
+ .form > form > * {
+  /* margin-right: 1rem; */
+  width: 100%;
+  height: 3.5rem;
+  border-radius: 1rem;
+  background-color: #98bf11;
+  border: 2px solid #d5e88f;
+  padding: 1rem;
+  color: #d5e88f;
+ }
+
+ .form > form > button {
+  cursor: pointer;
+ }
+
+ /* STYLES FOR MY RESERVATIONS */
+
+ .reservations {
+  background: url('./images/reserve-background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-color: #d3ea7f;
+  min-height: 100vh;
+ }
+ 
+ .reservations > h2 {
+  text-align: center;
+  background-color: #d3ea7f;
+}
+
+.reserved-flights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; 
+  justify-content: center;
+}
+
+.reserved-flight {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  width: 320px; 
+  background-color: #f9f9f9; 
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+}
+
+.reserved-flight > table {
+  border: 1px solid #ccc;
+}
+
+.reserved-flight > table > tr > td {
+  padding: 5px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+.reserved-flight h3 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #333;
+}
+
+.reserved-flight p {
+  margin: 5px 0;
+  color: #666;
+}
+
+/* ************************************ */
+
 /* AddFlight.css */
 
 .add-flight-container {

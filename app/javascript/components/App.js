@@ -6,6 +6,7 @@ import DeleteFlight from './DeleteFlight';
 import AddFlight from './AddFlight';
 import ReserveFlight from './ReserveFlight';
 import Layout from './Layout';
+import Reservations from './Reservations';
 
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
        <Route index element={<Flights />}/>
        <Route path="/add_flight" element={<AddFlight />} />
        <Route path="/reserve_flight" element={<ReserveFlight />} />
+       <Route path="/reservations" element={<Reservations />} />
        <Route path="/delete_flight" element={<DeleteFlight />} />
      </Routes>
 

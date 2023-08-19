@@ -1,13 +1,19 @@
 class Api::V1::FlightsController < ApplicationController
   before_action :set_flight, only: %i[ show edit update destroy ]
 
-  # GET /flights or /flights.json
   def index
     @flights = Flight.all
-    render json: @flights, status: :ok
+    @user = current_user
+
+    response_data = {
+      user: @user.as_json(only: [:name, :email]),
+      flights: @flights.as_json(except: [:created_at, :updated_at]) 
+    }
+  
+    render json: response_data, status: :ok
+    # render json: @flights, status: :ok
   end
 
-  # GET /flights/1 or /flights/1.json
   def show
   end
 
