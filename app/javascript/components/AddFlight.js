@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addFlight } from '../redux/flights/flightsSlice';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 
 function AddFlight() {
   const dispatch = useDispatch();

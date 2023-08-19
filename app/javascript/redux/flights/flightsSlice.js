@@ -3,16 +3,58 @@ import axios from 'axios';
 
 const url = 'http://localhost:3000/api/v1/flights';
 
-const flights = [
-    {name: 'Brazil', picture: 'https://images.pexels.com/photos/16129715/pexels-photo-16129715.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=300', base_price: 1500, available_slots: 10, reserved: false},
-    {name: 'Egypt', picture: 'https://images.pexels.com/photos/3958516/pexels-photo-3958516.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=300', base_price: 1100, available_slots: 10, reserved: false},
-    {name: 'America', picture: 'https://images.pexels.com/photos/356844/pexels-photo-356844.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=300', base_price: 2000, available_slots: 10, reserved: false},
-    {name: 'Morocco', picture: 'https://images.pexels.com/photos/6945915/pexels-photo-6945915.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=300', base_price: 1200, available_slots: 10, reserved: false},
-    {name: 'Cameroon', picture: 'https://images.pexels.com/photos/17290979/pexels-photo-17290979.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=300', base_price: 1400, available_slots: 10, reserved: false},
-    {name: 'Nigeria', picture: 'https://images.pexels.com/photos/16237519/pexels-photo-16237519.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=300', base_price: 1300, available_slots: 10, reserved: false},
-    {name: 'Mexico', picture: 'https://images.pexels.com/photos/17806066/pexels-photo-17806066.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=300', base_price: 1050, available_slots: 10, reserved: false},
-    {name: 'Ghana', picture: 'https://images.pexels.com/photos/6567674/pexels-photo-6567674.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=300', base_price: 1000, available_slots: 10, reserved: false},
-  ]
+const cities = [
+  { name: 'New York City', country: 'USA' },
+  { name: 'Tokyo', country: 'Japan' },
+  { name: 'London', country: 'UK' },
+  { name: 'Paris', country: 'France' },
+  { name: 'Los Angeles', country: 'USA' },
+  { name: 'Seoul', country: 'South Korea' },
+  { name: 'Shanghai', country: 'China' },
+  { name: 'Beijing', country: 'China' },
+  { name: 'Chicago', country: 'USA' },
+  { name: 'Istanbul', country: 'Turkey' },
+  { name: 'Miami', country: 'USA' },
+  { name: 'Moscow', country: 'Russia' },
+  { name: 'Sao Paulo', country: 'Brazil' },
+  { name: 'Mumbai', country: 'India' },
+  { name: 'Sydney', country: 'Australia' },
+  { name: 'Rio de Janeiro', country: 'Brazil' },
+  { name: 'Cairo', country: 'Egypt' },
+  { name: 'Mexico City', country: 'Mexico' },
+  { name: 'Bangkok', country: 'Thailand' },
+  { name: 'Toronto', country: 'Canada' },
+  { name: 'Buenos Aires', country: 'Argentina' },
+  { name: 'Dubai', country: 'UAE' },
+  { name: 'Hong Kong', country: 'China' },
+  { name: 'Singapore', country: 'Singapore' },
+  { name: 'Rome', country: 'Italy' },
+  { name: 'Berlin', country: 'Germany' },
+  { name: 'Barcelona', country: 'Spain' },
+  { name: 'Kuala Lumpur', country: 'Malaysia' },
+  { name: 'Amsterdam', country: 'Netherlands' },
+  { name: 'San Francisco', country: 'USA' },
+  { name: 'Vancouver', country: 'Canada' },
+  { name: 'San Diego', country: 'USA' },
+  { name: 'Houston', country: 'USA' },
+  { name: 'Washington, D.C.', country: 'USA' },
+  { name: 'Dallas', country: 'USA' },
+  { name: 'Istanbul', country: 'Turkey' },
+  { name: 'Abu Dhabi', country: 'UAE' },
+  { name: 'Jakarta', country: 'Indonesia' },
+  { name: 'Boston', country: 'USA' },
+  { name: 'Atlanta', country: 'USA' },
+  { name: 'Seattle', country: 'USA' },
+  { name: 'Tel Aviv', country: 'Israel' },
+  { name: 'Johannesburg', country: 'South Africa' },
+  { name: 'Melbourne', country: 'Australia' },
+  { name: 'Dubai', country: 'UAE' },
+  { name: 'Munich', country: 'Germany' },
+  { name: 'Montreal', country: 'Canada' },
+  { name: 'Prague', country: 'Czech Republic' },
+  { name: 'Auckland', country: 'New Zealand' },
+  { name: 'Stockholm', country: 'Sweden' },
+];
 
 export const fetchFlights = createAsyncThunk('flights/fetchFlights', async () => {
   try {
@@ -24,11 +66,17 @@ export const fetchFlights = createAsyncThunk('flights/fetchFlights', async () =>
 });
 
 const initialState = {
-  flights: [...flights],
+  flights: [],
+  cities,
+  user: '',
   status: 'idle',
   error: null,
   cwidth: 0,
   active: '',
+  city: '',
+  date: '',
+  flight: '',
+  reservedFlights: [],
 };
 
 const flightsSlice = createSlice({
@@ -42,8 +90,20 @@ const flightsSlice = createSlice({
         return { ...state, cwidth: action.payload };
       }
     },
-    AddFlight(state, action) {
-      // Handle adding a new flight to the state
+    setReservedFlights(state, action) {
+      localStorage.setItem('reservedFlights', JSON.stringify([...state.reservedFlights, action.payload]));
+      return { ...state, reservedFlights: [...state.reservedFlights, action.payload] };
+    },
+    setCity(state, action) {
+      return { ...state, city: action.payload };
+    },
+    setDate(state, action) {
+      return { ...state, date: action.payload };
+    },
+    setFlight(state, action) {
+      return { ...state, flight: action.payload };
+    },
+    addFlight(state, action) {
       const newFlight = action.payload;
       return { ...state, flights: [...state.flights, newFlight] };
     },
@@ -54,7 +114,7 @@ const flightsSlice = createSlice({
         return { ...state, status: 'loading' };
       })
       .addCase(fetchFlights.fulfilled, (state, action) => {
-        return { ...state, flights: [...action.payload], status: 'succeeded' };
+        return { ...state, flights: [...action.payload.flights], status: 'succeeded', user: action.payload.user.name };
       })
       .addCase(fetchFlights.rejected, (state, action) => {
         return { ...state, status: 'failed', error: action.payload };
@@ -62,6 +122,6 @@ const flightsSlice = createSlice({
   },
 });
 
-export const { setcwidth, AddFlight } = flightsSlice.actions;
+export const { setcwidth, AddFlight, setCity, setDate, setFlight, setReservedFlights } = flightsSlice.actions;
 
 export default flightsSlice.reducer;

@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "Seeding the database"
-user = User.create(name: "First-User")
+user = User.create!(name: "dammy", email: "dammy@gmail.com", password: "123456", password_confirmation: "123456")
 Flight.create([
     {name: 'Brazil', picture: 'https://images.pexels.com/photos/16129715/pexels-photo-16129715.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=300', base_price: 1500, available_slots: 10, reserved: false, user: user},
     {name: 'Egypt', picture: 'https://images.pexels.com/photos/3958516/pexels-photo-3958516.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=300', base_price: 1100, available_slots: 10, reserved: false, user: user},

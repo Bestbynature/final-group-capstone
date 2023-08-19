@@ -19,6 +19,9 @@ const Navbar = () => {
         <li>
           <Link to='/reserve_flight'>Reserve Flight</Link>
         </li>
+        <li>
+          <Link to='/reservations'>Reservations</Link>
+        </li>
       </ul>
     </nav>
   );
