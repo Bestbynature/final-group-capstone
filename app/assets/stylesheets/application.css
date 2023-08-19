@@ -252,3 +252,45 @@ f
  .clickactive {
    background-color: #98bf11;
  }
+
+ /*AddFlight*/
+ .add-flight-container {
+  max-width: 400px; /* Adjust this value based on your design */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.add-flight-container h2 {
+  text-align: center;
+}
+
+.add-flight-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-flight-container label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.add-flight-container input {
+  padding: 8px;
+  margin-top: 5px;
+}
+
+.add-flight-container button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 15px;
+  align-self: center;
+}
+
+@media (max-width: 768px) {
+  .add-flight-container {
+    max-width: 100%;
+  }
+}
