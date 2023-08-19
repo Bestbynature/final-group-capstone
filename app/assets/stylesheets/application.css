@@ -252,27 +252,27 @@ f
  .clickactive {
    background-color: #98bf11;
  }
+/* AddFlight.css */
 
-/*AddFlight*/
 .add-flight-container {
-  max-width: 600px; 
+  max-width: 600px;
   margin: 0 auto;
   padding: 30px;
-  background-color: #f0f8ff; 
+  background-color: #f0f8ff;
   border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .add-flight-container:hover {
-  transform: translateY(-5px); 
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); 
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
 .add-flight-container h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #333; 
+  color: #333;
 }
 
 .add-flight-container form {
@@ -283,18 +283,18 @@ f
 .add-flight-container label {
   margin-top: 15px;
   font-weight: bold;
-  color: #555; /* Medium gray text color */
+  color: #555;
 }
 
 .add-flight-container input {
   padding: 10px;
   margin-top: 5px;
-  border: 1px solid #ccc; 
+  border: 1px solid #ccc;
   border-radius: 5px;
 }
 
 .add-flight-container button {
-  background-color: #007bff; 
+  background-color: #007bff;
   color: #fff;
   border: none;
   padding: 12px 20px;
@@ -303,18 +303,18 @@ f
   align-self: center;
   border-radius: 5px;
   font-weight: bold;
-  transition: background-color 0.3s ease; /* Smooth color transition */
+  transition: background-color 0.3s ease;
 }
 
 .add-flight-container button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+  background-color: #0056b3;
 }
 
 @media (max-width: 768px) {
   .add-flight-container {
     max-width: 100%;
-    background-color: #f0f8ff; /* Keep background color for mobile */
-    box-shadow: none; /* No shadow on mobile */
-    transform: none; /* Reset transform on mobile */
+    background-color: #f0f8ff;
+    box-shadow: none;
+    transform: none;
   }
 }

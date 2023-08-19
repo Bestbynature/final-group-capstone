@@ -1,22 +1,9 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
+import React from 'react'
 
 function ReserveFlight() {
-  const location = useLocation();
-  const { flightInfo } = location.state || {}; // Access flightInfo from state
-
   return (
-    <div>
-      <h2>Reserve Flight</h2>
-      {flightInfo && (
-        <div>
-          <p>Flight Name: {flightInfo.name}</p>
-          <p>Base Price: {flightInfo.base_price}</p>
-          {/* Display other flight information here */}
-        </div>
-      )}
-    </div>
-  );
+    <div>ReserveFlight</div>
+  )
 }
 
-export default ReserveFlight;
+export default ReserveFlight

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addFlight } from '../redux/flights/flightsSlice';
 import { useHistory } from 'react-router-dom';
-// import './AddFlight.css'; // Import your custom stylesheet
 
 function AddFlight() {
   const dispatch = useDispatch();
@@ -31,6 +30,11 @@ function AddFlight() {
     setAvailableSlots('');
   };
 
+  const handlePicturePaste = (e) => {
+    const pastedValue = e.clipboardData.getData('Text');
+    setPicture(pastedValue);
+  };
+
   return (
     <div className="add-flight-container">
       <h2>Add New Flight</h2>
@@ -38,8 +42,17 @@ function AddFlight() {
         <label>Name:</label>
         <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
 
-        <label>Picture:</label>
-        <input type="text" value={picture} onChange={(e) => setPicture(e.target.value)} required />
+        <label>Picture URL:</label>
+        <input
+          type="text"
+          value={picture}
+          onChange={(e) => setPicture(e.target.value)}
+          onPaste={handlePicturePaste} // Handle paste event
+          required
+        />
+        <div className="image-preview">
+          {picture && <img src={picture} alt="Flight" />}
+        </div>
 
         <label>Base Price:</label>
         <input type="number" value={basePrice} onChange={(e) => setBasePrice(e.target.value)} required />
