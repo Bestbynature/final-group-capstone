@@ -38,7 +38,7 @@ function AddFlight() {
         <label>Name:</label>
         <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
 
-        <label>Picture URL:</label>
+        <label>Picture:</label>
         <input type="text" value={picture} onChange={(e) => setPicture(e.target.value)} required />
 
         <label>Base Price:</label>
