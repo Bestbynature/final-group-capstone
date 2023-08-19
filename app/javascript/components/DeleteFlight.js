@@ -1,18 +1,18 @@
-
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteFlight, fetchFlights } from '../redux/flights/flightsSlice'; // Adjust the path
 
 const DeleteFlight = () => {
   const dispatch = useDispatch();
   const flights = useSelector((state) => state.flights.flights);
+  // const currentUser = useSelector((state) => state.auth.currentUser); // Assuming you have the user information in your Redux state
 
   const handleDelete = (flightId) => {
     dispatch(deleteFlight(flightId));
   };
 
   useEffect(() => {
-    dispatch(fetchFlights())
+    dispatch(fetchFlights());
   }, [dispatch]);
 
   return (
@@ -21,10 +21,12 @@ const DeleteFlight = () => {
       <ul>
         {flights.map((flight) => (
           <li key={flight.id}>
-          {flight.user_id}
-          <br></br>
             {flight.name}
-            <button onClick={() => handleDelete(flight.id)}>Delete</button>
+            {flight.user_id === currentUser.id ? (
+              <button onClick={() => handleDelete(flight.id)}>Delete</button>
+            ) : (
+              <span>Not your flight</span>
+            )}
           </li>
         ))}
       </ul>
