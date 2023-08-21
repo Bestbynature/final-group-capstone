@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 // import './styles/navbar.css';
+
 
 const Navbar = () => {
   return (
@@ -8,19 +9,19 @@ const Navbar = () => {
       <h2 className='brand'><Link to='/'>Brand</Link></h2>
       <ul className='navlink'>
         <li>
-          <Link to='/'>Flights</Link>
+          <NavLink exact to='/' activeClassName='active'>Flights</NavLink>
         </li>
         <li>
-          <Link to='/add_flight'>Add Flight</Link>
+          <NavLink to='/add_flight' activeClassName='active'>Add Flight</NavLink>
         </li>
         <li>
-          <Link to='/delete_flight'>Delete Flights</Link>
+          <NavLink to='/delete_flight' activeClassName='active'>Delete Flights</NavLink>
         </li>
         <li>
-          <Link to='/reserve_flight'>Reserve Flight</Link>
+          <NavLink to='/reserve_flight' activeClassName='active'>Reserve Flight</NavLink>
         </li>
         <li>
-          <Link to='/reservations'>Reservations</Link>
+          <NavLink to='/reservations' activeClassName='active'>Reservations</NavLink>
         </li>
       </ul>
     </nav>

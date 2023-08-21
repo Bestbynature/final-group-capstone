@@ -65,6 +65,15 @@ export const fetchFlights = createAsyncThunk('flights/fetchFlights', async () =>
   }
 });
 
+export const deleteFlight = createAsyncThunk('flights/deleteFlight', async (flightId) => {
+  try {
+    await axios.delete(`${url}/${flightId}`);
+    return flightId; // Return the deleted flight's ID
+  } catch (error) {
+    return isRejectedWithValue(error.response.data);
+  }
+});
+
 const initialState = {
   flights: [],
   cities,
@@ -118,6 +127,11 @@ const flightsSlice = createSlice({
       })
       .addCase(fetchFlights.rejected, (state, action) => {
         return { ...state, status: 'failed', error: action.payload };
+      })
+      .addCase(deleteFlight.fulfilled, (state, action) => {
+        const deletedFlightId = action.payload;
+        const updatedFlights = state.flights.filter((flight) => flight.id !== deletedFlightId);
+        return { ...state, flights: updatedFlights };
       });
   },
 });

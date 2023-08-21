@@ -48,7 +48,7 @@ font-family: 'Tektur', cursive;
  height: 100vh; /* Make the app container take full viewport height */
 }
 
-/* Styles for the navbar */
+/*/* ####satrt Styles for the navbar */
 .navbar {
  background-color: #fff;
  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
@@ -58,7 +58,6 @@ font-family: 'Tektur', cursive;
  font-family: 'Lato', sans-serif;
 }
 
-/* Styles for the navigation links */
 .navlink {
  padding: 20px;
  margin-top: 30%;
@@ -107,6 +106,8 @@ font-family: 'Tektur', cursive;
  padding: 20px;
 
 }
+
+/*######## end NAVBAR ###*/
 
 /* Splash Screen */
 
@@ -221,7 +222,7 @@ font-family: 'Tektur', cursive;
    justify-content: space-around;
    align-items: center;
   }
- 
+
   .circle {
    width: 2rem;
    height: 2rem;
@@ -233,7 +234,7 @@ font-family: 'Tektur', cursive;
    justify-content: center;
    align-items: center;
   }
- 
+
  .left, .right {
    background-color: #efefef;
    color: white;
@@ -255,6 +256,9 @@ font-family: 'Tektur', cursive;
  }
 
  .clickactive {
+   background-color: #98bf11;
+ }
+ .active {
    background-color: #98bf11;
  }
 
@@ -371,7 +375,7 @@ font-family: 'Tektur', cursive;
   background-color: #d3ea7f;
   min-height: 100vh;
  }
- 
+
  .reservations > h2 {
   text-align: center;
   background-color: #d3ea7f;
@@ -380,7 +384,7 @@ font-family: 'Tektur', cursive;
 .reserved-flights {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; 
+  gap: 20px;
   justify-content: center;
 }
 
@@ -388,8 +392,8 @@ font-family: 'Tektur', cursive;
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 20px;
-  width: 320px; 
-  background-color: #f9f9f9; 
+  width: 320px;
+  background-color: #f9f9f9;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   height: fit-content;
 }
@@ -474,6 +478,50 @@ font-family: 'Tektur', cursive;
 .add-flight-container button:hover {
   background-color: #0056b3;
 }
+
+
+/*########satr DELETE FLIGHT COMPONENT */
+.delete-flight {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.delete-flight h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.delete-flight ul {
+  list-style: none;
+  padding: 0;
+}
+
+.delete-flight li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.delete-flight button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.delete-flight span {
+  color: #999;
+}
+/* #########END DELETE FLIGHT########  */
 
 @media (max-width: 768px) {
   .add-flight-container {

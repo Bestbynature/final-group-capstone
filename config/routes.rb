@@ -26,6 +26,6 @@ Rails.application.routes.draw do
       resources :reserved_flights
     end
   end
-  
+
   match '*path', to: 'root#index', via: :all
 end
