@@ -1,5 +1,4 @@
 # 📗 Table of Contents
-- [App Mock](#app-mock)
 - [📖 About the Project](#about-project)
   - [🧪 Linters](#linters)
   - [🛠 Built With](#built-with)
