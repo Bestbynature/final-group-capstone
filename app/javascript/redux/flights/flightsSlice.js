@@ -3,8 +3,6 @@ import axios from 'axios';
 
 const url = 'http://localhost:3000/api/v1/flights';
 
-// const url2 = '/api/v1/flights';
-
 const cities = [
   { name: 'New York City', country: 'USA' },
   { name: 'Tokyo', country: 'Japan' },
@@ -77,47 +75,13 @@ export const deleteFlight = createAsyncThunk('flights/deleteFlight', async (flig
 });
 
 export const postFlight = createAsyncThunk('flights/postFlights', async (formData) => {
-  
-  // const csrfToken = getState().flights.csrfToken;
-  // const config = {
-  //   headers: {
-  //     'X-CSRF-Token': csrfToken,
-  //   },
-  // };
   try {
     const response = await axios.post(url, formData);
-    console.log(response.data)
     return response.data;
   } catch (error) {
     return isRejectedWithValue(error.response.data);
   }
 });
-
-// export const postFlight = createAsyncThunk('flights/postFlights', async (formData) => {
-//   const csrfToken = getState().flights.csrfToken;
-//   const headers = new Headers({
-//     'X-CSRF-Token': csrfToken,
-//   });
-//   const options = {
-//     method: 'POST',
-//     headers,
-//     body: formData,
-//   };
-
-//   try {
-//     const response = await fetch(url2, options);
-//     if (response.ok) {
-//       const responseData = await response.json();
-//       return responseData;
-//     } else {
-//       const errorResponse = await response.json();
-//       return isRejectedWithValue(errorResponse);
-//     }
-//   } catch (error) {
-//     return isRejectedWithValue(error.message);
-//   }
-// });
-
 
 const initialState = {
   flights: [],
@@ -136,7 +100,6 @@ const initialState = {
   picture: '',
   basePrice: 0,
   availableSlots: 0,
-  csrfToken: '',
 };
 
 const flightsSlice = createSlice({
@@ -163,10 +126,6 @@ const flightsSlice = createSlice({
     setFlight(state, action) {
       return { ...state, flight: action.payload };
     },
-    addFlight(state, action) {
-      const newFlight = action.payload;
-      return { ...state, flights: [...state.flights, newFlight] };
-    },
     setName(state, action) {
       return { ...state, name: action.payload };
     },
@@ -178,9 +137,6 @@ const flightsSlice = createSlice({
     },
     setAvailableSlots(state, action) {
       return { ...state, availableSlots: action.payload };
-    },
-    setCsrfToken(state, action) {
-      return { ...state, csrfToken: action.payload };
     },
   },
   extraReducers: (builder) => {
@@ -198,7 +154,6 @@ const flightsSlice = createSlice({
         return { ...state, status: 'loading' };
       })
       .addCase(postFlight.fulfilled, (state, action) => {
-        console.log(action.payload)
         return { ...state, flights: [...action.payload.flights], status: 'succeeded', user: action.payload.user };
       })
       .addCase(postFlight.rejected, (state, action) => {

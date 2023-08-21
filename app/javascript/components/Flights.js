@@ -16,7 +16,6 @@ const Flights = () => {
       if (carouselRef.current) {
         dispatch(setcwidth(carouselRef.current.scrollWidth - carouselRef.current.offsetWidth));
       }
-      console.log(user)
     }, 2000);
   }, [dispatch, flights.length]);
   
@@ -47,7 +46,6 @@ const Flights = () => {
       <div className={active === 'left' ? "left clickactive" : "left"} onClick={()=>moveCarousel('left')}>
         <i className="fa-solid fa-caret-left"></i>
       </div>
-      {/* </div> */}
       
       <motion.div ref={carouselRef} className='outer-carousel' whileTap={{cursor: "grabbing"}} onScroll={()=>dispatch(setcwidth(carouselRef.current.scrollWidth - carouselRef.current.offsetWidth))}>
         <motion.div drag="x" dragConstraints={{right: 0, left: -cwidth}} className="inner-carousel">
@@ -55,11 +53,11 @@ const Flights = () => {
   const { picture, name, base_price, available_slots } = flightobj;
   return (
     <motion.div className='item' key={index}>
-      <img src={picture} alt={index} title={name} />
+      <img src={picture} alt={name} title={name} />
       <div className='text'>
         <h3>{name}</h3>
-        <p>Price: ${base_price}</p> {/* Display base price */}
-        <p>Available Slots: {available_slots}</p> {/* Display available slots */}
+        <p>Price: ${base_price}</p>
+        <p>Available Slots: {available_slots}</p>
         <div className="circle-cont">
           <div className="circle"><i className="fa-brands fa-facebook-f"></i></div>
           <div className="circle"><i className="fa-brands fa-twitter"></i></div>
