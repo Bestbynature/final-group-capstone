@@ -1,4 +1,6 @@
 class Api::V1::FlightsController < ApplicationController
+  # protect_from_forgery with: :exception
+  skip_before_action :verify_authenticity_token, only: [:create]
   before_action :set_flight, only: %i[ show edit update destroy ]
 
   def index
@@ -15,28 +17,29 @@ class Api::V1::FlightsController < ApplicationController
   def show
   end
 
-  def new
-    @flight = Flight.new
-  end
-
-  def edit
-  end
-
   def create
     @flight = Flight.new(flight_params)
-    @user = current_user
+  # @user = current_user
     if @flight.save
-      @flights = Flight.all
-    response_data = {
-      user: @user.as_json(only: [:name, :email, :id]),
-      flights: @flights.as_json(except: [:created_at, :updated_at]) 
-    }
-    render json: response_data, status: :ok
-      else
-      render json: { status: 'ERROR', message: 'Flight not created', data: @flight.errors }, status: :unprocessable_entity
-      end
+      render json: {data: @flight, status: 'success'}, status: :ok
+    else
+      render json: { status: 'ERROR', message: 'Flight not created', data: @flight.errors.full_messages }, status: :unprocessable_entity
     end
   end
+
+
+  # @flight = Flight.new(flight_params)
+  # @user = current_user
+  # if @flight.save
+  #   @flights = Flight.all.order(created_at: :desc)
+  #   response_data = {
+  #     user: @user.as_json(only: [:name, :email, :id]),
+  #     flights: @flights.as_json(except: [:created_at, :updated_at]) 
+  #   }
+  # render json: response_data, status: :ok
+  # else
+  #   render json: { status: 'ERROR', message: 'Flight not created', data: @flight.errors }, status: :unprocessable_entity
+  # end
 
   def update
     respond_to do |format|

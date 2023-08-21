@@ -8,16 +8,17 @@ import { setcwidth, fetchFlights } from '../redux/flights/flightsSlice';
 const Flights = () => {
   const carouselRef = useRef()
   const dispatch = useDispatch()
-  const { cwidth, active, flights } = useSelector((store) => store.flights)
+  const { cwidth, active, flights, user } = useSelector((store) => store.flights)
   
   useEffect(() => {
     dispatch(fetchFlights());
     setTimeout(() => {
-      if (carouselRef.current) { // Add a null check here
+      if (carouselRef.current) {
         dispatch(setcwidth(carouselRef.current.scrollWidth - carouselRef.current.offsetWidth));
       }
+      console.log(user)
     }, 2000);
-  }, [dispatch]);
+  }, [dispatch, flights.length]);
   
   
   const moveCarousel = (direction) => {
@@ -37,7 +38,7 @@ const Flights = () => {
 
   return (
     <div className='carousel'>
-    <div></div>
+    <div>&nbsp;{user}</div>
       <div className='carousel-header'>
         <h1>Flight Destinations</h1>
         <p>Please select a travel destination</p>

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteFlight, fetchFlights } from '../redux/flights/flightsSlice'; // Adjust the path
+import { deleteFlight, fetchFlights } from '../redux/flights/flightsSlice'; 
 
 const DeleteFlight = () => {
   const dispatch = useDispatch();

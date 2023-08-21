@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addFlight, setPicture, setAvailableSlots, setBasePrice, setName } from "../redux/flights/flightsSlice";
+import { postFlight, setPicture, setAvailableSlots, setBasePrice, setName, postFlights } from "../redux/flights/flightsSlice";
 import { useNavigate } from 'react-router-dom';
 
 const AddFlight = () => {
@@ -8,22 +8,31 @@ const AddFlight = () => {
   const dispatch = useDispatch();
   const history = useNavigate();
 
-  const { name, picture, basePrice, availableSlots, user } = useSelector((store) => store.flights);
+  const { name, picture, basePrice, availableSlots, user_id } = useSelector((store) => store.flights);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const newFlight = {
-      name,
-      picture,
-      user: user.name,
-      reserved: false,
-      base_price: parseFloat(basePrice),
-      available_slots: parseInt(availableSlots),
-    };
+    const formData = new FormData();
+        formData.append('flight[name]', name);
+        formData.append('flight[picture]', picture);
+        formData.append('flight[base_price]', basePrice);
+        formData.append('flight[available_slots]', availableSlots);
+        formData.append('flight[reserved]', 'false');
+        formData.append('flight[user_id]', user_id);
+        // dispatch(postDoctor(formData));
+    // console.log("Form submitted!", name)
+    // const newFlight = {
+    //   name,
+    //   picture,
+    //   user: user.name,
+    //   reserved: false,
+    //   base_price: parseFloat(basePrice),
+    //   available_slots: parseInt(availableSlots),
+    // };
 
-    dispatch(addFlight(newFlight));
-    history('/flights');
+    dispatch(postFlight(formData));
+    history('/');
   };
 
   return (
@@ -34,7 +43,7 @@ const AddFlight = () => {
         <input
           type="text"
           value={name}
-          onChange={(e) => setName(e.target.value)}
+          onChange={(e) => dispatch(setName(e.target.value))}
           required
         />
 
