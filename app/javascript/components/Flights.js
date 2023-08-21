@@ -13,9 +13,12 @@ const Flights = () => {
   useEffect(() => {
     dispatch(fetchFlights());
     setTimeout(() => {
-      dispatch(setcwidth(carouselRef.current.scrollWidth - carouselRef.current.offsetWidth));
+      if (carouselRef.current) { // Add a null check here
+        dispatch(setcwidth(carouselRef.current.scrollWidth - carouselRef.current.offsetWidth));
+      }
     }, 2000);
   }, [dispatch]);
+  
   
   const moveCarousel = (direction) => {
     const percentage = 0.5;
@@ -47,23 +50,25 @@ const Flights = () => {
       
       <motion.div ref={carouselRef} className='outer-carousel' whileTap={{cursor: "grabbing"}} onScroll={()=>dispatch(setcwidth(carouselRef.current.scrollWidth - carouselRef.current.offsetWidth))}>
         <motion.div drag="x" dragConstraints={{right: 0, left: -cwidth}} className="inner-carousel">
-          {flights.map((flightobj, index) => {
-            const { picture, name } = flightobj
-            return (
-              <motion.div className='item'>
-                <img src={picture} key={index} alt={index} title={name}/>
-                <div className='text'>
-                  <h3>{name}</h3>
-                  <p>*******************</p>
-                  <div className="circle-cont">
-                    <div className="circle"><i className="fa-brands fa-facebook-f"></i></div>
-                    <div className="circle"><i className="fa-brands fa-twitter"></i></div>
-                    <div className="circle"><i className="fa-brands fa-square-instagram"></i></div>
-                  </div>
-                </div>
-              </motion.div>
-            )
-          })}
+        {flights.map((flightobj, index) => {
+  const { picture, name, base_price, available_slots } = flightobj;
+  return (
+    <motion.div className='item' key={index}>
+      <img src={picture} alt={index} title={name} />
+      <div className='text'>
+        <h3>{name}</h3>
+        <p>Price: ${base_price}</p> {/* Display base price */}
+        <p>Available Slots: {available_slots}</p> {/* Display available slots */}
+        <div className="circle-cont">
+          <div className="circle"><i className="fa-brands fa-facebook-f"></i></div>
+          <div className="circle"><i className="fa-brands fa-twitter"></i></div>
+          <div className="circle"><i className="fa-brands fa-square-instagram"></i></div>
+        </div>
+      </div>
+    </motion.div>
+  );
+})}
+
         </motion.div>
       </motion.div>
       <div className={active === 'right' ? "right clickactive" : "right"} onClick={()=>moveCarousel("right")}>
