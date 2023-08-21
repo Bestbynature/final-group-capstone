@@ -29,6 +29,7 @@ font-family: 'Tektur', cursive;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
 
  }
 
@@ -70,7 +71,7 @@ font-family: 'Tektur', cursive;
  padding: 10px 20px;
 }
 .navbar .brand a {
- font-size: 26px;
+ font-size: 25px;
  font-weight: 600;
 }
 
@@ -288,6 +289,17 @@ font-family: 'Tektur', cursive;
  .active {
    background-color: #98bf11;
  }
+
+ .deleted {
+  text-decoration: line-through;
+}
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999 !important;
+  background-color: #cccccc !important;
+  color: #666666 !important;
+}
 
  /* styles for the reserve form */
 
@@ -526,12 +538,15 @@ color: #fff;
 
 .delete-flight h2 {
   font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
   margin-bottom: 10px;
 }
 
 .delete-flight ul {
   list-style: none;
-  padding: 0;
+  padding: 10px;
+  margin: 20px;
 }
 
 .delete-flight li {

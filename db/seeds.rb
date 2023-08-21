@@ -7,16 +7,17 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "Seeding the database"
-user = User.create!(name: "dammy", email: "dammy@gmail.com", password: "123456", password_confirmation: "123456")
+# user = User.create!(name: "naji", email: "naji@gmail.com", password: "123456", password_confirmation: "123456")
 Flight.create([
-    {name: 'Brazil', picture: 'https://images.pexels.com/photos/16129715/pexels-photo-16129715.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=300', base_price: 1500, available_slots: 10, reserved: false, user: user},
-    {name: 'Egypt', picture: 'https://images.pexels.com/photos/3958516/pexels-photo-3958516.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=300', base_price: 1100, available_slots: 10, reserved: false, user: user},
-    {name: 'America', picture: 'https://images.pexels.com/photos/356844/pexels-photo-356844.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=300', base_price: 2000, available_slots: 10, reserved: false, user: user},
-    {name: 'Morocco', picture: 'https://images.pexels.com/photos/6945915/pexels-photo-6945915.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=300', base_price: 1200, available_slots: 10, reserved: false, user: user},
-    {name: 'Cameroon', picture: 'https://images.pexels.com/photos/17290979/pexels-photo-17290979.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=300', base_price: 1400, available_slots: 10, reserved: false, user: user},
-    {name: 'Nigeria', picture: 'https://images.pexels.com/photos/16237519/pexels-photo-16237519.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=300', base_price: 1300, available_slots: 10, reserved: false, user: user},
-    {name: 'Mexico', picture: 'https://images.pexels.com/photos/17806066/pexels-photo-17806066.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=300', base_price: 1050, available_slots: 10, reserved: false, user: user},
-    {name: 'Ghana', picture: 'https://images.pexels.com/photos/6567674/pexels-photo-6567674.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=300', base_price: 1000, available_slots: 10, reserved: false, user: user},
+    {name: 'Brazil', picture: 'https://images.pexels.com/photos/16129715/pexels-photo-16129715.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=300', base_price: 1500, available_slots: 10, reserved: false, user_id: 2},
+    {name: 'Egypt', picture: 'https://images.pexels.com/photos/3958516/pexels-photo-3958516.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=300', base_price: 1100, available_slots: 10, reserved: false, user_id: 2},
+    {name: 'America', picture: 'https://images.pexels.com/photos/356844/pexels-photo-356844.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=300', base_price: 2000, available_slots: 10, reserved: false, user_id: 2},
+    {name: 'Morocco', picture: 'https://theroad-islife.com/wp-content/uploads/2020/07/Things-to-do-in-Chefchaouen-18.jpg', base_price: 1200, available_slots: 10, reserved: false, user_id: 2},
+    {name: 'Cameroon', picture: 'https://images.pexels.com/photos/17290979/pexels-photo-17290979.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=300', base_price: 1400, available_slots: 10, reserved: false, user_id: 2},
+    {name: 'Nigeria', picture: 'https://images.pexels.com/photos/16237519/pexels-photo-16237519.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=300', base_price: 1300, available_slots: 10, reserved: false, user_id: 2},
+    {name: 'Morocco', picture: 'https://media.tacdn.com/media/attractions-splice-spp-674x446/06/6a/f1/fc.jpg', base_price: 1200, available_slots: 10, reserved: false, user_id: 2},
+    {name: 'Mexico', picture: 'https://images.pexels.com/photos/17806066/pexels-photo-17806066.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=300', base_price: 1050, available_slots: 10, reserved: false, user_id: 2},
+    {name: 'Ghana', picture: 'https://images.pexels.com/photos/6567674/pexels-photo-6567674.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=300', base_price: 1000, available_slots: 10, reserved: false, user_id: 2},
   ])
 
   puts "Database is successfully seeded"
