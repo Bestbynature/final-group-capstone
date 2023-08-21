@@ -133,8 +133,12 @@ npm install
 To run the project, execute the following command:
 
 
-rails s // to start development server
-yarn build --watch // to build for productions
+# To start the development server
+rails s
+
+# To build for production and watch for changes
+yarn build --watch
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
