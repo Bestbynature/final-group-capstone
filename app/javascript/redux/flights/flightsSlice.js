@@ -65,6 +65,15 @@ export const fetchFlights = createAsyncThunk('flights/fetchFlights', async () =>
   }
 });
 
+export const deleteFlight = createAsyncThunk('flights/deleteFlight', async (flightId) => {
+  try {
+    await axios.delete(`${url}/${flightId}`);
+    return flightId; // Return the deleted flight's ID
+  } catch (error) {
+    return isRejectedWithValue(error.response.data);
+  }
+});
+
 export const postFlights = createAsyncThunk('flights/postFlights', async () => {
   try {
     const response = await axios.post(url);
@@ -152,6 +161,20 @@ const flightsSlice = createSlice({
       })
       .addCase(postFlights.rejected, (state, action) => {
         return { ...state, status: 'failed', error: action.payload };
+      })
+      .addCase(postFlights.pending, (state) => {
+        return { ...state, status: 'loading' };
+      })
+      .addCase(postFlights.fulfilled, (state, action) => {
+        return { ...state, flights: [...action.payload.flights], status: 'succeeded', user: action.payload.user };
+      })
+      .addCase(postFlights.rejected, (state, action) => {
+        return { ...state, status: 'failed', error: action.payload };
+      })
+      .addCase(deleteFlight.fulfilled, (state, action) => {
+        const deletedFlightId = action.payload;
+        const updatedFlights = state.flights.filter((flight) => flight.id !== deletedFlightId);
+        return { ...state, flights: updatedFlights };
       });
   },
 });
