@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteFlight, fetchFlights } from '../redux/flights/flightsSlice';
+
+import { deleteFlight, fetchFlights } from '../redux/flights/flightsSlice'; 
+
 
 const DeleteFlight = () => {
   const dispatch = useDispatch();

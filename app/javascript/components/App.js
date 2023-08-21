@@ -10,6 +10,7 @@ import Reservations from './Reservations';
 
 
 const App = () => {
+
   return (
    <div className='App '>
 
@@ -17,7 +18,6 @@ const App = () => {
      <Routes>
        <Route path='/' element={<Layout />} />
        <Route index element={<Flights />}/>
-       <Route path="/add_flight" element={<AddFlight />} />
        <Route path="/reserve_flight" element={<ReserveFlight />} />
        <Route path="/reservations" element={<Reservations />} />
        <Route path="/delete_flight" element={<DeleteFlight />} />

@@ -62,6 +62,7 @@ font-family: 'Tektur', cursive;
 .navlink {
  padding: 20px;
  margin-top: 30%;
+ width: 100%;
 }
 
 .brand{
@@ -84,22 +85,38 @@ font-family: 'Tektur', cursive;
  padding: 10px;
 }
 
+.navlink li {
+  width: 100%;
+}
+
 .navbar .navlink li a {
  text-decoration: none;
  color: #333;
  font-size: large;
  font-weight: 600;
  padding: 10px;
+ width: 100%;
 }
 
 .navbar .navlink li:hover {
  color: #fff;
  background-color: #98bf11;
+ border-radius: 10px;
+}
+
+.add-button {
+  border: none;
+  padding: 3px;
+  background: none;
+  font-size: large;
+ font-weight: 600;
 }
 
 /* Add styling for active link if needed */
 .navbar a.active {
  font-weight: bold;
+ color: #fff;
+ width: 100%;
 }
 
 /* Styles for the main content area */
@@ -166,9 +183,19 @@ font-family: 'Tektur', cursive;
     align-items: center;
  }
 
+ .item-image-container {
+  height: 70%; 
+  width: 90%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  overflow: hidden; 
+ }
+
  .item img {
-    width: 90%;
-    height: 70%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: 1rem;
     /* pointer-events: none; */
@@ -435,7 +462,7 @@ button[disabled]{
 
 /* AddFlight.css */
 
-.add-flight-container {
+/* .add-flight-container {
   max-width: 600px;
   margin: 0 auto;
   padding: 30px;
@@ -489,6 +516,15 @@ button[disabled]{
 
 .add-flight-container button:hover {
   background-color: #0056b3;
+} */
+
+.add-submit {
+background: #98bf11;
+}
+
+.add-submit:hover {
+background: #435502;
+color: #fff;
 }
 
 
