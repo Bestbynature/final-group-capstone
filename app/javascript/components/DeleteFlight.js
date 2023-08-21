@@ -35,8 +35,8 @@ const DeleteFlight = () => {
           ))}
         </ul>
       )}
-      <h2>Delete Flight</h2>
       <ul>
+      <h2>Delete Flight</h2>
         {flights.map((flight) => (
           <li key={flight.id}>
             {flight.name}
