@@ -223,7 +223,7 @@ moving further We want to thank [muratk Korkmaz on Behance](https://www.behance.
 
 ## 📝 License <a name="license"></a>
 
-This project is [GENERAL PUBLIC LICENSE](./LICENSE) licensed.
+This project is [GENERAL PUBLIC LICENSE](https://github.com/Bestbynature/final-group-capstone/blob/Readme/LICENSE) licensed.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
