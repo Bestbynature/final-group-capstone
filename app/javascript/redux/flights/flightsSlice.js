@@ -65,6 +65,15 @@ export const fetchFlights = createAsyncThunk('flights/fetchFlights', async () =>
   }
 });
 
+export const postFlights = createAsyncThunk('flights/postFlights', async () => {
+  try {
+    const response = await axios.post(url);
+    return response.data;
+  } catch (error) {
+    return isRejectedWithValue(error.response.data);
+  }
+});
+
 const initialState = {
   flights: [],
   cities,
@@ -77,6 +86,10 @@ const initialState = {
   date: '',
   flight: '',
   reservedFlights: [],
+  name: '',
+  picture: '',
+  basePrice: 0,
+  availableSlots: 0,
 };
 
 const flightsSlice = createSlice({
@@ -107,6 +120,18 @@ const flightsSlice = createSlice({
       const newFlight = action.payload;
       return { ...state, flights: [...state.flights, newFlight] };
     },
+    setName(state, action) {
+      return { ...state, name: action.payload };
+    },
+    setPicture(state, action) {
+      return { ...state, picture: action.payload };
+    },
+    setBasePrice(state, action) {
+      return { ...state, basePrice: action.payload };
+    },
+    setAvailableSlots(state, action) {
+      return { ...state, availableSlots: action.payload };
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -114,14 +139,23 @@ const flightsSlice = createSlice({
         return { ...state, status: 'loading' };
       })
       .addCase(fetchFlights.fulfilled, (state, action) => {
-        return { ...state, flights: [...action.payload.flights], status: 'succeeded', user: action.payload.user.name };
+        return { ...state, flights: [...action.payload.flights], status: 'succeeded', user: action.payload.user };
       })
       .addCase(fetchFlights.rejected, (state, action) => {
+        return { ...state, status: 'failed', error: action.payload };
+      })
+      .addCase(postFlights.pending, (state) => {
+        return { ...state, status: 'loading' };
+      })
+      .addCase(postFlights.fulfilled, (state, action) => {
+        return { ...state, flights: [...action.payload.flights], status: 'succeeded', user: action.payload.user };
+      })
+      .addCase(postFlights.rejected, (state, action) => {
         return { ...state, status: 'failed', error: action.payload };
       });
   },
 });
 
-export const { setcwidth, addFlight, setCity, setDate, setFlight, setReservedFlights } = flightsSlice.actions;
+export const { setcwidth, addFlight, setCity, setDate, setFlight, setReservedFlights, setName, setAvailableSlots, setBasePrice, setPicture } = flightsSlice.actions;
 
 export default flightsSlice.reducer;

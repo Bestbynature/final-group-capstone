@@ -1,15 +1,14 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { addFlight } from "../redux/flights/flightsSlice";
-// import { useHistory } from 'react-router-dom';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addFlight, setPicture, setAvailableSlots, setBasePrice, setName } from "../redux/flights/flightsSlice";
+import { useNavigate } from 'react-router-dom';
 
-function AddFlight() {
+const AddFlight = () => {
+
   const dispatch = useDispatch();
+  const history = useNavigate();
 
-  const [name, setName] = useState("");
-  const [picture, setPicture] = useState("");
-  const [basePrice, setBasePrice] = useState("");
-  const [availableSlots, setAvailableSlots] = useState("");
+  const { name, picture, basePrice, availableSlots, user } = useSelector((store) => store.flights);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,22 +16,14 @@ function AddFlight() {
     const newFlight = {
       name,
       picture,
+      user: user.name,
+      reserved: false,
       base_price: parseFloat(basePrice),
       available_slots: parseInt(availableSlots),
     };
 
     dispatch(addFlight(newFlight));
-
-    // Clear input fields after submission
-    setName("");
-    setPicture("");
-    setBasePrice("");
-    setAvailableSlots("");
-  };
-
-  const handlePicturePaste = (e) => {
-    const pastedValue = e.clipboardData.getData("Text");
-    setPicture(pastedValue);
+    history('/flights');
   };
 
   return (
@@ -51,19 +42,15 @@ function AddFlight() {
         <input
           type="text"
           value={picture}
-          onChange={(e) => setPicture(e.target.value)}
-          onPaste={handlePicturePaste} // Handle paste event
+          onChange={(e) => dispatch(setPicture(e.target.value))}
           required
         />
-        <div className="image-preview">
-          {picture && <img src={picture} alt="Flight" />}
-        </div>
 
         <label>Base Price:</label>
         <input
           type="number"
           value={basePrice}
-          onChange={(e) => setBasePrice(e.target.value)}
+          onChange={(e) => dispatch(setBasePrice(e.target.value))}
           required
         />
 
@@ -71,7 +58,7 @@ function AddFlight() {
         <input
           type="number"
           value={availableSlots}
-          onChange={(e) => setAvailableSlots(e.target.value)}
+          onChange={(e) => dispatch(setAvailableSlots(e.target.value))}
           required
         />
 
