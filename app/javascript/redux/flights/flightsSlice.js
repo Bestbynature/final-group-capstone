@@ -3,7 +3,6 @@ import axios from 'axios';
 
 const url = 'http://localhost:3000/api/v1/flights';
 
-
 const cities = [
   { name: 'New York City', country: 'USA' },
   { name: 'Tokyo', country: 'Japan' },
@@ -57,7 +56,6 @@ const cities = [
   { name: 'Stockholm', country: 'Sweden' },
 ];
 
-
 export const fetchFlights = createAsyncThunk('flights/fetchFlights', async () => {
   try {
     const response = await axios.get(url);
@@ -67,17 +65,14 @@ export const fetchFlights = createAsyncThunk('flights/fetchFlights', async () =>
   }
 });
 
-// deleteFlight
 export const deleteFlight = createAsyncThunk('flights/deleteFlight', async (flightId) => {
-    try {
-      await axios.delete(`${url}/${flightId}`);
-      return flightId; // Return the deleted flight's ID
-    } catch (error) {
-        console.error('Error deleting flight:', error.response.data);
-        return isRejectedWithValue(error.response.data);
-
-    }
-  });
+  try {
+    await axios.delete(`${url}/${flightId}`);
+    return flightId; // Return the deleted flight's ID
+  } catch (error) {
+    return isRejectedWithValue(error.response.data);
+  }
+});
 
 const initialState = {
   flights: [],
@@ -137,7 +132,7 @@ const flightsSlice = createSlice({
         const deletedFlightId = action.payload;
         const updatedFlights = state.flights.filter((flight) => flight.id !== deletedFlightId);
         return { ...state, flights: updatedFlights };
-      })
+      });
   },
 });
 

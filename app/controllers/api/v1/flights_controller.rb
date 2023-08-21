@@ -7,9 +7,9 @@ class Api::V1::FlightsController < ApplicationController
 
     response_data = {
       user: @user.as_json(only: [:name, :email]),
-      flights: @flights.as_json(except: [:created_at, :updated_at]) 
+      flights: @flights.as_json(except: [:created_at, :updated_at])
     }
-  
+
     render json: response_data, status: :ok
     # render json: @flights, status: :ok
   end
@@ -56,11 +56,16 @@ class Api::V1::FlightsController < ApplicationController
 
   # DELETE /flights/1 or /flights/1.json
   def destroy
-    @flight.destroy
+    @flight = Flight.find(params[:id])
 
     respond_to do |format|
-      format.html { redirect_to flights_url, notice: "Flight was successfully destroyed." }
-      format.json { head :no_content }
+      if @flight.destroy
+        format.html { redirect_to '/delete_flight', notice: "Flight was successfully destroyed." }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to delete_flight, alert: "Failed to destroy flight." }
+        format.json { render json: @flight.errors, status: :unprocessable_entity }
+      end
     end
   end
 

@@ -258,6 +258,9 @@ font-family: 'Tektur', cursive;
  .clickactive {
    background-color: #98bf11;
  }
+ .active {
+   background-color: #98bf11;
+ }
 
  /* styles for the reserve form */
 
@@ -372,7 +375,7 @@ font-family: 'Tektur', cursive;
   background-color: #d3ea7f;
   min-height: 100vh;
  }
- 
+
  .reservations > h2 {
   text-align: center;
   background-color: #d3ea7f;
@@ -381,7 +384,7 @@ font-family: 'Tektur', cursive;
 .reserved-flights {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; 
+  gap: 20px;
   justify-content: center;
 }
 
@@ -389,8 +392,8 @@ font-family: 'Tektur', cursive;
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 20px;
-  width: 320px; 
-  background-color: #f9f9f9; 
+  width: 320px;
+  background-color: #f9f9f9;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   height: fit-content;
 }
