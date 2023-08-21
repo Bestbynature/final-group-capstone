@@ -68,7 +68,16 @@ export const fetchFlights = createAsyncThunk('flights/fetchFlights', async () =>
 export const deleteFlight = createAsyncThunk('flights/deleteFlight', async (flightId) => {
   try {
     await axios.delete(`${url}/${flightId}`);
-    return flightId; // Return the deleted flight's ID
+    return flightId;
+  } catch (error) {
+    return isRejectedWithValue(error.response.data);
+  }
+});
+
+export const postFlight = createAsyncThunk('flights/postFlights', async (formData) => {
+  try {
+    const response = await axios.post(url, formData);
+    return response.data;
   } catch (error) {
     return isRejectedWithValue(error.response.data);
   }
@@ -78,6 +87,7 @@ const initialState = {
   flights: [],
   cities,
   user: '',
+  user_id: 0,
   status: 'idle',
   error: null,
   cwidth: 0,
@@ -86,6 +96,10 @@ const initialState = {
   date: '',
   flight: '',
   reservedFlights: [],
+  name: '',
+  picture: '',
+  basePrice: null,
+  availableSlots: null,
 };
 
 const flightsSlice = createSlice({
@@ -112,9 +126,17 @@ const flightsSlice = createSlice({
     setFlight(state, action) {
       return { ...state, flight: action.payload };
     },
-    addFlight(state, action) {
-      const newFlight = action.payload;
-      return { ...state, flights: [...state.flights, newFlight] };
+    setName(state, action) {
+      return { ...state, name: action.payload };
+    },
+    setPicture(state, action) {
+      return { ...state, picture: action.payload };
+    },
+    setBasePrice(state, action) {
+      return { ...state, basePrice: action.payload };
+    },
+    setAvailableSlots(state, action) {
+      return { ...state, availableSlots: action.payload };
     },
   },
   extraReducers: (builder) => {
@@ -123,19 +145,34 @@ const flightsSlice = createSlice({
         return { ...state, status: 'loading' };
       })
       .addCase(fetchFlights.fulfilled, (state, action) => {
-        return { ...state, flights: [...action.payload.flights], status: 'succeeded', user: action.payload.user.name };
+        return { ...state, flights: [...action.payload.flights], status: 'succeeded', user: action.payload.user.name, user_id: action.payload.user.id };
       })
       .addCase(fetchFlights.rejected, (state, action) => {
         return { ...state, status: 'failed', error: action.payload };
+      })
+      .addCase(postFlight.pending, (state) => {
+        return { ...state, status: 'loading' };
+      })
+      .addCase(postFlight.fulfilled, (state, action) => {
+        return { ...state, flights: [...action.payload.flights], status: 'succeeded', user: action.payload.user };
+      })
+      .addCase(postFlight.rejected, (state, action) => {
+        return { ...state, status: 'failed', error: action.payload };
+      })
+      .addCase(deleteFlight.pending, (state) => {
+        return { ...state, status: 'loading' };
       })
       .addCase(deleteFlight.fulfilled, (state, action) => {
         const deletedFlightId = action.payload;
         const updatedFlights = state.flights.filter((flight) => flight.id !== deletedFlightId);
         return { ...state, flights: updatedFlights };
+      })
+      .addCase(deleteFlight.rejected, (state, action) => {
+        return { ...state, status: 'failed', error: action.payload };
       });
   },
 });
 
-export const { setcwidth, AddFlight, setCity, setDate, setFlight, setReservedFlights } = flightsSlice.actions;
+export const { setcwidth, setCsrfToken, addFlight, setCity, setDate, setFlight, setReservedFlights, setName, setAvailableSlots, setBasePrice, setPicture } = flightsSlice.actions;
 
 export default flightsSlice.reducer;

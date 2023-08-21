@@ -12,17 +12,17 @@ const Navbar = () => {
           <NavLink exact to='/' activeClassName='active'>Flights</NavLink>
         </li>
         <li>
-          <NavLink to='/add_flight' activeClassName='active'>Add Flight</NavLink>
-        </li>
-        <li>
           <NavLink to='/delete_flight' activeClassName='active'>Delete Flights</NavLink>
         </li>
         <li>
-          <NavLink to='/reserve_flight' activeClassName='active'>Reserve Flight</NavLink>
+          <NavLink to='/reserve_flight' activeClassName='active'>Reserve</NavLink>
         </li>
         <li>
           <NavLink to='/reservations' activeClassName='active'>Reservations</NavLink>
         </li>
+        <li><button type="button" className="add-button" data-bs-toggle="modal" data-bs-target="#addModal">
+          Add Flight
+          </button></li>
       </ul>
     </nav>
   );
