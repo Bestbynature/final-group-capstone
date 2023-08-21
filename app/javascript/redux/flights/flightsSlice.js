@@ -98,8 +98,8 @@ const initialState = {
   reservedFlights: [],
   name: '',
   picture: '',
-  basePrice: 0,
-  availableSlots: 0,
+  basePrice: null,
+  availableSlots: null,
 };
 
 const flightsSlice = createSlice({

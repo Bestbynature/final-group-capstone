@@ -3,12 +3,12 @@ import { motion } from 'framer-motion'
 import { useEffect, useRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { setcwidth, fetchFlights } from '../redux/flights/flightsSlice';
-
+import AddFlight from './AddFlight';
 
 const Flights = () => {
   const carouselRef = useRef()
   const dispatch = useDispatch()
-  const { cwidth, active, flights, user } = useSelector((store) => store.flights)
+  const { cwidth, active, flights } = useSelector((store) => store.flights)
   
   useEffect(() => {
     dispatch(fetchFlights());
@@ -37,7 +37,8 @@ const Flights = () => {
 
   return (
     <div className='carousel'>
-    <div>&nbsp;{user}</div>
+      <AddFlight />
+    <div>&nbsp;</div>
       <div className='carousel-header'>
         <h1>Flight Destinations</h1>
         <p>Please select a travel destination</p>
@@ -53,7 +54,7 @@ const Flights = () => {
   const { picture, name, base_price, available_slots } = flightobj;
   return (
     <motion.div className='item' key={index}>
-      <img src={picture} alt={name} title={name} />
+      <div className="item-image-container"><img src={picture} alt={name} title={name} /></div>
       <div className='text'>
         <h3>{name}</h3>
         <p>Price: ${base_price}</p>
