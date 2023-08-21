@@ -21,7 +21,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Booking App Frontend <a name="about-project"></a>
+# 📖 Airlin Frontend App<a name="about-project"></a>
 
 Welcome to the frontend of the Airline Reservation Project, a cutting-edge application built using React and Redux technologies. Here, you can easily browse and reserve flights of your choice by selecting your preferred flight date date and city city of origin and destination.
 Our user-friendly interface allows you to explore a diverse range of flights with detailed information. You can make informed decisions based on real-time availability, ensuring a seamless reservation process.
