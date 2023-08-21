@@ -6,10 +6,10 @@ default: &default
 development:
   <<: *default
   database: final_group_capstone_development
-  # username: postgres
-  # # password: admin
-  # host: localhost
-  # port: 5432
+  username: postgres
+  password: admin
+  host: localhost
+  port: 5432
 
 test:
   <<: *default
@@ -22,7 +22,7 @@ test:
 production:
   <<: *default
   database: final_group_capstone_production
-  # username: postgres
-  # # password: admin
-  # host: localhost
-  # port: 5432
+  username: postgres
+  password: admin
+  host: localhost
+  port: 5432

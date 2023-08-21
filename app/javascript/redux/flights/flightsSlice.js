@@ -122,6 +122,6 @@ const flightsSlice = createSlice({
   },
 });
 
-export const { setcwidth, AddFlight, setCity, setDate, setFlight, setReservedFlights } = flightsSlice.actions;
+export const { setcwidth, addFlight, setCity, setDate, setFlight, setReservedFlights } = flightsSlice.actions;
 
 export default flightsSlice.reducer;
