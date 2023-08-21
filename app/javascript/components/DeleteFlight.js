@@ -1,13 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteFlight, fetchFlights } from '../redux/flights/flightsSlice'; // Adjust the path
+import { deleteFlight, fetchFlights } from '../redux/flights/flightsSlice';
 
 const DeleteFlight = () => {
   const dispatch = useDispatch();
   const flights = useSelector((state) => state.flights.flights);
 
+  const [deletedFlights, setDeletedFlights] = useState([]);
+  const deletedFlightRef = useRef(null);
+
   const handleDelete = (flightId) => {
-    dispatch(deleteFlight(flightId));
+    const flightToDelete = flights.find((flight) => flight.id === flightId);
+    if (flightToDelete) {
+      dispatch(deleteFlight(flightId));
+      deletedFlightRef.current = flightToDelete;
+      setDeletedFlights([...deletedFlights, flightToDelete]);
+    }
   };
 
   useEffect(() => {
@@ -16,16 +24,22 @@ const DeleteFlight = () => {
 
   return (
     <div className="delete-flight">
+      {deletedFlights.length > 0 && (
+        <ul>
+          <h2>Deleted Flights</h2>
+          {deletedFlights.map((deletedFlight) => (
+            <li key={deletedFlight.id} >
+           <span className='deleted'>{deletedFlight.name}</span>
+            <button disabled={true}>Delete</button>
+            </li>
+          ))}
+        </ul>
+      )}
       <h2>Delete Flight</h2>
       <ul>
         {flights.map((flight) => (
           <li key={flight.id}>
             {flight.name}
-            {/* {currentUser && flight.user_id === currentUser.id ? (
-              <button onClick={() => handleDelete(flight.id)}>Delete</button>
-            ) : (
-              <button disabled>Deletet</button>
-            )} */}
             <button onClick={() => handleDelete(flight.id)}>Delete</button>
           </li>
         ))}

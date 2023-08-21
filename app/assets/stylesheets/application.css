@@ -262,6 +262,17 @@ font-family: 'Tektur', cursive;
    background-color: #98bf11;
  }
 
+ .deleted {
+  text-decoration: line-through;
+}
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999 !important;
+  background-color: #cccccc !important;
+  color: #666666 !important;
+}
+
  /* styles for the reserve form */
 
  .reserve-form {
