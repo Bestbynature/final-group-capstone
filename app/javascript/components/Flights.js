@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { setcwidth, fetchFlights } from '../redux/flights/flightsSlice';
 import AddFlight from './AddFlight';
@@ -51,21 +52,23 @@ const Flights = () => {
       <motion.div ref={carouselRef} className='outer-carousel' whileTap={{cursor: "grabbing"}} onScroll={()=>dispatch(setcwidth(carouselRef.current.scrollWidth - carouselRef.current.offsetWidth))}>
         <motion.div drag="x" dragConstraints={{right: 0, left: -cwidth}} className="inner-carousel">
         {flights.map((flightobj, index) => {
-  const { picture, name, base_price, available_slots } = flightobj;
+  const { picture, name, base_price, available_slots, id } = flightobj;
   return (
-    <motion.div className='item' key={index}>
-      <div className="item-image-container"><img src={picture} alt={name} title={name} /></div>
-      <div className='text'>
-        <h3>{name}</h3>
-        <p>Price: ${base_price}</p>
-        <p>Available Slots: {available_slots}</p>
-        <div className="circle-cont">
-          <div className="circle"><i className="fa-brands fa-facebook-f"></i></div>
-          <div className="circle"><i className="fa-brands fa-twitter"></i></div>
-          <div className="circle"><i className="fa-brands fa-square-instagram"></i></div>
+    <Link to={`/details/${id}`} key={index}>
+      <motion.div className='item'>
+        <div className="item-image-container"><img src={picture} alt={name} title={name} /></div>
+        <div className='text'>
+          <h3>{name}</h3>
+          <p>Price: ${base_price}</p>
+          <p>Available Slots: {available_slots}</p>
+          <div className="circle-cont">
+            <div className="circle"><i className="fa-brands fa-facebook-f"></i></div>
+            <div className="circle"><i className="fa-brands fa-twitter"></i></div>
+            <div className="circle"><i className="fa-brands fa-square-instagram"></i></div>
+          </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </Link>
   );
 })}
 

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchFlights, setCity, setDate, setFlight, setReservedFlights } from '../redux/flights/flightsSlice';
+import AddFlight from './AddFlight';
 
 const ReserveFlight = () => {
 
@@ -30,6 +31,7 @@ const ReserveFlight = () => {
 
   return (
     <div className='reserve-form'>
+      <AddFlight />
       <div className="overlay">
         <div>
           <div className="minus">

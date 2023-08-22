@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useEffect } from 'react';
 import { setReservedFlights } from '../redux/flights/flightsSlice';
+import AddFlight from './AddFlight';
 
 const Reservations = () => {
     const dispatch = useDispatch();
@@ -16,6 +17,7 @@ const Reservations = () => {
 
   return (
     <div className='reservations'>
+        <AddFlight />
         <h2>Reserved Destinations</h2>
         <hr />
         <div className='reserved-flights'>
