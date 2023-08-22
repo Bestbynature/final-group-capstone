@@ -311,24 +311,24 @@ button[disabled]{
 }
 
  /* styles for the reserve form */
-
- .reserve-form {
+/* Styles for desktop and larger screens */
+.reserve-form {
   background: url('./images/reserve-background.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
- }
+}
 
- .overlay {
+.overlay {
   background-color: rgba(152, 191, 17, 0.8);
   padding: 2rem;
   height: 100%;
   width: 100%;
   display: grid;
   grid-template-columns: 10% 80% 10%;
- }
+}
 
- .mag {
+.mag {
   background-color: #fff;
   width: 4rem;
   height: 3rem;
@@ -336,72 +336,71 @@ button[disabled]{
   display: flex;
   justify-content: center;
   align-items: center;
- }
+}
 
- .mag > i {
+.mag > i {
   font-size: 2rem;
   color: #98bf11;
   transform: rotate(90deg);
- }
+}
 
- .minus {
+.minus {
   display: flex;
   flex-direction: column;
   color: #fff;
- }
+}
 
- .minus > hr {
+.minus > hr {
   width: 2rem;
   border: 4px solid #fff;
   margin-bottom: 5px;
   border-radius: .2rem;
- }
+}
 
- .middle {
+.middle {
   display: flex;
   justify-content: center;
   align-items: center;
- }
+}
 
- .form {
+.form {
   width: 95%;
   min-height: 50%;
   color: #d5e88f;
   font-family: 'Lato', sans-serif;
- }
+}
 
- .form > h2 {
+.form > h2 {
   text-align: center;
   text-transform: uppercase;
-  color: #f5f7f1
- }
+  color: #f5f7f1;
+}
 
- .form > p {
+.form > p {
   text-align: center;
   font-size: 0.8rem;
   font-weight: bold;
   line-height: 1.7rem;
   word-spacing: 0.2rem;
-  color: #d9e3b6
+  color: #d9e3b6;
 }
 
- .form > hr {
+.form > hr {
   margin: 1rem auto;
   width: 80%;
   border: 1px solid #d5e88f;
- }
+}
 
- .form > form {
+.form > form {
   width: 90%;
   display: grid;
   grid-gap: 1.2rem;
   justify-content: center;
   grid-template-columns: repeat(5, 12vw);
   margin: 2rem auto;
- }
+}
 
- .form > form > * {
-  /* margin-right: 1rem; */
+.form > form > * {
   width: 100%;
   height: 3.5rem;
   border-radius: 1rem;
@@ -409,22 +408,46 @@ button[disabled]{
   border: 2px solid #d5e88f;
   padding: 1rem;
   color: #d5e88f;
- }
+}
 
- .form > form > button {
+.form > form > button {
   cursor: pointer;
- }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 767px) {
+  .overlay {
+    padding: 1rem;
+    grid-template-columns: 5% 90% 5%;
+  }
+
+  .form {
+    min-height: auto;
+  }
+
+  .form > form {
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+  }
+
+  .form > form > * {
+    height: 3rem;
+  }
+}
+
 
  /* STYLES FOR MY RESERVATIONS */
 
- .reservations {
+ /* Base styles */
+.reservations {
   background: url('./images/reserve-background.jpg') no-repeat center center fixed;
   background-size: cover;
   background-color: #d3ea7f;
   min-height: 100vh;
- }
+}
 
- .reservations > h2 {
+.reservations > h2 {
   text-align: center;
   background-color: #d3ea7f;
 }
@@ -466,6 +489,19 @@ button[disabled]{
   margin: 5px 0;
   color: #666;
 }
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 375px) {
+  .reserved-flights {
+    justify-content: center;
+  }
+
+  .reserved-flight {
+    width: 100%;
+    margin: 0 auto 20px;
+  }
+}
+
 
 /* ***************** Add flight ******************* */
 
