@@ -106,10 +106,13 @@ font-family: 'Tektur', cursive;
 
 .add-button {
   border: none;
-  padding: 3px;
+  width: 100%;
+  padding: 0 5px;
   background: none;
   font-size: large;
- font-weight: 600;
+  font-weight: 600;
+  display: flex;
+  justify-content: flex-start
 }
 
 /* Add styling for active link if needed */
