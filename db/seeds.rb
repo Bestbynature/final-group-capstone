@@ -18,6 +18,12 @@ Flight.create([
     {name: 'Ghana', picture: 'https://images.pexels.com/photos/6567674/pexels-photo-6567674.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=300', base_price: 1000, available_slots: 10, reserved: false, user: user},
   ])
 
+  Package.create([
+    {name: 'Economy', multiplier: 1},
+    {name: 'Business Class', multiplier: 1.5},
+    {name: 'Economic', multiplier: 2},
+  ])
+
   puts "Database is successfully seeded"
   
   # {name: 'Morocco', picture: 'https://theroad-islife.com/wp-content/uploads/2020/07/Things-to-do-in-Chefchaouen-18.jpg', base_price: 1200, available_slots: 10, reserved: false, user: user},

@@ -20,11 +20,17 @@ class Api::V1::FlightsController < ApplicationController
   def create
     @flight = Flight.new(flight_params)
     if @flight.save
+      @packages = Package.all
+      @packages.each do |package|
+        package.flight_id = @flight.id
+        package.save
+      end
+      @flight.reload
       @flights = Flight.all.order(created_at: :desc)
       @user = current_user
       response_data = {
         user: @user.as_json(only: [:name, :email, :id]),
-        flights: @flights.as_json(except: [:created_at, :updated_at])
+        flights: @flights.as_json(except: [:created_at, :updated_at], include: { packages: { except: [:created_at, :updated_at] } })
       }
       render json: response_data, status: :ok
     else
