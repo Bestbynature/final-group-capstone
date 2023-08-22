@@ -593,7 +593,7 @@ color: #fff;
   border-radius: 5% 15% 5% 15%;
   color: black;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #d3ea7f;
+  background-color: #f2f2f2;
 }
 
 /* Center the Sign up heading */
@@ -673,7 +673,7 @@ input[type="password"] {
 /* Styling for submit button */
 input[type="submit"] {
   padding: 10px 20px;
-  background-color: #d3ea7f;
+  background-color: #98bf11;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -707,7 +707,7 @@ em {
 /* Styling for login link */
 .actions a {
   padding: 10px 20px;
-  background-color: #d3ea7f;
+  background-color: #98bf11;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -725,7 +725,7 @@ em {
 /* Styling for the styled links */
 .styled-link {
   padding: 10px 20px;
-  background-color: #d3ea7f;
+  background-color: #98bf11;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -767,7 +767,7 @@ em {
 
 .email-label {
   font-weight: bold;
-  color: #d3ea7f;
+  color: #98bf11;
 }
 
 /* For mobile view within the range of 375px to 767px */
@@ -775,5 +775,56 @@ em {
   #centered-field {
     width: 80%; 
     margin: 0 auto; 
+  }
+}
+
+/*30*/
+.forgotpassword {
+  width: 100%;
+  max-width: 548px;
+  margin: 2rem auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5% 15% 5% 15%;
+  color: black;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #f2f2f2;
+  
+}
+
+.forgotpassword h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.forgotpassword .field,
+.forgotpassword .Aactions {
+  text-align: center;
+}
+
+.forgotpassword input[type="text"],
+.forgotpassword input[type="email"],
+.forgotpassword input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.forgotpassword input[type="email"] {
+  width: 100%;
+}
+
+.forgotpassword .email-label {
+  font-weight: bold;
+  color: #98bf11;
+}
+
+/* For mobile view within the range of 375px to 767px */
+@media (max-width: 767px) and (min-width: 375px) {
+  .forgotpassword {
+    padding: 15px;
   }
 }
