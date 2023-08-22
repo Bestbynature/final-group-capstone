@@ -593,7 +593,7 @@ color: #fff;
   border-radius: 5% 15% 5% 15%;
   color: black;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #f2f2f2;
+  background-color: #d3ea7f;
 }
 
 /* Center the Sign up heading */
@@ -617,12 +617,14 @@ label {
 input[type="text"],
 input[type="email"],
 input[type="password"] {
-  width: 100%;
+  width: 70%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
+  margin: 0 auto; 
 }
+
 
 /* Default styles for screens wider than 768px */
 .actions {
@@ -644,16 +646,34 @@ input[type="password"] {
     margin-bottom: 10px; 
   }
 }
+
+/* For desktop view */
 .Aactions {
-  justify-content: space-between;
-  align-items: center;
+  display: flex;
+  gap: 1rem; 
+  justify-content: center;
   margin-top: 20px;
+  margin:  1rem;
+  align-items: center;
+}
+
+/* For mobile view within the range of 375px to 767px */
+@media (max-width: 767px) and (min-width: 375px) {
+  .Aactions {
+    display: block; 
+    margin-top: 2px;
+    margin-left: 1rem;
+  }
+
+  .Aactions > * {
+    margin-bottom: 5px;
+  }
 }
 
 /* Styling for submit button */
 input[type="submit"] {
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #d3ea7f;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -663,7 +683,7 @@ input[type="submit"] {
 
 /* Hover effect for submit button */
 input[type="submit"]:hover {
-  background-color: #0056b3;
+  background-color: #d3ea7f;
 }
 
 /* Styling for error messages */
@@ -687,7 +707,7 @@ em {
 /* Styling for login link */
 .actions a {
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #d3ea7f;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -699,13 +719,13 @@ em {
 
 /* Hover effect for login link */
 .actions a:hover {
-  background-color: #0056b3;
+  background-color: #d3ea7f;
 }
 
 /* Styling for the styled links */
 .styled-link {
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #d3ea7f;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -713,27 +733,47 @@ em {
   font-size: 16px;
   text-decoration: none;
   margin-top: 10px;
-  display: inline-block; /* Ensures proper spacing between links */
+  display: inline-block; 
 }
 
 /* Hover effect for styled links */
 .styled-link:hover {
-  background-color: #0056b3;
+  background-color: #d3ea7f;
 }
 
 /* Styling for the styled buttons */
 .styled-button {
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #d3ea7f;
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  display: inline-block; /* Ensures proper spacing between buttons */
+  display: inline-block; 
 }
 
 /* Hover effect for styled buttons */
 .styled-button:hover {
-  background-color: #0056b3;
+  background-color: #d3ea7f;
+}
+
+#centered-field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; 
+}
+
+.email-label {
+  font-weight: bold;
+  color: #d3ea7f;
+}
+
+/* For mobile view within the range of 375px to 767px */
+@media (max-width: 767px) and (min-width: 375px) {
+  #centered-field {
+    width: 80%; 
+    margin: 0 auto; 
+  }
 }
