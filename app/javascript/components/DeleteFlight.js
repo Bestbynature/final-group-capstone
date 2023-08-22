@@ -11,8 +11,8 @@ const DeleteFlight = () => {
 
   const handleDelete = (flightId) => {
     const flightToDelete = flights.find((flight) => flight.id === flightId);
+    dispatch(deleteFlight(flightId));
     if (flightToDelete) {
-      dispatch(deleteFlight(flightId));
       deletedFlightRef.current = flightToDelete;
       setDeletedFlights([...deletedFlights, flightToDelete]);
     }
