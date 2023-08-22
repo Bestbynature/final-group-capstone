@@ -138,7 +138,16 @@ font-family: 'Tektur', cursive;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 85vh;
+  min-height: 90vh;
+  width: 100%;
+  max-width: 450px;
+  margin: 2rem auto 0;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5% 15% 5% 15%;
+  color: black;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #f2f2f2;
 }
 
 .splash-container img {
