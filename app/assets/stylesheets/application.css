@@ -582,3 +582,158 @@ color: #fff;
     transform: none;
   }
 }
+/**********Login*Sign**********/
+/* Basic styling for the form container */
+form {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5% 15% 5% 15%;
+  color: black;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #f2f2f2;
+}
+
+/* Center the Sign up heading */
+h2 {
+  font-size: 24px;
+  margin: 0 auto 15px;
+  text-align: center;
+}
+
+/* Styling for form fields */
+.field {
+  margin-bottom: 15px;
+}
+
+/* Styling for labels */
+label {
+  font-weight: bold;
+}
+
+/* Styling for text fields and email fields */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Default styles for screens wider than 768px */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+  .actions {
+    flex-direction: column; 
+    align-items: flex-start; 
+    margin-top: 10px; 
+  }
+  
+  .actions > * {
+    margin-bottom: 10px; 
+  }
+}
+.Aactions {
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Styling for submit button */
+input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Hover effect for submit button */
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Styling for error messages */
+#error-explanation {
+  color: red;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    li:before {
+      content: "• ";
+    }
+  }
+}
+
+/* Styling for password length note */
+em {
+  font-size: 12px;
+  color: #777;
+}
+/* Styling for login link */
+.actions a {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+/* Hover effect for login link */
+.actions a:hover {
+  background-color: #0056b3;
+}
+
+/* Styling for the styled links */
+.styled-link {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block; /* Ensures proper spacing between links */
+}
+
+/* Hover effect for styled links */
+.styled-link:hover {
+  background-color: #0056b3;
+}
+
+/* Styling for the styled buttons */
+.styled-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  display: inline-block; /* Ensures proper spacing between buttons */
+}
+
+/* Hover effect for styled buttons */
+.styled-button:hover {
+  background-color: #0056b3;
+}
