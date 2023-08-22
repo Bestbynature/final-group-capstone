@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { useEffect, useRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { setcwidth, fetchFlights } from '../redux/flights/flightsSlice';
-
+import AddFlight from './AddFlight';
 
 const Flights = () => {
   const carouselRef = useRef()
@@ -13,9 +13,12 @@ const Flights = () => {
   useEffect(() => {
     dispatch(fetchFlights());
     setTimeout(() => {
-      dispatch(setcwidth(carouselRef.current.scrollWidth - carouselRef.current.offsetWidth));
+      if (carouselRef.current) {
+        dispatch(setcwidth(carouselRef.current.scrollWidth - carouselRef.current.offsetWidth));
+      }
     }, 2000);
-  }, [dispatch]);
+  }, [dispatch, flights.length]);
+  
   
   const moveCarousel = (direction) => {
     const percentage = 0.5;
@@ -34,7 +37,8 @@ const Flights = () => {
 
   return (
     <div className='carousel'>
-    <div></div>
+      <AddFlight />
+    <div>&nbsp;</div>
       <div className='carousel-header'>
         <h1>Flight Destinations</h1>
         <p>Please select a travel destination</p>
@@ -43,27 +47,28 @@ const Flights = () => {
       <div className={active === 'left' ? "left clickactive" : "left"} onClick={()=>moveCarousel('left')}>
         <i className="fa-solid fa-caret-left"></i>
       </div>
-      {/* </div> */}
       
       <motion.div ref={carouselRef} className='outer-carousel' whileTap={{cursor: "grabbing"}} onScroll={()=>dispatch(setcwidth(carouselRef.current.scrollWidth - carouselRef.current.offsetWidth))}>
         <motion.div drag="x" dragConstraints={{right: 0, left: -cwidth}} className="inner-carousel">
-          {flights.map((flightobj, index) => {
-            const { picture, name } = flightobj
-            return (
-              <motion.div className='item'>
-                <img src={picture} key={index} alt={index} title={name}/>
-                <div className='text'>
-                  <h3>{name}</h3>
-                  <p>*******************</p>
-                  <div className="circle-cont">
-                    <div className="circle"><i className="fa-brands fa-facebook-f"></i></div>
-                    <div className="circle"><i className="fa-brands fa-twitter"></i></div>
-                    <div className="circle"><i className="fa-brands fa-square-instagram"></i></div>
-                  </div>
-                </div>
-              </motion.div>
-            )
-          })}
+        {flights.map((flightobj, index) => {
+  const { picture, name, base_price, available_slots } = flightobj;
+  return (
+    <motion.div className='item' key={index}>
+      <div className="item-image-container"><img src={picture} alt={name} title={name} /></div>
+      <div className='text'>
+        <h3>{name}</h3>
+        <p>Price: ${base_price}</p>
+        <p>Available Slots: {available_slots}</p>
+        <div className="circle-cont">
+          <div className="circle"><i className="fa-brands fa-facebook-f"></i></div>
+          <div className="circle"><i className="fa-brands fa-twitter"></i></div>
+          <div className="circle"><i className="fa-brands fa-square-instagram"></i></div>
+        </div>
+      </div>
+    </motion.div>
+  );
+})}
+
         </motion.div>
       </motion.div>
       <div className={active === 'right' ? "right clickactive" : "right"} onClick={()=>moveCarousel("right")}>
