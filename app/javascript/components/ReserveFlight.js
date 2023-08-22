@@ -10,7 +10,7 @@ const ReserveFlight = () => {
   const dispatch = useDispatch();
   const history = useNavigate();
   const { cities, user, flights, city, flight, date } = useSelector((state) => state.flights);
-  const { name } = user
+  // const { name } = user
 
   useEffect(() => {
     dispatch(fetchFlights());
@@ -45,7 +45,7 @@ const ReserveFlight = () => {
             <p>Welcome to our user-friendly booking form! Whether you're planning a relaxing getaway or an adventure-packed journey, our form makes booking your dream trip a breeze. With our hassle-free booking process, We got you covered! <br />Just fill in your travel details and get set for an unforgettable travel experience.</p>
             <hr />
             <form onSubmit={handleReserve}>
-            <input type="text" value={name}/>
+            <input type="text" value={user}/>
                 
             <input type="date" onChange={(e)=>dispatch(setDate(e.target.value))} />
                 
