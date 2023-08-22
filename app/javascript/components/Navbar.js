@@ -6,10 +6,12 @@ import { Link, NavLink } from 'react-router-dom';
 const Navbar = () => {
   return (
     <div className='navbar'>
-      <h2 className='brand'><Link to='/'>Brand</Link></h2>
+      <div className="brand">
+        <Link to='/'><h2> Brand</h2></Link>
+      </div>
 
       <nav>
-        <ul>
+      <ul>
           <li>
             <NavLink exact to='/' activeClassName='active'>Flights</NavLink>
           </li>
@@ -28,16 +30,15 @@ const Navbar = () => {
         </ul>
       </nav>
       <div className="social">
-            <ul>
-                <li><i className="fa-brands fa-twitter"></i></li>
-                <li><i className="fa-brands fa-facebook"></i></li>
-                <li><i className="fa-brands fa-google-plus-g"></i></li>
-                <li><i className="fa-brands fa-vimeo-v"></i></li>
-                <li><i className="fa-brands fa-pinterest-p"></i></li>
-            </ul>
-            <p>&copy; 2023 Brand Consult Ltd</p>
+        <div className="icons">
+          <i className="fa-brands fa-twitter"></i>
+          <i className="fa-brands fa-facebook"></i>
+          <i className="fa-brands fa-google-plus-g"></i>
+          <i className="fa-brands fa-vimeo-v"></i>
+          <i className="fa-brands fa-pinterest-p"></i>
+        </div>
+        <p>&copy; 2023 Brand Consult Ltd</p>
       </div>
-
     </div>
   );
 };

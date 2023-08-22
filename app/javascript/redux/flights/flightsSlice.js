@@ -186,8 +186,6 @@ const flightsSlice = createSlice({
       })
       .addCase(fetchFlightDetails.fulfilled, (state, action) => {
         return { ...state, loading: false, flightDetails: action.payload };
-        // state.loading = false;
-        // state.doctorDetails = {...action.payload}
       })
       .addCase(fetchFlightDetails.rejected, (state, action) => {
         return { ...state, loading: false, error: action.error.message };
