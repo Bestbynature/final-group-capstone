@@ -15,6 +15,10 @@ class Api::V1::FlightsController < ApplicationController
   end
 
   def show
+    @flight = Flight.find(params[:id])
+    render json: @flight, status: :ok
+  rescue ActiveRecord::RecordNotFound
+    render json: { status: 'ERROR', message: 'Flight cannot be found' }, status: :not_found
   end
 
   def create

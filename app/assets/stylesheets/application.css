@@ -25,7 +25,7 @@ font-family: 'Tektur', cursive;
  @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Roboto+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Rubik:ital,wght@0,300;1,300&family=Tektur:wght@400;500;600;700;800&display=swap');
 
 
- *,body{
+ *, body{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -33,63 +33,64 @@ font-family: 'Tektur', cursive;
 
  }
 
- a{
+ a {
   text-decoration: none;
  }
 
- ul{
+ ul {
   list-style: none;
  }
 
- /* #########  Navbar  ########## */
 /* Styles for the entire app container */
 .App {
  display: grid;
- grid-template-columns: 200px auto; /* 200px for the navbar, auto for the content */
- height: 100vh; /* Make the app container take full viewport height */
+ grid-template-columns: 200px auto;
+ height: 100vh; 
 }
 
 /*/* ####satrt Styles for the navbar */
 .navbar {
+  display: grid;
+  grid-template-rows: 10vh 70vh 20vh;
  background-color: #fff;
  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
  color: #fff;
- width: 100%; /* Let grid handle the width */
- height: 100%; /* Make the navbar take full height */
+ width: 100%; 
+ max-height: 100%;
  font-family: 'Lato', sans-serif;
 }
 
-.navlink {
+/* .navlink {
  padding: 20px;
- margin-top: 30%;
+ margin-top: 2rem;
  width: 100%;
-}
+ border: 2px solid red;
+} */
 
 .brand{
  color: black;
- margin: 15px 20px;
+ margin: 0 auto;
+ /* margin: 15px 20px; */
  padding: 10px 20px;
+ width: 80%;
+ border: 2px solid green;
 }
-.navbar .brand a {
+
+.brand a {
  font-size: 25px;
  font-weight: 600;
 }
 
-.navbar .brand a:hover {
+.brand a:hover {
  font-size: 26px;
  font-weight: 600;
 }
 
-
-.navbar li {
- padding: 10px;
+nav ul li {
+  padding: 10px
 }
 
-.navlink li {
-  width: 100%;
-}
-
-.navbar .navlink li a {
+nav ul li a {
  text-decoration: none;
  color: #333;
  font-size: large;
@@ -98,7 +99,7 @@ font-family: 'Tektur', cursive;
  width: 100%;
 }
 
-.navbar .navlink li:hover {
+ nav ul li:hover {
  color: #fff;
  background-color: #98bf11;
  border-radius: 10px;
@@ -115,12 +116,28 @@ font-family: 'Tektur', cursive;
   justify-content: flex-start
 }
 
+ /* .social ul {
+  border: 2px solid red;
+}
+
+.social ul li {
+  list-style-type: none;
+  display: inline-block;
+  margin-right: 0.5rem;
+   border:  2px solid red;
+ } 
+
+ .social p {
+  font-size: 0.6rem;
+  text-align: center;
+ } */
+
 /* Add styling for active link if needed */
-.navbar a.active {
+/* .navbar a.active {
  font-weight: bold;
  color: #fff;
  width: 100%;
-}
+} */
 
 /* Styles for the main content area */
 .main-content {
@@ -576,6 +593,57 @@ color: #fff;
   color: #999;
 }
 /* #########END DELETE FLIGHT########  */
+
+
+/* #########  FLIGHT DETAILS  COMPONENT */
+
+
+.details {
+  display: grid;
+  grid-template-columns: 5% 65% 30%;
+  grid-template-rows: 10% 80% 10%;
+  width: 100%;
+  height: 100%;
+  padding: 3rem 1rem 1rem 0.5rem;
+ }
+
+ .big-image {
+  width: 100%;
+  max-height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-right: 0.4rem;
+ }
+
+ .image2 {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+ }
+
+.width-full {
+  width: 100%;
+  background-color: var(--primary-color);
+  transition: all 0.5s ease-in-out;
+}
+
+.reserve {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.reserve > p {
+  background-color: var(--primary-color);
+  transition: all 0.5s ease-in-out;
+}
+
+.reserve > p:hover {
+  filter: invert(60%);
+}
+
+/* ############# END OF FLIGHT DETAILS COMPONENT */
 
 @media (max-width: 768px) {
   .add-flight-container {

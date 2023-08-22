@@ -74,6 +74,15 @@ export const deleteFlight = createAsyncThunk('flights/deleteFlight', async (flig
   }
 });
 
+export const fetchFlightDetails = createAsyncThunk('flights/fetchFlightDetails', async (id) => {
+  try {
+    const response = await axios.get(`${url}/${id}`);
+    return response.data;
+  } catch (error) {
+    return isRejectedWithValue(error.response.data);
+  }
+});
+
 export const postFlight = createAsyncThunk('flights/postFlights', async (formData) => {
   try {
     const response = await axios.post(url, formData);
@@ -85,6 +94,7 @@ export const postFlight = createAsyncThunk('flights/postFlights', async (formDat
 
 const initialState = {
   flights: [],
+  flightDetails: {},
   cities,
   user: '',
   user_id: 0,
@@ -169,6 +179,20 @@ const flightsSlice = createSlice({
       })
       .addCase(deleteFlight.rejected, (state, action) => {
         return { ...state, status: 'failed', error: action.payload };
+      })
+      .addCase(fetchFlightDetails.pending, (state) => {
+        return { ...state, loading: true };
+        // state.loading = true;
+      })
+      .addCase(fetchFlightDetails.fulfilled, (state, action) => {
+        return { ...state, loading: false, flightDetails: action.payload };
+        // state.loading = false;
+        // state.doctorDetails = {...action.payload}
+      })
+      .addCase(fetchFlightDetails.rejected, (state, action) => {
+        return { ...state, loading: false, error: action.error.message };
+        // state.loading = false;
+        // state.error = action.error.message;
       });
   },
 });
