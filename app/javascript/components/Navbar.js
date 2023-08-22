@@ -12,8 +12,8 @@ const Navbar = () => {
 
       <nav>
       <ul>
-          <li>
-            <NavLink exact to='/' activeClassName='active'>Flights</NavLink>
+          <li><p><NavLink exact to='/' activeClassName='active'>Flights</NavLink></p>
+            
           </li>
           <li>
             <NavLink to='/delete_flight' activeClassName='active'>Delete Flights</NavLink>
