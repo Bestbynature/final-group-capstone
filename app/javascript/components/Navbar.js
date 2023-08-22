@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-// import './styles/navbar.css';
-
 
 const Navbar = () => {
   return (
@@ -11,22 +9,37 @@ const Navbar = () => {
       </div>
 
       <nav>
-      <ul>
-          <li><p><NavLink exact to='/' activeClassName='active'>Flights</NavLink></p>
-            
+        <ul>
+          <li>
+            <NavLink exact to="/" activeClassName="active">
+              Flights
+            </NavLink>
           </li>
           <li>
-            <NavLink to='/delete_flight' activeClassName='active'>Delete Flights</NavLink>
+            <NavLink to="/delete_flight" activeClassName="active">
+              Delete Flights
+            </NavLink>
           </li>
           <li>
-            <NavLink to='/reserve_flight' activeClassName='active'>Reserve</NavLink>
+            <NavLink to="/reserve_flight" activeClassName="active">
+              Reserve
+            </NavLink>
           </li>
           <li>
-            <NavLink to='/reservations' activeClassName='active'>Reservations</NavLink>
+            <NavLink to="/reservations" activeClassName="active">
+              Reservations
+            </NavLink>
           </li>
-          <li><button type="button" className="add-button" data-bs-toggle="modal" data-bs-target="#addModal">
-            Add Flight
-            </button></li>
+          <li>
+            <button
+              type="button"
+              className="add-button"
+              data-bs-toggle="modal"
+              data-bs-target="#addModal"
+            >
+              Add Flight
+            </button>
+          </li>
         </ul>
       </nav>
       <div className="social">

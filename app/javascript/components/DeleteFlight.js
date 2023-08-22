@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
 import { deleteFlight, fetchFlights } from '../redux/flights/flightsSlice'; 
+import AddFlight from './AddFlight';
 
 
 const DeleteFlight = () => {
@@ -26,13 +26,14 @@ const DeleteFlight = () => {
 
   return (
     <div className="delete-flight">
+      <AddFlight />
       {deletedFlights.length > 0 && (
         <ul>
           <h2>Deleted Flights</h2>
           {deletedFlights.map((deletedFlight) => (
             <li key={deletedFlight.id} >
            <span className='deleted'>{deletedFlight.name}</span>
-            <button disabled={true}>Delete</button>
+            <button className='btn-deleted' disabled={true}>Delete</button>
             </li>
           ))}
         </ul>
@@ -42,7 +43,7 @@ const DeleteFlight = () => {
         {flights.map((flight) => (
           <li key={flight.id}>
             {flight.name}
-            <button onClick={() => handleDelete(flight.id)}>Delete</button>
+            <button className='btn-delete' onClick={() => handleDelete(flight.id)}>Delete</button>
           </li>
         ))}
       </ul>

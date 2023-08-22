@@ -35,6 +35,7 @@ font-family: 'Tektur', cursive;
 
  a {
   text-decoration: none;
+  color: black;
  }
 
  ul {
@@ -58,10 +59,9 @@ font-family: 'Tektur', cursive;
   align-items: center;
   background-color: #fff;
   box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
-  height: 93vh;
+  height: 95vh;
   font-family: 'Lato', sans-serif;
   overflow: hidden;
- border: 2px solid blue;
 }
 
 .brand {
@@ -71,46 +71,32 @@ font-family: 'Tektur', cursive;
  padding: 10px 20px;
  width: 100%;
  height: 10%;
- border: 2px solid green;
  flex-basis: 10%;
- /* flex: 1; */
 }
 
 .brand a h2 {
  font-size: 25px;
  font-weight: 600;
  color: #333;
+ letter-spacing: 0.4em;
 }
 
 nav {
-  border: 2px solid red;
   width: 100%;
   flex-basis: 70%;
 }
-nav > ul {
-  width: 100%;
-  border: 2px solid green;
-}
 
-nav > ul > li {
-  /* border: 2px solid brown; */
-  width: 100%;
+nav ul li {
+  width: 80%;
+  padding: 0.4em;
+  font-weight: bold;
+  margin-bottom: 3px;
 }
-
-nav > ul > li > p {
-  /* border: 2px solid purple; */
-  width: 100%;
-  border: 2px solid red;
-}
-
-/* nav > ul > li > a {
-  border: 2px solid purple;
-  width: 100%;
-} */
 
 nav > ul > li:hover {
   background-color: #98bf11;
   border-radius: 5px;
+  padding: 10px;
 }
 
 .social {
@@ -119,7 +105,6 @@ nav > ul > li:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid purple;
 }
 
 .icons > i {
@@ -135,20 +120,6 @@ nav > ul > li:hover {
   font-weight: 600;
   display: flex;
   justify-content: flex-start
-}
-
-
-/* Add styling for active link if needed */
-/* .navbar a.active {
- font-weight: bold;
- color: #fff;
- width: 100%;
-} */
-
-/* Styles for the main content area */
-.main-content {
- padding: 20px;
-
 }
 
 /*######## end NAVBAR ###*/
@@ -315,6 +286,7 @@ nav > ul > li:hover {
 
  .active {
    background-color: #98bf11;
+   padding: 10px 5px;
    width: 100%;
  }
 
@@ -486,65 +458,7 @@ button[disabled]{
   color: #666;
 }
 
-/* ************************************ */
-
-/* AddFlight.css */
-
-/* .add-flight-container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 30px;
-  background-color: #f0f8ff;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.add-flight-container:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-}
-
-.add-flight-container h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.add-flight-container form {
-  display: flex;
-  flex-direction: column;
-}
-
-.add-flight-container label {
-  margin-top: 15px;
-  font-weight: bold;
-  color: #555;
-}
-
-.add-flight-container input {
-  padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.add-flight-container button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 12px 20px;
-  cursor: pointer;
-  margin-top: 20px;
-  align-self: center;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.add-flight-container button:hover {
-  background-color: #0056b3;
-} */
+/* ***************** Add flight ******************* */
 
 .add-submit {
 background: #98bf11;
@@ -553,6 +467,11 @@ background: #98bf11;
 .add-submit:hover {
 background: #435502;
 color: #fff;
+}
+
+.width-full {
+  width: 100%;
+  border: 2px solid red;
 }
 
 
@@ -588,7 +507,7 @@ color: #fff;
   border-radius: 5px;
 }
 
-.delete-flight button {
+.btn-delete, .btn-deleted {
   background-color: #e74c3c;
   color: white;
   border: none;
@@ -629,12 +548,6 @@ color: #fff;
   max-height: 100%;
   object-fit: contain;
  }
-
-.width-full {
-  width: 100%;
-  background-color: var(--primary-color);
-  transition: all 0.5s ease-in-out;
-}
 
 .reserve {
   display: flex;

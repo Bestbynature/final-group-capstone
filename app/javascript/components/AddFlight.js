@@ -32,11 +32,11 @@ const AddFlight = () => {
         <div className="modal-dialog">
             <div className="modal-content">
             <div className="modal-header">
-                <h1 className="modal-title fs-5 text-center" id="addModalLabel">Add a New Flight</h1>
+                <h1 className="modal-title" id="addModalLabel">Add a New Flight</h1>
                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div className="modal-body">
-                  <input className="form-control mt-3"
+            <input className="form-control width-full mt-3"
                     type="text"
                     value={name}
                     placeholder="Flight Name"
