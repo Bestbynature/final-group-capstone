@@ -373,6 +373,8 @@ button[disabled]{
 }
 
 .form {
+  width: 95%;
+  min-height: 50%;
   color: #d5e88f;
   font-family: 'Lato', sans-serif;
 }

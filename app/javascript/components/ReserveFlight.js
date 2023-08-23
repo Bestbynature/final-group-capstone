@@ -35,6 +35,8 @@ const ReserveFlight = () => {
       <div className="overlay">
         <div>
           <div className="minus">
+            <hr />
+            <hr />
           </div>
         </div>
         <div className='middle'>
