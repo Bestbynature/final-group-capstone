@@ -19,7 +19,6 @@ const Reservations = () => {
     <div className='reservations'>
         <AddFlight />
         <h2>Reserved Destinations</h2>
-        <hr />
         <div className='reserved-flights'>
             {reservedFlights.map((flight, index) => (
                 <div className='reserved-flight' key={index}>
