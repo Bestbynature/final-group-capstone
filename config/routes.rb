@@ -1,13 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
-  # resources :packages
-  # resources :flights
-  # resources :users
-  # resources :reserved_flights
-  # resources :packages
-  # resources :flights
-  # resources :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  devise_for :users do
+    delete '/users/sign_out' => 'devise/sessions#destroy'
+  end
+
   authenticated :user do
     root 'root#index', as: :authenticated_root
   end
