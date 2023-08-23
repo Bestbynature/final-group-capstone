@@ -67,7 +67,7 @@ const ReserveFlight = () => {
                     ))}
               </select>
 
-              <button type="submit">Book Now</button>
+              <button type="submit" className="submit-button">Book Now</button>
             </form>
           </div>
         </div>

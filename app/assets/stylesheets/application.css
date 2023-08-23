@@ -34,8 +34,8 @@ font-family: 'Tektur', cursive;
  }
 
  body{
-  margin: 20px 10px;
-  background: gray;
+  padding: 10px 10px;
+  background: #efefef;
 }
 
  #root{
@@ -71,6 +71,7 @@ font-family: 'Tektur', cursive;
   height: 95vh;
   font-family: 'Lato', sans-serif;
   overflow: hidden;
+  border-right: 2px solid #efefef;
 }
 
 .brand {
@@ -304,7 +305,7 @@ nav > ul > li:hover {
 
  .active {
    background-color: #98bf11;
-   padding: 10px 5px;
+   padding: 5px 0;
    width: 100%;
  }
 
@@ -320,24 +321,24 @@ button[disabled]{
 }
 
  /* styles for the reserve form */
-/* Styles for desktop and larger screens */
-.reserve-form {
+
+ .reserve-form {
   background: url('./images/reserve-background.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-}
+ }
 
-.overlay {
+ .overlay {
   background-color: rgba(152, 191, 17, 0.8);
   padding: 2rem;
   height: 100%;
   width: 100%;
   display: grid;
   grid-template-columns: 10% 80% 10%;
-}
+ }
 
-.mag {
+ .mag {
   background-color: #fff;
   width: 4rem;
   height: 3rem;
@@ -345,14 +346,15 @@ button[disabled]{
   display: flex;
   justify-content: center;
   align-items: center;
-}
+ }
 
-.mag > i {
+ .mag > i {
   font-size: 2rem;
   color: #98bf11;
   transform: rotate(90deg);
-}
+ }
 
+ /* Regular styles for .minus */
 .minus {
   display: flex;
   flex-direction: column;
@@ -366,12 +368,15 @@ button[disabled]{
   border-radius: .2rem;
 }
 
-.middle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Hide .minus on mobile devices */
+@media (max-width: 768px) {
+  .minus {
+    display: none;
+  }
 }
 
+
+/* Existing styles for .resrve form */
 .form {
   width: 95%;
   min-height: 50%;
@@ -423,40 +428,47 @@ button[disabled]{
   cursor: pointer;
 }
 
-/* Media query for mobile devices */
-@media (max-width: 767px) {
-  .overlay {
-    padding: 1rem;
-    grid-template-columns: 5% 90% 5%;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .form {
+    min-height:auto;
   }
 
-  .form {
-    min-height: auto;
+  .form > h2 {
+    font-size: 1.5rem;
+  }
+
+  .form > p {
+    font-size: 0.7rem;
+    line-height: 1.5rem;
+  }
+
+  .form > hr {
+    width: 90%;
   }
 
   .form > form {
-    width: 100%;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 50%);
     grid-gap: 1rem;
+    margin: 1rem auto; 
   }
 
   .form > form > * {
-    height: 3rem;
+    height: 2.5rem; 
+    font-size: 0.9rem; 
   }
 }
 
-
  /* STYLES FOR MY RESERVATIONS */
 
- /* Base styles */
-.reservations {
+ .reservations {
   background: url('./images/reserve-background.jpg') no-repeat center center fixed;
   background-size: cover;
   background-color: #d3ea7f;
   min-height: 100vh;
-}
+ }
 
-.reservations > h2 {
+ .reservations > h2 {
   text-align: center;
   background-color: #d3ea7f;
 }
@@ -499,19 +511,6 @@ button[disabled]{
   color: #666;
 }
 
-/* Media queries for responsiveness */
-@media screen and (max-width: 375px) {
-  .reserved-flights {
-    justify-content: center;
-  }
-
-  .reserved-flight {
-    width: 100%;
-    margin: 0 auto 20px;
-  }
-}
-
-
 /* ***************** Add flight ******************* */
 
 .add-submit {
@@ -525,7 +524,11 @@ color: #fff;
 
 .width-full {
   width: 100%;
-  border: 2px solid red;
+  border: 2px solid #98bf11;
+}
+
+.reserve-submit {
+  background-color: #98bf11;
 }
 
 
@@ -660,9 +663,9 @@ label {
 }
 
 /* Styling for text fields and email fields */
-input[type="text"],
-input[type="email"],
-input[type="password"] {
+.win > input[type="text"],
+.win > input[type="email"],
+.win > input[type="password"] {
   width: 70%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -896,15 +899,12 @@ em {
   color: #3b4907;
 }
 
-
-
-
 /* Hide the navbar on mobile screens */
 @media (max-width: 768px) {
   .App {
     grid-template-columns:  auto;
+  }
 
-    /}
   .mobile-menu-icon{
     display: block;
   }
