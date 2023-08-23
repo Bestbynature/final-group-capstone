@@ -21,6 +21,5 @@ Rails.application.routes.draw do
     end
   end
   
-  apipie
   match '*path', to: 'root#index', via: :all
 end
