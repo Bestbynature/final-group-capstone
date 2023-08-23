@@ -34,8 +34,8 @@ font-family: 'Tektur', cursive;
  }
 
  body{
-  margin: 20px 10px;
-  background: gray;
+  padding: 10px 10px;
+  background: #efefef;
 }
 
  #root{
@@ -71,6 +71,7 @@ font-family: 'Tektur', cursive;
   height: 95vh;
   font-family: 'Lato', sans-serif;
   overflow: hidden;
+  border-right: 2px solid #efefef;
 }
 
 .brand {
@@ -304,7 +305,7 @@ nav > ul > li:hover {
 
  .active {
    background-color: #98bf11;
-   padding: 10px 5px;
+   padding: 5px 0;
    width: 100%;
  }
 
@@ -410,7 +411,6 @@ button[disabled]{
  }
 
  .form > form > * {
-  /* margin-right: 1rem; */
   width: 100%;
   height: 3.5rem;
   border-radius: 1rem;
@@ -489,7 +489,11 @@ color: #fff;
 
 .width-full {
   width: 100%;
-  border: 2px solid red;
+  border: 2px solid #98bf11;
+}
+
+.reserve-submit {
+  background-color: #98bf11;
 }
 
 
@@ -624,9 +628,9 @@ label {
 }
 
 /* Styling for text fields and email fields */
-input[type="text"],
-input[type="email"],
-input[type="password"] {
+.win > input[type="text"],
+.win > input[type="email"],
+.win > input[type="password"] {
   width: 70%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -860,15 +864,12 @@ em {
   color: #3b4907;
 }
 
-
-
-
 /* Hide the navbar on mobile screens */
 @media (max-width: 768px) {
   .App {
     grid-template-columns:  auto;
+  }
 
-    /}
   .mobile-menu-icon{
     display: block;
   }
