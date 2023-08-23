@@ -354,67 +354,63 @@ button[disabled]{
   transform: rotate(90deg);
  }
 
- /* Regular styles for .minus */
-.minus {
+ .minus {
   display: flex;
   flex-direction: column;
   color: #fff;
-}
+ }
 
-.minus > hr {
+ .minus > hr {
   width: 2rem;
   border: 4px solid #fff;
   margin-bottom: 5px;
   border-radius: .2rem;
-}
+ }
 
-/* Hide .minus on mobile devices */
-@media (max-width: 768px) {
-  .minus {
-    display: none;
-  }
-}
+ .middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
 
-
-/* Existing styles for .resrve form */
-.form {
+ .form {
   width: 95%;
   min-height: 50%;
   color: #d5e88f;
   font-family: 'Lato', sans-serif;
-}
+ }
 
-.form > h2 {
+ .form > h2 {
   text-align: center;
   text-transform: uppercase;
-  color: #f5f7f1;
-}
+  color: #f5f7f1
+ }
 
-.form > p {
+ .form > p {
   text-align: center;
   font-size: 0.8rem;
   font-weight: bold;
   line-height: 1.7rem;
   word-spacing: 0.2rem;
-  color: #d9e3b6;
+  color: #d9e3b6
 }
 
-.form > hr {
+ .form > hr {
   margin: 1rem auto;
   width: 80%;
   border: 1px solid #d5e88f;
-}
+ }
 
-.form > form {
+ .form > form {
   width: 90%;
   display: grid;
   grid-gap: 1.2rem;
   justify-content: center;
   grid-template-columns: repeat(5, 12vw);
   margin: 2rem auto;
-}
+ }
 
-.form > form > * {
+ .form > form > * {
   width: 100%;
   height: 3.5rem;
   border-radius: 1rem;
@@ -422,42 +418,11 @@ button[disabled]{
   border: 2px solid #d5e88f;
   padding: 1rem;
   color: #d5e88f;
-}
+ }
 
-.form > form > button {
+ .form > form > button {
   cursor: pointer;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .form {
-    min-height:auto;
-  }
-
-  .form > h2 {
-    font-size: 1.5rem;
-  }
-
-  .form > p {
-    font-size: 0.7rem;
-    line-height: 1.5rem;
-  }
-
-  .form > hr {
-    width: 90%;
-  }
-
-  .form > form {
-    grid-template-columns: repeat(2, 50%);
-    grid-gap: 1rem;
-    margin: 1rem auto; 
-  }
-
-  .form > form > * {
-    height: 2.5rem; 
-    font-size: 0.9rem; 
-  }
-}
+ }
 
  /* STYLES FOR MY RESERVATIONS */
 
@@ -938,5 +903,17 @@ em {
   .modal{
     z-index: 999999;
   }
-
+  .form > form {
+    grid-template-columns: auto;
+   }
+   .minus{
+    display: none;
+   }
+   .mag{
+    width: 3rem;
+    height: 2rem;
+   }
+   .mag > i {
+    font-size: 17px;
+}
 }

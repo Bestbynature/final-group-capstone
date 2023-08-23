@@ -5,7 +5,7 @@ default: &default
   # username: postgres
   # password: admin
   username: postgres
-  password: admin
+  password: admin   
 
 development:
   <<: *default
