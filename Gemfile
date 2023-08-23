@@ -76,3 +76,4 @@ gem 'cancancan'
 gem 'devise', '~> 4.9'
 gem 'faker', '~> 2.18', require: false
 gem 'letter_opener', group: :development
+gem 'apipie-rails', '~> 1.2', '>= 1.2.2'
