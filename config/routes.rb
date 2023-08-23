@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  apipie
   devise_for :users do
     delete '/users/sign_out' => 'devise/sessions#destroy'
   end
