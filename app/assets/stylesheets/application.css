@@ -33,6 +33,15 @@ font-family: 'Tektur', cursive;
 
  }
 
+ body{
+  margin: 20px 10px;
+  background: gray;
+}
+
+ #root{
+  background: white;
+}
+
  a {
   text-decoration: none;
   color: black;
@@ -46,7 +55,7 @@ font-family: 'Tektur', cursive;
 .App {
  display: grid;
  grid-template-columns: 200px auto;
- height: 95vh; 
+ height: 95vh;
  overflow: hidden;
  /* border: 5px solid red; */
 }
@@ -190,13 +199,13 @@ nav > ul > li:hover {
  }
 
  .item-image-container {
-  height: 70%; 
-  width: 90%; 
+  height: 70%;
+  width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 1rem;
-  overflow: hidden; 
+  overflow: hidden;
  }
 
  .item img {
@@ -623,7 +632,7 @@ input[type="password"] {
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
 
 
@@ -638,20 +647,20 @@ input[type="password"] {
 /* Media query for screens smaller than 768px */
 @media (max-width: 768px) {
   .actions {
-    flex-direction: column; 
-    align-items: flex-start; 
-    margin-top: 10px; 
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
   }
-  
+
   .actions > * {
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
   }
 }
 
 /* For desktop view */
 .Aactions {
   display: flex;
-  gap: 1rem; 
+  gap: 1rem;
   justify-content: center;
   margin-top: 20px;
   margin:  1rem;
@@ -661,7 +670,7 @@ input[type="password"] {
 /* For mobile view within the range of 375px to 767px */
 @media (max-width: 767px) and (min-width: 375px) {
   .Aactions {
-    display: block; 
+    display: block;
     margin-top: 2px;
     margin-left: 1rem;
   }
@@ -734,7 +743,7 @@ em {
   font-size: 16px;
   text-decoration: none;
   margin-top: 10px;
-  display: inline-block; 
+  display: inline-block;
 }
 
 /* Hover effect for styled links */
@@ -751,7 +760,7 @@ em {
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  display: inline-block; 
+  display: inline-block;
 }
 
 /* Hover effect for styled buttons */
@@ -763,7 +772,7 @@ em {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center; 
+  text-align: center;
 }
 
 .email-label {
@@ -774,8 +783,8 @@ em {
 /* For mobile view within the range of 375px to 767px */
 @media (max-width: 767px) and (min-width: 375px) {
   #centered-field {
-    width: 80%; 
-    margin: 0 auto; 
+    width: 80%;
+    margin: 0 auto;
   }
 }
 
@@ -790,7 +799,7 @@ em {
   color: black;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   background-color: #f2f2f2;
-  
+
 }
 
 .forgotpassword h2 {
@@ -828,4 +837,70 @@ em {
   .forgotpassword {
     padding: 15px;
   }
+}
+
+
+
+
+.mobile-menu-icon {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 9999;
+}
+
+.mobile-menu-icon.open {
+  display: none;
+}
+
+.fas{
+  color: #3b4907;
+}
+
+
+
+
+/* Hide the navbar on mobile screens */
+@media (max-width: 768px) {
+  .App {
+    grid-template-columns:  auto;
+
+    /}
+  .mobile-menu-icon{
+    display: block;
+  }
+
+  .navbar{
+    display: none;
+  }
+
+.mobile-open{
+  display: flex;
+  }
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.mobile-open {
+    display: block;
+  }
+
+  nav ul  {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  nav ul li {
+    width: 70%;
+    border-bottom: 0.5px green solid;
+  }
+
+
+  .modal{
+    z-index: 999999;
+  }
+
 }
