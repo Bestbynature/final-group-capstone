@@ -9,6 +9,7 @@ Bundler.require(*Rails.groups)
 module FinalGroupCapstone
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+    config.autoload_paths += %W[#{config.root}/lib #{config.root}/doc]
     config.load_defaults 7.0
 
     # Configure CORS to allow requests from your React frontend's development server
