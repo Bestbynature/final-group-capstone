@@ -1,5 +1,5 @@
 class Api::V1::FlightsController < ApplicationController
-  # protect_from_forgery with: :exception
+  
   protect_from_forgery with: :null_session
   skip_before_action :verify_authenticity_token, only: [:create, :destroy]
   before_action :set_flight, only: %i[ show edit update destroy ]
