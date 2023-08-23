@@ -36,7 +36,7 @@ const AddFlight = () => {
                 <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div className="modal-body">
-            <input className="form-control width-full mt-3"
+            <input className="form-control mt-3"
                     type="text"
                     value={name}
                     placeholder="Flight Name"

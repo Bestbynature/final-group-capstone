@@ -57,7 +57,7 @@ const FlightDetails = () => {
             <p className='mt-3'><strong>5.9% discount to all new customers</strong></p>
             <p className='btn width-full'><Link to='/' > Discover more flights</Link></p>
             <div className='reserve'>
-                <Link to='/reserve_flight' className='btn btn-primary width-full'>Reserve</Link>
+                <Link to='/reserve_flight' className='btn reserve-submit'>Reserve</Link>
             </div>
         </div>
         <div></div>
