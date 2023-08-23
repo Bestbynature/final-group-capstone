@@ -838,3 +838,69 @@ em {
     padding: 15px;
   }
 }
+
+
+
+
+.mobile-menu-icon {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 9999;
+}
+
+.mobile-menu-icon.open {
+  display: none;
+}
+
+.fas{
+  color: #3b4907;
+}
+
+
+
+
+/* Hide the navbar on mobile screens */
+@media (max-width: 768px) {
+  .App {
+    grid-template-columns:  auto;
+
+    /}
+  .mobile-menu-icon{
+    display: block;
+  }
+
+  .navbar{
+    display: none;
+  }
+
+.mobile-open{
+  display: flex;
+  }
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.mobile-open {
+    display: block;
+  }
+
+  nav ul  {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  nav ul li {
+    width: 70%;
+    border-bottom: 0.5px green solid;
+  }
+
+
+  .modal{
+    z-index: 999999;
+  }
+
+}

@@ -1,47 +1,61 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
   return (
-    <div className='navbar'>
-      <div className="brand">
-        <Link to='/'><h2> Brand</h2></Link>
+    <>
+       <div className="mobile-menu-icon" onClick={toggleMobileMenu}>
+        <i className="fas fa-bars"></i>
       </div>
 
-      <nav>
+    <div className={`navbar ${mobileMenuOpen ? 'mobile-open' : ''}`}>
+      <div className="brand">
+        <Link to="/" onClick={toggleMobileMenu} type='button'>
+          <h2> Brand</h2>
+        </Link>
+      </div>
+
+      <nav className={`nav-links ${mobileMenuOpen ? 'mobile-open' : ''}`}>
         <ul>
           <li>
-            <NavLink exact to="/" activeClassName="active">
+            <NavLink exact to="/" onClick={toggleMobileMenu} type='button' activeClassName="active">
               Flights
             </NavLink>
           </li>
           <li>
-            <NavLink to="/delete_flight" activeClassName="active">
+            <NavLink to="/delete_flight" onClick={toggleMobileMenu} type='button' activeClassName="active">
               Delete Flights
             </NavLink>
           </li>
           <li>
-            <NavLink to="/reserve_flight" activeClassName="active">
+            <NavLink to="/reserve_flight" onClick={toggleMobileMenu} type='button' activeClassName="active">
               Reserve
             </NavLink>
           </li>
           <li>
-            <NavLink to="/reservations" activeClassName="active">
+            <NavLink to="/reservations" onClick={toggleMobileMenu} type='button' activeClassName="active">
               Reservations
             </NavLink>
           </li>
           <li>
-            <button
-              type="button"
-              className="add-button"
+            <NavLink onClick={toggleMobileMenu} type='button'
+              to="/add"
+              activeClassName="active"
               data-bs-toggle="modal"
               data-bs-target="#addModal"
             >
               Add Flight
-            </button>
+            </NavLink>
           </li>
         </ul>
       </nav>
+
       <div className="social">
         <div className="icons">
           <i className="fa-brands fa-twitter"></i>
@@ -53,6 +67,7 @@ const Navbar = () => {
         <p>&copy; 2023 Brand Consult Ltd</p>
       </div>
     </div>
+    </>
   );
 };
 
