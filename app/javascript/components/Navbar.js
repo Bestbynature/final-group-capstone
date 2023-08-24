@@ -29,7 +29,7 @@ const Navbar = () => {
       <div className={`navbar ${mobileMenuOpen ? 'mobile-open' : ''}`}>
         <div className="brand">
           <Link to="/" onClick={toggleMobileMenu} type="button">
-          <h2>10-Gano</h2>
+            <h2>10-Gano</h2>
           </Link>
         </div>
 
