@@ -1,3 +1,135 @@
 openapi: 3.0.3
 info:
-  title: 10-Gano Fligts API
+  version: 1.0.0
+  title: 10-Gano Flights API
+  description: An API for managing flights
+
+servers:
+  - url: http://example.com/api/v1
+
+paths:
+  /flights:
+    get:
+      summary: Get all flights
+      responses:
+        '200':
+          description: A list of flights
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Flight'
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+    post:
+      summary: Create a new flight
+      requestBody:
+        description: Flight object
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Flight'
+      responses:
+        '201':
+          description: Flight created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Flight'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+  /flights/{id}:
+    get:
+      summary: Get a flight by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID of the flight to retrieve
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Flight found successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Flight'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+    delete:
+      summary: Delete a flight by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID of the flight to delete
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Flight deleted successfully
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+components:
+  schemas:
+    Flight:
+      type: object
+      properties:
+        name:
+          type: string
+        picture:
+          type: string
+        base_price:
+          type: number
+          format: decimal
+        available_slots:
+          type: integer
+      required:
+        - name
+        - picture
+        - base_price
+        - available_slots
+
+  responses:
+    BadRequest:
+      description: Bad request error message
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+
+    NotFound:
+      description: Not found error message
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+
+    ServerError:
+      description: Server error message
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
