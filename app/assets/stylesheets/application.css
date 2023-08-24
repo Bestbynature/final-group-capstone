@@ -903,5 +903,17 @@ em {
   .modal{
     z-index: 999999;
   }
-
+  .form > form {
+    grid-template-columns: auto;
+   }
+   .minus{
+    display: none;
+   }
+   .mag{
+    width: 3rem;
+    height: 2rem;
+   }
+   .mag > i {
+    font-size: 17px;
+}
 }
