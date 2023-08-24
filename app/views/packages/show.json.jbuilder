@@ -1,1 +1,1 @@
-json.partial! "packages/package", package: @package
+json.partial! 'packages/package', package: @package

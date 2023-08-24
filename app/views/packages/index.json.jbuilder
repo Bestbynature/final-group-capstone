@@ -1,1 +1,1 @@
-json.array! @packages, partial: "packages/package", as: :package
+json.array! @packages, partial: 'packages/package', as: :package

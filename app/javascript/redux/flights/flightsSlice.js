@@ -1,59 +1,60 @@
 import { createSlice, createAsyncThunk, isRejectedWithValue } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { v4 as uuidv4 } from 'uuid';
 
 const url = 'http://localhost:3000/api/v1/flights';
 
 const cities = [
-  { name: 'New York City', country: 'USA' },
-  { name: 'Tokyo', country: 'Japan' },
-  { name: 'London', country: 'UK' },
-  { name: 'Paris', country: 'France' },
-  { name: 'Los Angeles', country: 'USA' },
-  { name: 'Seoul', country: 'South Korea' },
-  { name: 'Shanghai', country: 'China' },
-  { name: 'Beijing', country: 'China' },
-  { name: 'Chicago', country: 'USA' },
-  { name: 'Istanbul', country: 'Turkey' },
-  { name: 'Miami', country: 'USA' },
-  { name: 'Moscow', country: 'Russia' },
-  { name: 'Sao Paulo', country: 'Brazil' },
-  { name: 'Mumbai', country: 'India' },
-  { name: 'Sydney', country: 'Australia' },
-  { name: 'Rio de Janeiro', country: 'Brazil' },
-  { name: 'Cairo', country: 'Egypt' },
-  { name: 'Mexico City', country: 'Mexico' },
-  { name: 'Bangkok', country: 'Thailand' },
-  { name: 'Toronto', country: 'Canada' },
-  { name: 'Buenos Aires', country: 'Argentina' },
-  { name: 'Dubai', country: 'UAE' },
-  { name: 'Hong Kong', country: 'China' },
-  { name: 'Singapore', country: 'Singapore' },
-  { name: 'Rome', country: 'Italy' },
-  { name: 'Berlin', country: 'Germany' },
-  { name: 'Barcelona', country: 'Spain' },
-  { name: 'Kuala Lumpur', country: 'Malaysia' },
-  { name: 'Amsterdam', country: 'Netherlands' },
-  { name: 'San Francisco', country: 'USA' },
-  { name: 'Vancouver', country: 'Canada' },
-  { name: 'San Diego', country: 'USA' },
-  { name: 'Houston', country: 'USA' },
-  { name: 'Washington, D.C.', country: 'USA' },
-  { name: 'Dallas', country: 'USA' },
-  { name: 'Istanbul', country: 'Turkey' },
-  { name: 'Abu Dhabi', country: 'UAE' },
-  { name: 'Jakarta', country: 'Indonesia' },
-  { name: 'Boston', country: 'USA' },
-  { name: 'Atlanta', country: 'USA' },
-  { name: 'Seattle', country: 'USA' },
-  { name: 'Tel Aviv', country: 'Israel' },
-  { name: 'Johannesburg', country: 'South Africa' },
-  { name: 'Melbourne', country: 'Australia' },
-  { name: 'Dubai', country: 'UAE' },
-  { name: 'Munich', country: 'Germany' },
-  { name: 'Montreal', country: 'Canada' },
-  { name: 'Prague', country: 'Czech Republic' },
-  { name: 'Auckland', country: 'New Zealand' },
-  { name: 'Stockholm', country: 'Sweden' },
+  { id: uuidv4(), name: 'New York City', country: 'USA' },
+  { id: uuidv4(), name: 'Tokyo', country: 'Japan' },
+  { id: uuidv4(), name: 'London', country: 'UK' },
+  { id: uuidv4(), name: 'Paris', country: 'France' },
+  { id: uuidv4(), name: 'Los Angeles', country: 'USA' },
+  { id: uuidv4(), name: 'Seoul', country: 'South Korea' },
+  { id: uuidv4(), name: 'Shanghai', country: 'China' },
+  { id: uuidv4(), name: 'Beijing', country: 'China' },
+  { id: uuidv4(), name: 'Chicago', country: 'USA' },
+  { id: uuidv4(), name: 'Istanbul', country: 'Turkey' },
+  { id: uuidv4(), name: 'Miami', country: 'USA' },
+  { id: uuidv4(), name: 'Moscow', country: 'Russia' },
+  { id: uuidv4(), name: 'Sao Paulo', country: 'Brazil' },
+  { id: uuidv4(), name: 'Mumbai', country: 'India' },
+  { id: uuidv4(), name: 'Sydney', country: 'Australia' },
+  { id: uuidv4(), name: 'Rio de Janeiro', country: 'Brazil' },
+  { id: uuidv4(), name: 'Cairo', country: 'Egypt' },
+  { id: uuidv4(), name: 'Mexico City', country: 'Mexico' },
+  { id: uuidv4(), name: 'Bangkok', country: 'Thailand' },
+  { id: uuidv4(), name: 'Toronto', country: 'Canada' },
+  { id: uuidv4(), name: 'Buenos Aires', country: 'Argentina' },
+  { id: uuidv4(), name: 'Dubai', country: 'UAE' },
+  { id: uuidv4(), name: 'Hong Kong', country: 'China' },
+  { id: uuidv4(), name: 'Singapore', country: 'Singapore' },
+  { id: uuidv4(), name: 'Rome', country: 'Italy' },
+  { id: uuidv4(), name: 'Berlin', country: 'Germany' },
+  { id: uuidv4(), name: 'Barcelona', country: 'Spain' },
+  { id: uuidv4(), name: 'Kuala Lumpur', country: 'Malaysia' },
+  { id: uuidv4(), name: 'Amsterdam', country: 'Netherlands' },
+  { id: uuidv4(), name: 'San Francisco', country: 'USA' },
+  { id: uuidv4(), name: 'Vancouver', country: 'Canada' },
+  { id: uuidv4(), name: 'San Diego', country: 'USA' },
+  { id: uuidv4(), name: 'Houston', country: 'USA' },
+  { id: uuidv4(), name: 'Washington, D.C.', country: 'USA' },
+  { id: uuidv4(), name: 'Dallas', country: 'USA' },
+  { id: uuidv4(), name: 'Istanbul', country: 'Turkey' },
+  { id: uuidv4(), name: 'Abu Dhabi', country: 'UAE' },
+  { id: uuidv4(), name: 'Jakarta', country: 'Indonesia' },
+  { id: uuidv4(), name: 'Boston', country: 'USA' },
+  { id: uuidv4(), name: 'Atlanta', country: 'USA' },
+  { id: uuidv4(), name: 'Seattle', country: 'USA' },
+  { id: uuidv4(), name: 'Tel Aviv', country: 'Israel' },
+  { id: uuidv4(), name: 'Johannesburg', country: 'South Africa' },
+  { id: uuidv4(), name: 'Melbourne', country: 'Australia' },
+  { id: uuidv4(), name: 'Dubai', country: 'UAE' },
+  { id: uuidv4(), name: 'Munich', country: 'Germany' },
+  { id: uuidv4(), name: 'Montreal', country: 'Canada' },
+  { id: uuidv4(), name: 'Prague', country: 'Czech Republic' },
+  { id: uuidv4(), name: 'Auckland', country: 'New Zealand' },
+  { id: uuidv4(), name: 'Stockholm', country: 'Sweden' },
 ];
 
 export const fetchFlights = createAsyncThunk('flights/fetchFlights', async () => {
@@ -97,7 +98,7 @@ const initialState = {
   flightDetails: {},
   cities,
   user: '',
-  user_id: 0,
+  userId: 0,
   status: 'idle',
   error: null,
   cwidth: 0,
@@ -119,9 +120,8 @@ const flightsSlice = createSlice({
     setcwidth(state, action) {
       if (action.payload === 'left' || action.payload === 'right') {
         return { ...state, active: action.payload };
-      } else {
-        return { ...state, cwidth: action.payload };
       }
+      return { ...state, cwidth: action.payload };
     },
     setReservedFlights(state, action) {
       localStorage.setItem('reservedFlights', JSON.stringify([...state.reservedFlights, action.payload]));
@@ -151,50 +151,40 @@ const flightsSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchFlights.pending, (state) => {
-        return { ...state, status: 'loading' };
-      })
-      .addCase(fetchFlights.fulfilled, (state, action) => {
-        return { ...state, flights: [...action.payload.flights], status: 'succeeded', user: action.payload.user.name, user_id: action.payload.user.id };
-      })
-      .addCase(fetchFlights.rejected, (state, action) => {
-        return { ...state, status: 'failed', error: action.payload };
-      })
-      .addCase(postFlight.pending, (state) => {
-        return { ...state, status: 'loading' };
-      })
-      .addCase(postFlight.fulfilled, (state, action) => {
-        return { ...state, flights: [...action.payload.flights], status: 'succeeded', user: action.payload.user };
-      })
-      .addCase(postFlight.rejected, (state, action) => {
-        return { ...state, status: 'failed', error: action.payload };
-      })
-      .addCase(deleteFlight.pending, (state) => {
-        return { ...state, status: 'loading' };
-      })
+      .addCase(fetchFlights.pending, (state) => ({ ...state, status: 'loading' }))
+      .addCase(fetchFlights.fulfilled, (state, action) => ({
+        ...state, flights: [...action.payload.flights], status: 'succeeded', user: action.payload.user.name, userId: action.payload.user.id,
+      }))
+      .addCase(fetchFlights.rejected, (state, action) => ({ ...state, status: 'failed', error: action.payload }))
+      .addCase(postFlight.pending, (state) => ({ ...state, status: 'loading' }))
+      .addCase(postFlight.fulfilled, (state, action) => ({
+        ...state, flights: [...action.payload.flights], status: 'succeeded', user: action.payload.user,
+      }))
+      .addCase(postFlight.rejected, (state, action) => ({ ...state, status: 'failed', error: action.payload }))
+      .addCase(deleteFlight.pending, (state) => ({ ...state, status: 'loading' }))
       .addCase(deleteFlight.fulfilled, (state, action) => {
         const deletedFlightId = action.payload;
         const updatedFlights = state.flights.filter((flight) => flight.id !== deletedFlightId);
         return { ...state, flights: updatedFlights };
       })
-      .addCase(deleteFlight.rejected, (state, action) => {
-        return { ...state, status: 'failed', error: action.payload };
-      })
-      .addCase(fetchFlightDetails.pending, (state) => {
-        return { ...state, loading: true };
-        // state.loading = true;
-      })
-      .addCase(fetchFlightDetails.fulfilled, (state, action) => {
-        return { ...state, loading: false, flightDetails: action.payload };
-      })
-      .addCase(fetchFlightDetails.rejected, (state, action) => {
-        return { ...state, loading: false, error: action.error.message };
-        // state.loading = false;
-        // state.error = action.error.message;
-      });
+      .addCase(deleteFlight.rejected, (state, action) => ({ ...state, status: 'failed', error: action.payload }))
+      .addCase(fetchFlightDetails.pending, (state) => ({ ...state, loading: true }))
+      .addCase(fetchFlightDetails.fulfilled,
+        (state, action) => ({ ...state, loading: false, flightDetails: action.payload }))
+      .addCase(fetchFlightDetails.rejected, (state, action) => (
+        {
+          ...state,
+          loading: false,
+          error: action.error.message,
+        }));
   },
 });
 
-export const { setcwidth, setCsrfToken, addFlight, setCity, setDate, setFlight, setReservedFlights, setName, setAvailableSlots, setBasePrice, setPicture } = flightsSlice.actions;
+export const {
+  setcwidth, addFlight,
+  setCity, setDate, setFlight,
+  setReservedFlights, setName, setAvailableSlots,
+  setBasePrice, setPicture,
+} = flightsSlice.actions;
 
 export default flightsSlice.reducer;

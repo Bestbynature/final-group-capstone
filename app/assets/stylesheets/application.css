@@ -54,10 +54,11 @@ ul {
   grid-template-columns: 200px auto;
   height: 95vh;
   overflow: hidden;
+
   /* border: 5px solid red; */
 }
 
-/*/* ####satrt Styles for the navbar */
+/* /* ####satrt Styles for the navbar */
 .navbar {
   display: flex;
   flex-direction: column;
@@ -81,6 +82,37 @@ ul {
   flex-basis: 10%;
 }
 
+/* Center the Sign up heading */
+h2 {
+  font-size: 24px;
+  margin: 0 auto 15px;
+  text-align: center;
+}
+
+.form > h2 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #f5f7f1;
+}
+
+.reservations > h2 {
+  text-align: center;
+  background-color: #d3ea7f;
+}
+
+.delete-flight h2 {
+  font-size: 24px;
+
+  /* margin-bottom: 20px; */
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.forgotpassword h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 .brand a h2 {
   font-size: 25px;
   font-weight: 600;
@@ -98,6 +130,17 @@ nav ul li {
   padding: 0.4em;
   font-weight: bold;
   margin-bottom: 3px;
+}
+
+.delete-flight li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
 nav > ul > li:hover {
@@ -129,7 +172,7 @@ nav > ul > li:hover {
   justify-content: flex-start;
 }
 
-/*######## end NAVBAR ###*/
+/* ######## end NAVBAR ### */
 
 /* Splash Screen */
 
@@ -210,6 +253,7 @@ nav > ul > li:hover {
   height: 100%;
   object-fit: cover;
   border-radius: 1rem;
+
   /* pointer-events: none; */
 }
 
@@ -312,9 +356,9 @@ nav > ul > li:hover {
 
 button:disabled,
 button[disabled] {
-  border: 1px solid #999999 !important;
-  background-color: #cccccc !important;
-  color: #666666 !important;
+  border: 1px solid #999 !important;
+  background-color: #ccc !important;
+  color: #666 !important;
 }
 
 /* styles for the reserve form */
@@ -377,12 +421,6 @@ button[disabled] {
   font-family: "Lato", sans-serif;
 }
 
-.form > h2 {
-  text-align: center;
-  text-transform: uppercase;
-  color: #f5f7f1;
-}
-
 .form > p {
   text-align: center;
   font-size: 0.8rem;
@@ -424,16 +462,12 @@ button[disabled] {
 /* STYLES FOR MY RESERVATIONS */
 
 .reservations {
-  background: url("./images/reserve-background.jpg") no-repeat center center
+  background:
+    url("./images/reserve-background.jpg") no-repeat center center
     fixed;
   background-size: cover;
   background-color: #d3ea7f;
   min-height: 100vh;
-}
-
-.reservations > h2 {
-  text-align: center;
-  background-color: #d3ea7f;
 }
 
 .reserved-flights {
@@ -449,8 +483,8 @@ button[disabled] {
   padding: 20px;
   width: 320px;
   background-color: #f9f9f9;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  height: fit-content;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: auto;
 }
 
 .reserved-flight > table {
@@ -494,7 +528,7 @@ button[disabled] {
   background-color: #98bf11;
 }
 
-/*########satr DELETE FLIGHT COMPONENT */
+/* ########satr DELETE FLIGHT COMPONENT */
 .delete-flight {
   padding: 20px;
   border: 1px solid #ccc;
@@ -502,28 +536,10 @@ button[disabled] {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.delete-flight h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
 .delete-flight ul {
   list-style: none;
   padding: 10px;
   margin: 20px;
-}
-
-.delete-flight li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-  padding: 10px;
-  background-color: #f5f5f5;
-  border: 1px solid #ddd;
-  border-radius: 5px;
 }
 
 .btn-delete,
@@ -585,7 +601,8 @@ button[disabled] {
 
 /* ############# END OF FLIGHT DETAILS COMPONENT */
 
-/**********Login*Sign**********/
+/**********  Login*Sign  **********/
+
 /* Basic styling for the form container */
 .win {
   width: 100%;
@@ -600,13 +617,6 @@ button[disabled] {
   text-align: center;
 }
 
-/* Center the Sign up heading */
-h2 {
-  font-size: 24px;
-  margin: 0 auto 15px;
-  text-align: center;
-}
-
 /* Styling for form fields */
 .field {
   margin-bottom: 15px;
@@ -618,8 +628,8 @@ label {
   font-weight: bold;
 }
 
-.field input{
-  width: 100% ;
+.field input {
+  width: 100%;
   border-radius: 8px;
   border: none;
   padding: 3px;
@@ -651,13 +661,15 @@ label {
   display: flex;
   gap: 1rem;
   justify-content: center;
-  margin-top: 20px;
+
+  /* margin-top: 20px; */
   margin: 1rem;
   align-items: center;
 }
 
 /* Styling for submit button */
-input[type="submit"], .actions a {
+input[type="submit"],
+.actions a {
   padding: 5px 20px;
   width: 50%;
   background-color: #98bf11;
@@ -682,7 +694,7 @@ input[type="submit"]:hover {
     margin: 0;
     padding: 0;
 
-    li:before {
+    li::before {
       content: "• ";
     }
   }
@@ -695,17 +707,6 @@ em {
 }
 
 /* Styling for login link */
-/* .actions a {
-  padding: 10px 20px;
-  background-color: #98bf11;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  text-decoration: none;
-  margin-top: 10px;
-} */
 
 /* Hover effect for login link */
 .actions a:hover {
@@ -760,7 +761,7 @@ em {
   color: #98bf11;
 }
 
-/*30*/
+/* 30 */
 .forgotpassword {
   width: 100%;
   max-width: 548px;
@@ -771,11 +772,6 @@ em {
   color: black;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   background-color: #f2f2f2;
-}
-
-.forgotpassword h2 {
-  text-align: center;
-  margin-bottom: 20px;
 }
 
 .forgotpassword .field,
@@ -824,23 +820,24 @@ em {
   display: none;
 }
 
-.fas, fa-solid {
+.fas,
+.fa-solid {
   color: #98c008;
   font-weight: 900;
 }
-.fa-arrow-right-to-bracket{
+
+.fa-arrow-right-to-bracket {
   border: none;
   font-size: 19px;
   color: #98c008;
 }
 
-
-
 /* Hide the navbar on mobile screens */
 @media (max-width: 468px) {
-  /* ####start Navbar ######*/
+  /* ####start Navbar ###### */
   .App {
     grid-template-columns: auto;
+    height: auto;
   }
 
   .mobile-menu-icon {
@@ -880,13 +877,16 @@ em {
   .form > form {
     grid-template-columns: auto;
   }
+
   .minus {
     display: none;
   }
+
   .mag {
     width: 3rem;
     height: 2rem;
   }
+
   .mag > i {
     font-size: 17px;
   }
@@ -905,21 +905,3 @@ em {
   cursor: pointer;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
-
-@media (max-width: 768px) {
-}
-
-/* For mobile view within the range of 375px to 767px */
-/* @media (max-width: 767px) and (min-width: 375px) {
-
-} */
-
-/* For mobile view within the range of 375px to 767px */
-/* @media (max-width: 767px) and (min-width: 375px) {
-
-} */
-
-/* For mobile view within the range of 375px to 767px */
-/* @media (max-width: 767px) and (min-width: 375px) {
-
-}  */
