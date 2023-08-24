@@ -16,7 +16,7 @@ class Api::V1::FlightsController < ApplicationController
   def index
     @flights = Flight.all.order(created_at: :desc)
     @user = current_user
-  
+
     response_data = {
       user: @user.as_json(only: %i[name email id]),
       flights: @flights.as_json(except: %i[created_at updated_at]).map do |flight|
@@ -30,14 +30,13 @@ class Api::V1::FlightsController < ApplicationController
         }
       end
     }
-  
+
     render json: response_data, status: :ok
   end
-  
 
   def show
     @flight = Flight.find(params[:id])
-  
+
     response_data = {
       name: @flight.name,
       picture: @flight.picture,
@@ -46,7 +45,7 @@ class Api::V1::FlightsController < ApplicationController
       basePrice: @flight.base_price,
       availableSlots: @flight.available_slots
     }
-  
+
     render json: response_data, status: :ok
   rescue ActiveRecord::RecordNotFound
     render json: { status: 'ERROR', message: 'Flight cannot be found' }, status: :not_found
@@ -54,11 +53,11 @@ class Api::V1::FlightsController < ApplicationController
 
   def create
     @flight = Flight.new(flight_params)
-  
+
     if @flight.save
       @flights = Flight.all.order(created_at: :desc)
       @user = current_user
-  
+
       response_data = {
         user: @user.as_json(only: %i[name email id]),
         flights: @flights.as_json(except: %i[created_at updated_at]).map do |flight|
@@ -72,14 +71,14 @@ class Api::V1::FlightsController < ApplicationController
           }
         end
       }
-  
+
       render json: response_data, status: :ok
     else
       render json: { status: 'ERROR', message: 'Flight not created', data: @flight.errors.full_messages },
              status: :unprocessable_entity
     end
   end
-  
+
   # def create
   #   @flight = Flight.new(flight_params)
   #   if @flight.save

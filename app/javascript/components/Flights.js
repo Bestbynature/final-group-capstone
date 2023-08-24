@@ -55,8 +55,7 @@ const Flights = () => {
         tabIndex={0}
       >
         <i className="fa-solid fa-caret-left" />
-    </div>
-
+      </div>
 
       <motion.div ref={carouselRef} className="outer-carousel" whileTap={{ cursor: 'grabbing' }} onScroll={() => dispatch(setcwidth(carouselRef.current.scrollWidth - carouselRef.current.offsetWidth))}>
         <motion.div drag="x" dragConstraints={{ right: 0, left: -cwidth }} className="inner-carousel">

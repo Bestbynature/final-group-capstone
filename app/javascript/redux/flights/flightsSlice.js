@@ -170,13 +170,12 @@ const flightsSlice = createSlice({
       .addCase(deleteFlight.rejected, (state, action) => ({ ...state, status: 'failed', error: action.payload }))
       .addCase(fetchFlightDetails.pending, (state) => ({ ...state, loading: true }))
       .addCase(fetchFlightDetails.fulfilled,
-         (state, action) => {
-        return { ...state, loading: false, flightDetails: action.payload };
-      })
+        (state, action) => ({ ...state, loading: false, flightDetails: action.payload }))
       .addCase(fetchFlightDetails.rejected, (state, action) => (
-        { ...state,
+        {
+          ...state,
           loading: false,
-          error: action.error.message 
+          error: action.error.message,
         }));
   },
 });
