@@ -53,7 +53,7 @@ const ReserveFlight = () => {
               </span>
               <span>
                 a relaxing getaway or an adventure-packed journey,
-              our form makes booking your dream trip a breeze.
+                our form makes booking your dream trip a breeze.
               </span>
               <span>
                 With our hassle-free booking process, we have got you covered!
