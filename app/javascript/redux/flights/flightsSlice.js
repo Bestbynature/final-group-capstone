@@ -169,27 +169,23 @@ const flightsSlice = createSlice({
       })
       .addCase(deleteFlight.rejected, (state, action) => ({ ...state, status: 'failed', error: action.payload }))
       .addCase(fetchFlightDetails.pending, (state) => ({ ...state, loading: true }))
-      .addCase(fetchFlightDetails.fulfilled, (state, action) => {
-        const {
-          base_price, available_slots, picture, name,
-        } = action.payload;
-        const newObj = {
-          basePrice: base_price,
-          availableSlots: available_slots,
-          picture,
-          name,
-        };
-        return { ...state, loading: false, flightDetails: newObj };
+      .addCase(fetchFlightDetails.fulfilled,
+         (state, action) => {
+        return { ...state, loading: false, flightDetails: action.payload };
       })
       .addCase(fetchFlightDetails.rejected, (state, action) => (
         { ...state,
-         loading: false,
-          error: action.error.message }));
+          loading: false,
+          error: action.error.message 
+        }));
   },
 });
 
 export const {
-  setcwidth, setCsrfToken, addFlight, setCity, setDate, setFlight, setReservedFlights, setName, setAvailableSlots, setBasePrice, setPicture,
+  setcwidth, addFlight,
+  setCity, setDate, setFlight,
+  setReservedFlights, setName, setAvailableSlots,
+  setBasePrice, setPicture,
 } = flightsSlice.actions;
 
 export default flightsSlice.reducer;

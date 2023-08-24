@@ -43,29 +43,40 @@ const Flights = () => {
         <p>Please select a travel destination</p>
       </div>
       <div>&nbsp;</div>
-      <div className={active === 'left' ? 'left clickactive' : 'left'} onClick={() => moveCarousel('left')}>
+      <div
+        className={active === 'left' ? 'left clickactive' : 'left'}
+        onClick={() => moveCarousel('left')}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            moveCarousel('left');
+          }
+        }}
+        role="button"
+        tabIndex={0}
+      >
         <i className="fa-solid fa-caret-left" />
-      </div>
+    </div>
+
 
       <motion.div ref={carouselRef} className="outer-carousel" whileTap={{ cursor: 'grabbing' }} onScroll={() => dispatch(setcwidth(carouselRef.current.scrollWidth - carouselRef.current.offsetWidth))}>
         <motion.div drag="x" dragConstraints={{ right: 0, left: -cwidth }} className="inner-carousel">
-          {flights.map((flightobj, index) => {
+          {flights.map((flightobj) => {
             const {
-              picture, name, base_price, available_slots, id,
+              picture, name, basePrice, availableSlots, id,
             } = flightobj;
             return (
-              <Link to={`/details/${id}`} key={index}>
+              <Link to={`/details/${id}`} key={id}>
                 <motion.div className="item">
                   <div className="item-image-container"><img src={picture} alt={name} title={name} /></div>
                   <div className="text">
                     <h3>{name}</h3>
                     <p>
                       Price: $
-                      {base_price}
+                      {basePrice}
                     </p>
                     <p>
                       Available Slots:
-                      {available_slots}
+                      {availableSlots}
                     </p>
                     <div className="circle-cont">
                       <div className="circle"><i className="fa-brands fa-facebook-f" /></div>
@@ -80,9 +91,20 @@ const Flights = () => {
 
         </motion.div>
       </motion.div>
-      <div className={active === 'right' ? 'right clickactive' : 'right'} onClick={() => moveCarousel('right')}>
+      <div
+        className={active === 'right' ? 'right clickactive' : 'right'}
+        onClick={() => moveCarousel('right')}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            moveCarousel('right');
+          }
+        }}
+        role="button"
+        tabIndex={0}
+      >
         <i className="fa-solid fa-caret-right" />
       </div>
+
       <div>&nbsp;</div>
       <div>&nbsp;</div>
       <div>&nbsp;</div>

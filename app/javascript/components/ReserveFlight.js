@@ -15,7 +15,6 @@ const ReserveFlight = () => {
     cities, user, flights, city, flight, date,
   } = useSelector((state) => state.flights);
 
-
   useEffect(() => {
     dispatch(fetchFlights());
   }, [dispatch]);
@@ -48,11 +47,12 @@ const ReserveFlight = () => {
           <div className="form">
             <h2>Reserve your favorite flight</h2>
             <hr />
-            <p>
-              Welcome to our user-friendly booking form! Whether you're planning a relaxing getaway or an adventure-packed journey, our form makes booking your dream trip a breeze. With our hassle-free booking process, We got you covered!
-              <br />
+            <p> Welcome to our user-friendly booking form! Whether you are planning a relaxing getaway or an adventure-packed journey,
+                our form makes booking your dream trip a breeze. With our hassle-free booking process, we have got you covered!
+                <br />
               Just fill in your travel details and get set for an unforgettable travel experience.
-            </p>
+              </p>
+
             <hr />
             <form onSubmit={handleReserve}>
               <input type="text" value={user} readOnly />
@@ -100,7 +100,6 @@ const ReserveFlight = () => {
 };
 
 export default ReserveFlight;
-
 
 // import React, { useEffect } from 'react';
 // import { useNavigate, useParams } from 'react-router-dom';
@@ -152,10 +151,12 @@ export default ReserveFlight;
 //             <h2>Reserve your favorite flight</h2>
 //             <hr />
 //             <p>
-//               Welcome to our user-friendly booking form! Whether you're planning a relaxing getaway or an adventure-packed journey, our form makes booking your dream trip a breeze. With our hassle-free booking process, We got you covered!
-//               <br />
-//               Just fill in your travel details and get set for an unforgettable travel experience.
-//             </p>
+//   Welcome to our user-friendly booking form! Whether you're planning a relaxing getaway or an adventure-packed journey,
+//   our form makes booking your dream trip a breeze. With our hassle-free booking process, we've got you covered!
+//   <br />
+//   Just fill in your travel details and get set for an unforgettable travel experience.
+// </p>
+
 //             <hr />
 //             <form onSubmit={handleReserve}>
 //               <input type="text" value={user} />
