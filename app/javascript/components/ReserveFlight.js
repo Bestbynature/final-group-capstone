@@ -48,20 +48,25 @@ const ReserveFlight = () => {
             <h2>Reserve your favorite flight</h2>
             <hr />
             <p>
-              <span>Welcome to our user-friendly booking form! Whether you are planning
+              <span>
+                Welcome to our user-friendly booking form! Whether you are planning
               </span>
-              <span>a relaxing getaway or an adventure-packed journey,
+              <span>
+                a relaxing getaway or an adventure-packed journey,
               our form makes booking your dream trip a breeze.
               </span>
-              <span>With our hassle-free booking process, we have got you covered!
+              <span>
+                With our hassle-free booking process, we have got you covered!
               </span>
               <br />
-              <span>Just fill in your travel details and get set
+              <span>
+                Just fill in your travel details and get set
               </span>
-              <span>for an unforgettable travel experience.
+              <span>
+                for an unforgettable travel experience.
               </span>
             </p>
-            
+
             <hr />
             <form onSubmit={handleReserve}>
               <input type="text" value={user} readOnly />
