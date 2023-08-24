@@ -4,7 +4,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
+  - [🚀 API Documentation](#api-doc)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -80,9 +80,13 @@ In this project we utilize our skills and knowledge to create this project
 - *Reserve Flight*
 - *Cancel Reservation*
 
-## 🚀 Live Demo <a name="live-demo"></a>
+## 💻 API Documentation <a name="api-doc"></a>
 
-- [Under process ⚒️🏋️](Link)
+To get to the API Documentation, go to the link above after starting rails server
+
+```
+localhost:3000/api-docs
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
