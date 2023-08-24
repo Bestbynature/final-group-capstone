@@ -144,7 +144,7 @@ nav > ul > li:hover {
   margin: 2rem auto 0;
   padding: 20px;
   border: 1px solid #ccc;
-  border-radius: 5% 15% 5% 15%;
+  border-radius: 8px;
   color: black;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   background-color: #f2f2f2;
@@ -164,7 +164,7 @@ nav > ul > li:hover {
 
 .sign-in-btn,
 .sign-up-btn {
-  padding: 10px 15px;
+  padding: 5px 15px;
   font-family: "Proxima Nova Bold", sans-serif;
   font-size: 15px;
   width: 10vw;
@@ -593,10 +593,11 @@ button[disabled] {
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
-  border-radius: 5% 15% 5% 15%;
+  border-radius: 8px;
   color: black;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   background-color: #f2f2f2;
+  text-align: center;
 }
 
 /* Center the Sign up heading */
@@ -609,11 +610,19 @@ h2 {
 /* Styling for form fields */
 .field {
   margin-bottom: 15px;
+  width: 100%;
 }
 
 /* Styling for labels */
 label {
   font-weight: bold;
+}
+
+.field input{
+  width: 100% ;
+  border-radius: 8px;
+  border: none;
+  padding: 3px;
 }
 
 /* Styling for text fields and email fields */
@@ -631,6 +640,7 @@ label {
 /* Default styles for screens wider than 768px */
 .actions {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   margin-top: 20px;
@@ -647,8 +657,9 @@ label {
 }
 
 /* Styling for submit button */
-input[type="submit"] {
-  padding: 10px 20px;
+input[type="submit"], .actions a {
+  padding: 5px 20px;
+  width: 50%;
   background-color: #98bf11;
   color: #fff;
   border: none;
@@ -684,7 +695,7 @@ em {
 }
 
 /* Styling for login link */
-.actions a {
+/* .actions a {
   padding: 10px 20px;
   background-color: #98bf11;
   color: #fff;
@@ -694,7 +705,7 @@ em {
   font-size: 16px;
   text-decoration: none;
   margin-top: 10px;
-}
+} */
 
 /* Hover effect for login link */
 .actions a:hover {
@@ -703,7 +714,7 @@ em {
 
 /* Styling for the styled links */
 .styled-link {
-  padding: 10px 20px;
+  padding: 5px 20px;
   background-color: #98bf11;
   color: #fff;
   border: none;
