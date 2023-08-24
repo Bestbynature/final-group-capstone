@@ -22,42 +22,43 @@ font-family: 'Tektur', cursive;
 
 
 
- @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Roboto+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Rubik:ital,wght@0,300;1,300&family=Tektur:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Roboto+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Rubik:ital,wght@0,300;1,300&family=Tektur:wght@400;500;600;700;800&display=swap');
 
 
- *, body{
+*,
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Lato', sans-serif;
+  font-family:'Lato', sans-serif;
 
- }
+}
 
- body{
+body {
   padding: 10px 10px;
   background: #efefef;
 }
 
- #root{
+#root {
   background: white;
 }
 
- a {
+a {
   text-decoration: none;
   color: black;
- }
+}
 
- ul {
+ul {
   list-style: none;
- }
+}
 
 /* Styles for the entire app container */
 .App {
- display: grid;
- grid-template-columns: 200px auto;
- height: 95vh;
- overflow: hidden;
- /* border: 5px solid red; */
+  display: grid;
+  grid-template-columns: 200px auto;
+  height: 95vh;
+  overflow: hidden;
+  /* border: 5px solid red; */
 }
 
 /*/* ####satrt Styles for the navbar */
@@ -75,20 +76,20 @@ font-family: 'Tektur', cursive;
 }
 
 .brand {
- display: flex;
- justify-content: center;
+  display: flex;
+  justify-content: center;
   align-items: center;
- padding: 10px 20px;
- width: 100%;
- height: 10%;
- flex-basis: 10%;
+  padding: 10px 20px;
+  width: 100%;
+  height: 10%;
+  flex-basis: 10%;
 }
 
 .brand a h2 {
- font-size: 25px;
- font-weight: 600;
- color: #333;
- letter-spacing: 0.4em;
+  font-size: 25px;
+  font-weight: 600;
+  color: #333;
+  letter-spacing: 0.4em;
 }
 
 nav {
@@ -103,7 +104,7 @@ nav ul li {
   margin-bottom: 3px;
 }
 
-nav > ul > li:hover {
+nav>ul>li:hover {
   background-color: #98bf11;
   border-radius: 5px;
   padding: 10px;
@@ -117,7 +118,7 @@ nav > ul > li:hover {
   align-items: center;
 }
 
-.icons > i {
+.icons>i {
   margin-right: 0.7em;
 }
 
@@ -190,16 +191,16 @@ nav > ul > li:hover {
 
 /* Styles for the main Flights page */
 
- .item {
-    height: 100%;
-    min-width: 15rem;
-    padding: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
- }
+.item {
+  height: 100%;
+  min-width: 15rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
- .item-image-container {
+.item-image-container {
   height: 70%;
   width: 90%;
   display: flex;
@@ -207,138 +208,139 @@ nav > ul > li:hover {
   align-items: center;
   border-radius: 1rem;
   overflow: hidden;
- }
-
- .item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 1rem;
-    /* pointer-events: none; */
- }
-
- .text {
-   margin-top: 0.5rem;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
- }
-
- .text > p {
-   font-size: 0.7rem;
-   color: #9e9e9e;
-   margin: 0.3rem 0;
- }
-
- .inner-carousel {
-    display: flex;
-    height: 100%;
- }
-
- .outer-carousel {
-   cursor: grab;
-   overflow: hidden;
-   height: 100%;
-   width: 95%;
-   margin: 0 auto;
- }
-
- .carousel {
-   display: grid;
-   grid-template-columns: 7% 86% 7%;
-   grid-template-rows: 20vh 60vh 20vh;
-   max-width: 100%;
-   justify-content: center;
-   align-items: center;
- }
-
- .carousel-header {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   height: 100%;
-   justify-content: end;
- }
-
- .circle-cont {
-   width: 100%;
-   display: flex;
-   justify-content: space-around;
-   align-items: center;
-  }
-
-  .circle {
-   width: 2rem;
-   height: 2rem;
-   border-radius: 50%;
-   margin-right: 0.7rem;
-   border: 2px solid #9e9e9e;
-   color: #9e9e9e;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-  }
-
- .left, .right {
-   background-color: #efefef;
-   color: white;
-   width: 4rem;
-   height: 3rem;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   font-size: 3rem;
-   border-radius: 0 2rem 2rem 0;
- }
-
- .left {
-    border-radius: 0 2rem 2rem 0;
 }
 
- .right {
-    border-radius: 2rem 0 0 2rem;
- }
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+  /* pointer-events: none; */
+}
 
- .clickactive {
-   background-color: #98bf11;
- }
+.text {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
- .active {
-   background-color: #98bf11;
-   padding: 5px 0;
-   width: 100%;
- }
+.text>p {
+  font-size: 0.7rem;
+  color: #9e9e9e;
+  margin: 0.3rem 0;
+}
 
- .deleted {
+.inner-carousel {
+  display: flex;
+  height: 100%;
+}
+
+.outer-carousel {
+  cursor: grab;
+  overflow: hidden;
+  height: 100%;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.carousel {
+  display: grid;
+  grid-template-columns: 7% 86% 7%;
+  grid-template-rows: 20vh 60vh 20vh;
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: end;
+}
+
+.circle-cont {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.circle {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  margin-right: 0.7rem;
+  border: 2px solid #9e9e9e;
+  color: #9e9e9e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left,
+.right {
+  background-color: #efefef;
+  color: white;
+  width: 4rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  border-radius: 0 2rem 2rem 0;
+}
+
+.left {
+  border-radius: 0 2rem 2rem 0;
+}
+
+.right {
+  border-radius: 2rem 0 0 2rem;
+}
+
+.clickactive {
+  background-color: #98bf11;
+}
+
+.active {
+  background-color: #98bf11;
+  padding: 5px 0;
+  width: 100%;
+}
+
+.deleted {
   text-decoration: line-through;
 }
 
 button:disabled,
-button[disabled]{
+button[disabled] {
   border: 1px solid #999999 !important;
   background-color: #cccccc !important;
   color: #666666 !important;
 }
 
- /* styles for the reserve form */
+/* styles for the reserve form */
 
- .reserve-form {
+.reserve-form {
   background: url('./images/reserve-background.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
- }
+}
 
- .overlay {
+.overlay {
   background-color: rgba(152, 191, 17, 0.8);
   padding: 2rem;
   height: 100%;
   width: 100%;
   display: grid;
   grid-template-columns: 10% 80% 10%;
- }
+}
 
- .mag {
+.mag {
   background-color: #fff;
   width: 4rem;
   height: 3rem;
@@ -346,47 +348,47 @@ button[disabled]{
   display: flex;
   justify-content: center;
   align-items: center;
- }
+}
 
- .mag > i {
+.mag>i {
   font-size: 2rem;
   color: #98bf11;
   transform: rotate(90deg);
- }
+}
 
- .minus {
+.minus {
   display: flex;
   flex-direction: column;
   color: #fff;
- }
+}
 
- .minus > hr {
+.minus>hr {
   width: 2rem;
   border: 4px solid #fff;
   margin-bottom: 5px;
   border-radius: .2rem;
- }
+}
 
- .middle {
+.middle {
   display: flex;
   justify-content: center;
   align-items: center;
- }
+}
 
- .form {
+.form {
   width: 95%;
   min-height: 50%;
   color: #d5e88f;
   font-family: 'Lato', sans-serif;
- }
+}
 
- .form > h2 {
+.form>h2 {
   text-align: center;
   text-transform: uppercase;
   color: #f5f7f1
- }
+}
 
- .form > p {
+.form>p {
   text-align: center;
   font-size: 0.8rem;
   font-weight: bold;
@@ -395,22 +397,22 @@ button[disabled]{
   color: #d9e3b6
 }
 
- .form > hr {
+.form>hr {
   margin: 1rem auto;
   width: 80%;
   border: 1px solid #d5e88f;
- }
+}
 
- .form > form {
+.form>form {
   width: 90%;
   display: grid;
   grid-gap: 1.2rem;
   justify-content: center;
   grid-template-columns: repeat(5, 12vw);
   margin: 2rem auto;
- }
+}
 
- .form > form > * {
+.form>form>* {
   width: 100%;
   height: 3.5rem;
   border-radius: 1rem;
@@ -418,22 +420,22 @@ button[disabled]{
   border: 2px solid #d5e88f;
   padding: 1rem;
   color: #d5e88f;
- }
+}
 
- .form > form > button {
+.form>form>button {
   cursor: pointer;
- }
+}
 
- /* STYLES FOR MY RESERVATIONS */
+/* STYLES FOR MY RESERVATIONS */
 
- .reservations {
+.reservations {
   background: url('./images/reserve-background.jpg') no-repeat center center fixed;
   background-size: cover;
   background-color: #d3ea7f;
   min-height: 100vh;
- }
+}
 
- .reservations > h2 {
+.reservations>h2 {
   text-align: center;
   background-color: #d3ea7f;
 }
@@ -455,11 +457,11 @@ button[disabled]{
   height: fit-content;
 }
 
-.reserved-flight > table {
+.reserved-flight>table {
   border: 1px solid #ccc;
 }
 
-.reserved-flight > table > tr > td {
+.reserved-flight>table>tr>td {
   padding: 5px;
   text-align: left;
   border-bottom: 1px solid #ccc;
@@ -479,12 +481,12 @@ button[disabled]{
 /* ***************** Add flight ******************* */
 
 .add-submit {
-background: #98bf11;
+  background: #98bf11;
 }
 
 .add-submit:hover {
-background: #435502;
-color: #fff;
+  background: #435502;
+  color: #fff;
 }
 
 .width-full {
@@ -529,7 +531,8 @@ color: #fff;
   border-radius: 5px;
 }
 
-.btn-delete, .btn-deleted {
+.btn-delete,
+.btn-deleted {
   background-color: #e74c3c;
   color: white;
   border: none;
@@ -541,6 +544,7 @@ color: #fff;
 .delete-flight span {
   color: #999;
 }
+
 /* #########END DELETE FLIGHT########  */
 
 
@@ -554,22 +558,22 @@ color: #fff;
   width: 100%;
   height: 100%;
   padding: 3rem 1rem 1rem 0.5rem;
- }
+}
 
- .big-image {
+.big-image {
   width: 100%;
   max-height: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   padding-right: 0.4rem;
- }
+}
 
- .image2 {
+.image2 {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
- }
+}
 
 .reserve {
   display: flex;
@@ -577,25 +581,18 @@ color: #fff;
   align-items: center;
 }
 
-.reserve > p {
+.reserve>p {
   background-color: var(--primary-color);
   transition: all 0.5s ease-in-out;
 }
 
-.reserve > p:hover {
+.reserve>p:hover {
   filter: invert(60%);
 }
 
 /* ############# END OF FLIGHT DETAILS COMPONENT */
 
-@media (max-width: 768px) {
-  .add-flight-container {
-    max-width: 100%;
-    background-color: #f0f8ff;
-    box-shadow: none;
-    transform: none;
-  }
-}
+
 /**********Login*Sign**********/
 /* Basic styling for the form container */
 .win {
@@ -628,9 +625,9 @@ label {
 }
 
 /* Styling for text fields and email fields */
-.win > input[type="text"],
-.win > input[type="email"],
-.win > input[type="password"] {
+.win>input[type="text"],
+.win>input[type="email"],
+.win>input[type="password"] {
   width: 70%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -648,41 +645,17 @@ label {
   margin-top: 20px;
 }
 
-/* Media query for screens smaller than 768px */
-@media (max-width: 768px) {
-  .actions {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 10px;
-  }
-
-  .actions > * {
-    margin-bottom: 10px;
-  }
-}
-
 /* For desktop view */
 .Aactions {
   display: flex;
   gap: 1rem;
   justify-content: center;
   margin-top: 20px;
-  margin:  1rem;
+  margin: 1rem;
   align-items: center;
 }
 
-/* For mobile view within the range of 375px to 767px */
-@media (max-width: 767px) and (min-width: 375px) {
-  .Aactions {
-    display: block;
-    margin-top: 2px;
-    margin-left: 1rem;
-  }
 
-  .Aactions > * {
-    margin-bottom: 5px;
-  }
-}
 
 /* Styling for submit button */
 input[type="submit"] {
@@ -703,10 +676,12 @@ input[type="submit"]:hover {
 /* Styling for error messages */
 #error-explanation {
   color: red;
+
   ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+
     li:before {
       content: "• ";
     }
@@ -718,6 +693,7 @@ em {
   font-size: 12px;
   color: #777;
 }
+
 /* Styling for login link */
 .actions a {
   padding: 10px 20px;
@@ -784,13 +760,7 @@ em {
   color: #98bf11;
 }
 
-/* For mobile view within the range of 375px to 767px */
-@media (max-width: 767px) and (min-width: 375px) {
-  #centered-field {
-    width: 80%;
-    margin: 0 auto;
-  }
-}
+
 
 /*30*/
 .forgotpassword {
@@ -836,14 +806,6 @@ em {
   color: #98bf11;
 }
 
-/* For mobile view within the range of 375px to 767px */
-@media (max-width: 767px) and (min-width: 375px) {
-  .forgotpassword {
-    padding: 15px;
-  }
-}
-
-
 
 
 .mobile-menu-icon {
@@ -860,27 +822,31 @@ em {
   display: none;
 }
 
-.fas{
+.fas {
   color: #3b4907;
 }
 
 /* Hide the navbar on mobile screens */
-@media (max-width: 768px) {
+@media (max-width: 468px) {
+
+
+  /* ####start Navbar ######*/
   .App {
-    grid-template-columns:  auto;
+    grid-template-columns: auto;
   }
 
-  .mobile-menu-icon{
+  .mobile-menu-icon {
     display: block;
   }
 
-  .navbar{
+  .navbar {
     display: none;
   }
 
-.mobile-open{
-  display: flex;
+  .mobile-open {
+    display: flex;
   }
+
   .nav-links {
     display: none;
   }
@@ -889,7 +855,7 @@ em {
     display: block;
   }
 
-  nav ul  {
+  nav ul {
     text-align: center;
     margin-top: 20px;
   }
@@ -900,20 +866,98 @@ em {
   }
 
 
-  .modal{
+  .modal {
     z-index: 999999;
   }
-  .form > form {
+
+  .form>form {
     grid-template-columns: auto;
-   }
-   .minus{
+  }
+
+  .minus {
     display: none;
-   }
-   .mag{
+  }
+
+  .mag {
     width: 3rem;
     height: 2rem;
-   }
-   .mag > i {
+  }
+
+  .mag>i {
     font-size: 17px;
+  }
+
+    /* #### End Navbar ######*/
+
+  .actions {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+
+  .actions>* {
+    margin-bottom: 10px;
+  }
+
+  .Aactions {
+    display: block;
+    margin-top: 2px;
+    margin-left: 1rem;
+  }
+
+  .Aactions>* {
+    margin-bottom: 5px;
+  }
+
+  .add-flight-container {
+    max-width: 100%;
+    background-color: #f0f8ff;
+    box-shadow: none;
+    transform: none;
+  }
+
+  #centered-field {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .forgotpassword {
+    padding: 15px;
+  }
+
 }
+
+
+
+/* ################### END Mobile Style################################ */
+
+/* Media query for screens smaller than 768px
+@media (max-width: 768px) {
+
+
+
 }
+
+@media (max-width: 768px) {
+
+}
+
+
+
+/* For mobile view within the range of 375px to 767px */
+/* @media (max-width: 767px) and (min-width: 375px) {
+
+} */
+
+
+
+/* For mobile view within the range of 375px to 767px */
+/* @media (max-width: 767px) and (min-width: 375px) {
+
+} */
+
+
+/* For mobile view within the range of 375px to 767px */
+/* @media (max-width: 767px) and (min-width: 375px) {
+
+}  */
