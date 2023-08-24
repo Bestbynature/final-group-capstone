@@ -3,16 +3,6 @@ class Api::V1::FlightsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: %i[create destroy]
   before_action :set_flight, only: %i[show edit update destroy]
 
-  # def index
-  #   @flights = Flight.all.order(created_at: :desc)
-  #   @user = current_user
-
-  #   response_data = {
-  #     user: @user.as_json(only: %i[name email id]),
-  #     flights: @flights.as_json(except: %i[created_at updated_at])
-  #   }
-  #   render json: response_data, status: :ok
-  # end
   def index
     @flights = Flight.all.order(created_at: :desc)
     @user = current_user
@@ -26,7 +16,8 @@ class Api::V1::FlightsController < ApplicationController
           reserved: flight['reserved'],
           userId: flight['user_id'],
           basePrice: flight['base_price'],
-          availableSlots: flight['available_slots']
+          availableSlots: flight['available_slots'],
+          id: flight['id']
         }
       end
     }
@@ -43,7 +34,8 @@ class Api::V1::FlightsController < ApplicationController
       reserved: @flight.reserved,
       userId: @flight.user_id,
       basePrice: @flight.base_price,
-      availableSlots: @flight.available_slots
+      availableSlots: @flight.available_slots,
+      id: @flight.id
     }
 
     render json: response_data, status: :ok
@@ -78,22 +70,6 @@ class Api::V1::FlightsController < ApplicationController
              status: :unprocessable_entity
     end
   end
-
-  # def create
-  #   @flight = Flight.new(flight_params)
-  #   if @flight.save
-  #     @flights = Flight.all.order(created_at: :desc)
-  #     @user = current_user
-  #     response_data = {
-  #       user: @user.as_json(only: %i[name email id]),
-  #       flights: @flights.as_json(except: %i[created_at updated_at])
-  #     }
-  #     render json: response_data, status: :ok
-  #   else
-  #     render json: { status: 'ERROR', message: 'Flight not created', data: @flight.errors.full_messages },
-  #            status: :unprocessable_entity
-  #   end
-  # end
 
   def update
     respond_to do |format|
