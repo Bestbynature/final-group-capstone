@@ -804,7 +804,7 @@ em {
   cursor: pointer;
   font-size: 1.5rem;
   position: fixed;
-  top: 20px;
+  top: 0;
   left: 20px;
   z-index: 9999;
 }
@@ -813,9 +813,17 @@ em {
   display: none;
 }
 
-.fas {
-  color: #3b4907;
+.fas, fa-solid {
+  color: #98c008;
+  font-weight: 900;
 }
+.fa-arrow-right-to-bracket{
+  border: none;
+  font-size: 19px;
+  color: #98c008;
+}
+
+
 
 /* Hide the navbar on mobile screens */
 @media (max-width: 468px) {
