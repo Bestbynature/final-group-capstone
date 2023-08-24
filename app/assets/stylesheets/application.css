@@ -610,7 +610,7 @@ button[disabled] {
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 5% 15% 5% 15%;
   color: black;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   background-color: #f2f2f2;
@@ -631,7 +631,6 @@ label {
 .field input {
   width: 100%;
   border-radius: 8px;
-  border: none;
   padding: 3px;
 }
 
@@ -820,8 +819,7 @@ em {
   display: none;
 }
 
-.fas,
-.fa-solid {
+.fas {
   color: #98c008;
   font-weight: 900;
 }
