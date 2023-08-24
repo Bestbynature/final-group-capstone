@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_18_115543) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_23_094650) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,25 +23,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_18_115543) do
     t.integer "available_slots"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.jsonb "packages", default: []
     t.index ["user_id"], name: "index_flights_on_user_id"
-  end
-
-  create_table "packages", force: :cascade do |t|
-    t.string "name"
-    t.decimal "multiplier"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "reserved_flights", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "package_id", null: false
     t.bigint "flight_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["flight_id"], name: "index_reserved_flights_on_flight_id"
-    t.index ["package_id"], name: "index_reserved_flights_on_package_id"
     t.index ["user_id"], name: "index_reserved_flights_on_user_id"
   end
 
@@ -64,6 +54,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_18_115543) do
 
   add_foreign_key "flights", "users"
   add_foreign_key "reserved_flights", "flights"
-  add_foreign_key "reserved_flights", "packages"
   add_foreign_key "reserved_flights", "users"
 end

@@ -53,6 +53,7 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem 'rspec-rails', '~> 6.0', '>= 6.0.3'
 end
 
 group :development do
@@ -76,3 +77,5 @@ gem 'cancancan'
 gem 'devise', '~> 4.9'
 gem 'faker', '~> 2.18', require: false
 gem 'letter_opener', group: :development
+gem 'apipie-rails', '~> 1.2', '>= 1.2.2'
+gem 'rswag', '~> 2.10', '>= 2.10.1'
