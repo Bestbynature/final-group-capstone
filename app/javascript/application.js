@@ -1,4 +1,1 @@
-import './index'
-
-
-
+import './index';

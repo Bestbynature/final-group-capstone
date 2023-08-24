@@ -8,26 +8,20 @@ import Layout from './Layout';
 import Reservations from './Reservations';
 import FlightDetails from './FlightDetails';
 
+const App = () => (
+  <div className="App">
 
-const App = () => {
+    <Navbar />
+    <Routes>
+      <Route path="/" element={<Layout />} />
+      <Route index element={<Flights />} />
+      <Route path="/reserve_flight" element={<ReserveFlight />} />
+      <Route path="/details/:index" element={<FlightDetails />} />
+      <Route path="/reservations" element={<Reservations />} />
+      <Route path="/delete_flight" element={<DeleteFlight />} />
+    </Routes>
 
-  return (
-   <div className='App'>
-
-     <Navbar/>
-     <Routes>
-       <Route path='/' element={<Layout />} />
-       <Route index element={<Flights />}/>
-       <Route path="/reserve_flight" element={<ReserveFlight />} />
-       <Route path="/details/:index" element={<FlightDetails />}/>
-       <Route path="/reservations" element={<Reservations />} />
-       <Route path="/delete_flight" element={<DeleteFlight />} />
-     </Routes>
-
- </div>
-  );
-};
-
-
+  </div>
+);
 
 export default App;

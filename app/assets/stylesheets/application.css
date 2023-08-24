@@ -616,7 +616,6 @@ button[disabled] {
   background-color: #f2f2f2;
 }
 
-
 /* Styling for form fields */
 .field {
   margin-bottom: 15px;
@@ -829,6 +828,7 @@ em {
   /* ####start Navbar ###### */
   .App {
     grid-template-columns: auto;
+    height: auto;
   }
 
   .mobile-menu-icon {
