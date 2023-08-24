@@ -539,6 +539,7 @@ button[disabled] {
 .delete-flight span {
   color: #999;
 }
+
 /* #########END DELETE FLIGHT########  */
 
 /* #########  FLIGHT DETAILS  COMPONENT */
@@ -584,14 +585,6 @@ button[disabled] {
 
 /* ############# END OF FLIGHT DETAILS COMPONENT */
 
-@media (max-width: 768px) {
-  .add-flight-container {
-    max-width: 100%;
-    background-color: #f0f8ff;
-    box-shadow: none;
-    transform: none;
-  }
-}
 /**********Login*Sign**********/
 /* Basic styling for the form container */
 .win {
@@ -643,19 +636,6 @@ label {
   margin-top: 20px;
 }
 
-/* Media query for screens smaller than 768px */
-@media (max-width: 768px) {
-  .actions {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 10px;
-  }
-
-  .actions > * {
-    margin-bottom: 10px;
-  }
-}
-
 /* For desktop view */
 .Aactions {
   display: flex;
@@ -664,19 +644,6 @@ label {
   margin-top: 20px;
   margin: 1rem;
   align-items: center;
-}
-
-/* For mobile view within the range of 375px to 767px */
-@media (max-width: 767px) and (min-width: 375px) {
-  .Aactions {
-    display: block;
-    margin-top: 2px;
-    margin-left: 1rem;
-  }
-
-  .Aactions > * {
-    margin-bottom: 5px;
-  }
 }
 
 /* Styling for submit button */
@@ -698,10 +665,12 @@ input[type="submit"]:hover {
 /* Styling for error messages */
 #error-explanation {
   color: red;
+
   ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+
     li:before {
       content: "• ";
     }
@@ -713,6 +682,7 @@ em {
   font-size: 12px;
   color: #777;
 }
+
 /* Styling for login link */
 .actions a {
   padding: 10px 20px;
@@ -777,14 +747,6 @@ em {
 .email-label {
   font-weight: bold;
   color: #98bf11;
-}
-
-/* For mobile view within the range of 375px to 767px */
-@media (max-width: 767px) and (min-width: 375px) {
-  #centered-field {
-    width: 80%;
-    margin: 0 auto;
-  }
 }
 
 /*30*/
@@ -856,7 +818,8 @@ em {
 }
 
 /* Hide the navbar on mobile screens */
-@media (max-width: 768px) {
+@media (max-width: 468px) {
+  /* ####start Navbar ######*/
   .App {
     grid-template-columns: auto;
   }
@@ -872,6 +835,7 @@ em {
   .mobile-open {
     display: flex;
   }
+
   .nav-links {
     display: none;
   }
@@ -893,6 +857,7 @@ em {
   .modal {
     z-index: 999999;
   }
+
   .form > form {
     grid-template-columns: auto;
   }
@@ -919,5 +884,23 @@ em {
 .sign-out-btn {
   border: none;
   cursor: pointer;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
+
+@media (max-width: 768px) {
+}
+
+/* For mobile view within the range of 375px to 767px */
+/* @media (max-width: 767px) and (min-width: 375px) {
+
+} */
+
+/* For mobile view within the range of 375px to 767px */
+/* @media (max-width: 767px) and (min-width: 375px) {
+
+} */
+
+/* For mobile view within the range of 375px to 767px */
+/* @media (max-width: 767px) and (min-width: 375px) {
+
+}  */
