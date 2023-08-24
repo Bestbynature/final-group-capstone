@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'spec_helper'
 require 'support/request_spec_helper'
 ENV['RAILS_ENV'] ||= 'test'

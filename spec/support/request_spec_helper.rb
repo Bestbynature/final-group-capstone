@@ -1,16 +1,14 @@
-# frozen_string_literal: true
-
 module RequestSpecHelper
   def json
     JSON.parse(response.body)
   end
 
   def default_headers
-    { 'CONTENT_TYPE': 'application/json' }
+    { CONTENT_TYPE: 'application/json' }
   end
 
   def authorized_headers
-    { 'Authorization': 'Bearer test', 'CONTENT_TYPE': 'application/json' }
+    { Authorization: 'Bearer test', CONTENT_TYPE: 'application/json' }
   end
 
   def stub_current_user(user)

@@ -1,5 +1,5 @@
 class ReservedFlightsController < ApplicationController
-  before_action :set_reserved_flight, only: %i[ show edit update destroy ]
+  before_action :set_reserved_flight, only: %i[show edit update destroy]
 
   # GET /reserved_flights or /reserved_flights.json
   def index
@@ -7,8 +7,7 @@ class ReservedFlightsController < ApplicationController
   end
 
   # GET /reserved_flights/1 or /reserved_flights/1.json
-  def show
-  end
+  def show; end
 
   # GET /reserved_flights/new
   def new
@@ -16,8 +15,7 @@ class ReservedFlightsController < ApplicationController
   end
 
   # GET /reserved_flights/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /reserved_flights or /reserved_flights.json
   def create
@@ -25,7 +23,9 @@ class ReservedFlightsController < ApplicationController
 
     respond_to do |format|
       if @reserved_flight.save
-        format.html { redirect_to reserved_flight_url(@reserved_flight), notice: "Reserved flight was successfully created." }
+        format.html do
+          redirect_to reserved_flight_url(@reserved_flight), notice: 'Reserved flight was successfully created.'
+        end
         format.json { render :show, status: :created, location: @reserved_flight }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,9 @@ class ReservedFlightsController < ApplicationController
   def update
     respond_to do |format|
       if @reserved_flight.update(reserved_flight_params)
-        format.html { redirect_to reserved_flight_url(@reserved_flight), notice: "Reserved flight was successfully updated." }
+        format.html do
+          redirect_to reserved_flight_url(@reserved_flight), notice: 'Reserved flight was successfully updated.'
+        end
         format.json { render :show, status: :ok, location: @reserved_flight }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,19 +54,20 @@ class ReservedFlightsController < ApplicationController
     @reserved_flight.destroy
 
     respond_to do |format|
-      format.html { redirect_to reserved_flights_url, notice: "Reserved flight was successfully destroyed." }
+      format.html { redirect_to reserved_flights_url, notice: 'Reserved flight was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_reserved_flight
-      @reserved_flight = ReservedFlight.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def reserved_flight_params
-      params.require(:reserved_flight).permit(:user_id, :package_id, :flight_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_reserved_flight
+    @reserved_flight = ReservedFlight.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def reserved_flight_params
+    params.require(:reserved_flight).permit(:user_id, :package_id, :flight_id)
+  end
 end
