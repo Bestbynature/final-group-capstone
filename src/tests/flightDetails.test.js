@@ -4,6 +4,9 @@ import renderer from 'react-test-renderer';
 import { render } from '@testing-library/react';
 import FlightDetails from '../../app/javascript/components/Flights';
 import store from '../../app/javascript/redux/store';
+import reducer, {
+  fetchFlightDetails,
+} from '../../app/javascript/redux/flights/flightsSlice';
 
 describe('Flights', () => {
   it('renders flights correctly', () => {
@@ -26,5 +29,18 @@ describe('Flights', () => {
         </Provider>
       </BrowserRouter>,
     );
+  });
+});
+
+describe('redux', () => {
+  const state = {
+    flightDetails: {},
+    isLoading: false,
+    error: null,
+  };
+  expect(reducer(state, fetchFlightDetails)).toEqual({
+    flightDetails: {},
+    isLoading: false,
+    error: null,
   });
 });
