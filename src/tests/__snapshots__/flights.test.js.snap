@@ -1,0 +1,327 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Flights renders each category correctly 1`] = `
+<div
+  className="carousel"
+>
+  <div
+    aria-hidden="true"
+    aria-labelledby="addModalLabel"
+    className="modal fade"
+    id="addModal"
+    tabIndex="-1"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <div
+        className="modal-dialog"
+      >
+        <div
+          className="modal-content"
+        >
+          <div
+            className="modal-header"
+          >
+            <h1
+              className="modal-title"
+              id="addModalLabel"
+            >
+              Add a New Flight
+            </h1>
+            <button
+              aria-label="Close"
+              className="btn-close"
+              data-bs-dismiss="modal"
+              type="button"
+            />
+          </div>
+          <div
+            className="modal-body"
+          >
+            <input
+              className="form-control mt-3"
+              onChange={[Function]}
+              placeholder="Flight Name"
+              required={true}
+              type="text"
+              value=""
+            />
+            <input
+              className="form-control mt-3"
+              onChange={[Function]}
+              placeholder="Picture URL for the flight"
+              required={true}
+              type="text"
+              value=""
+            />
+            <input
+              className="form-control mt-3"
+              onChange={[Function]}
+              placeholder="Base Price for the destination"
+              required={true}
+              type="number"
+              value={null}
+            />
+            <input
+              className="form-control mt-3"
+              onChange={[Function]}
+              placeholder="Available Slots for the destination"
+              required={true}
+              type="number"
+              value={null}
+            />
+          </div>
+          <div
+            className="modal-footer"
+          >
+            <button
+              className="btn btn-danger form-control mt-2"
+              data-bs-dismiss="modal"
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              className="btn add-submit form-control mt-3"
+              data-bs-dismiss="modal"
+              type="submit"
+            >
+              Create a Flight
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div>
+     
+  </div>
+  <div
+    className="carousel-header"
+  >
+    <h1>
+      Flight Destinations
+    </h1>
+    <p>
+      Please select a travel destination
+    </p>
+  </div>
+  <div>
+     
+  </div>
+  <div
+    className="left"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    tabIndex={0}
+  >
+    <i
+      className="fa-solid fa-caret-left"
+    />
+  </div>
+  <div
+    className="outer-carousel"
+    onScroll={[Function]}
+    style={Object {}}
+    tabIndex={0}
+  >
+    <div
+      className="inner-carousel"
+      draggable={false}
+      style={
+        Object {
+          "WebkitTouchCallout": "none",
+          "WebkitUserSelect": "none",
+          "touchAction": "pan-y",
+          "userSelect": "none",
+        }
+      }
+    />
+  </div>
+  <div
+    className="right"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    tabIndex={0}
+  >
+    <i
+      className="fa-solid fa-caret-right"
+    />
+  </div>
+  <div>
+     
+  </div>
+  <div>
+     
+  </div>
+  <div>
+     
+  </div>
+</div>
+`;
+
+exports[`Flights renders flights correctly 1`] = `
+<div
+  className="carousel"
+>
+  <div
+    aria-hidden="true"
+    aria-labelledby="addModalLabel"
+    className="modal fade"
+    id="addModal"
+    tabIndex="-1"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <div
+        className="modal-dialog"
+      >
+        <div
+          className="modal-content"
+        >
+          <div
+            className="modal-header"
+          >
+            <h1
+              className="modal-title"
+              id="addModalLabel"
+            >
+              Add a New Flight
+            </h1>
+            <button
+              aria-label="Close"
+              className="btn-close"
+              data-bs-dismiss="modal"
+              type="button"
+            />
+          </div>
+          <div
+            className="modal-body"
+          >
+            <input
+              className="form-control mt-3"
+              onChange={[Function]}
+              placeholder="Flight Name"
+              required={true}
+              type="text"
+              value=""
+            />
+            <input
+              className="form-control mt-3"
+              onChange={[Function]}
+              placeholder="Picture URL for the flight"
+              required={true}
+              type="text"
+              value=""
+            />
+            <input
+              className="form-control mt-3"
+              onChange={[Function]}
+              placeholder="Base Price for the destination"
+              required={true}
+              type="number"
+              value={null}
+            />
+            <input
+              className="form-control mt-3"
+              onChange={[Function]}
+              placeholder="Available Slots for the destination"
+              required={true}
+              type="number"
+              value={null}
+            />
+          </div>
+          <div
+            className="modal-footer"
+          >
+            <button
+              className="btn btn-danger form-control mt-2"
+              data-bs-dismiss="modal"
+              type="button"
+            >
+              Cancel
+            </button>
+            <button
+              className="btn add-submit form-control mt-3"
+              data-bs-dismiss="modal"
+              type="submit"
+            >
+              Create a Flight
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div>
+     
+  </div>
+  <div
+    className="carousel-header"
+  >
+    <h1>
+      Flight Destinations
+    </h1>
+    <p>
+      Please select a travel destination
+    </p>
+  </div>
+  <div>
+     
+  </div>
+  <div
+    className="left"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    tabIndex={0}
+  >
+    <i
+      className="fa-solid fa-caret-left"
+    />
+  </div>
+  <div
+    className="outer-carousel"
+    onScroll={[Function]}
+    style={Object {}}
+    tabIndex={0}
+  >
+    <div
+      className="inner-carousel"
+      draggable={false}
+      style={
+        Object {
+          "WebkitTouchCallout": "none",
+          "WebkitUserSelect": "none",
+          "touchAction": "pan-y",
+          "userSelect": "none",
+        }
+      }
+    />
+  </div>
+  <div
+    className="right"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="button"
+    tabIndex={0}
+  >
+    <i
+      className="fa-solid fa-caret-right"
+    />
+  </div>
+  <div>
+     
+  </div>
+  <div>
+     
+  </div>
+  <div>
+     
+  </div>
+</div>
+`;
