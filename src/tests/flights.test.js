@@ -18,4 +18,13 @@ describe('Flights', () => {
       .toJSON();
     expect(details).toMatchSnapshot();
   });
+  it('renders flights correctly', () => {
+    render(
+      <BrowserRouter>
+        <Provider store={store}>
+          <Flights />
+        </Provider>
+      </BrowserRouter>,
+    );
+  });
 });
