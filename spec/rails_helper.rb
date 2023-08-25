@@ -4,7 +4,7 @@ ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
-require 'support/apipie_helper'
+require 'database_cleaner'
 
 begin
   ActiveRecord::Migration.maintain_test_schema!
@@ -15,4 +15,17 @@ end
 
 RSpec.configure do |config|
   config.include RequestSpecHelper, type: :request
+
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.start
+  end
+
+  config.after(:each) do
+    DatabaseCleaner.clean
+  end
 end

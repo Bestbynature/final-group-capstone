@@ -17,8 +17,6 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :flights, only: [:index, :show, :create, :destroy]
       resources :users
-      resources :packages
-      resources :reserved_flights
     end
   end
   

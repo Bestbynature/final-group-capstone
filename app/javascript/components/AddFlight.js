@@ -1,16 +1,21 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import {
   postFlight, setPicture, setAvailableSlots, setBasePrice, setName,
 } from '../redux/flights/flightsSlice';
+import ServerSideError from './ServerSideError';
 
 const AddFlight = () => {
   const dispatch = useDispatch();
   const history = useNavigate();
 
+  // const [isServerSideError, setIsServerSideError] = useState(false);
+  // const [serverSideError, setServerSideError] = useState([]);
+
   const {
-    name, picture, basePrice, availableSlots, userId,
+    name, picture, basePrice, availableSlots, 
+    userId, isServerError, serverError,
   } = useSelector((store) => store.flights);
 
   const handleSubmit = (e) => {
@@ -39,6 +44,7 @@ const AddFlight = () => {
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
             </div>
             <div className="modal-body">
+              {isServerError && <ServerSideError serverError={serverError} />}
               <input
                 className="form-control mt-3"
                 type="text"
