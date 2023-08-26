@@ -72,6 +72,8 @@ class Api::V1::FlightsController < ApplicationController
     else
       render json: { status: 'failure', data: @flight.errors.full_messages }, status: :unprocessable_entity
     end
+  rescue StandardError => e
+    render json: { status: 'ERROR', message: e.message }, status: :internal_server_error
   end
 
   def destroy
