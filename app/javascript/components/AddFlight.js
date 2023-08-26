@@ -4,18 +4,18 @@ import { useNavigate } from 'react-router-dom';
 import {
   postFlight, setPicture, setAvailableSlots, setBasePrice, setName,
 } from '../redux/flights/flightsSlice';
-import ServerSideError from './ServerSideError';
+// import ServerSideError from './ServerSideError';
 
 const AddFlight = () => {
   const dispatch = useDispatch();
-  const history = useNavigate();
+  // const history = useNavigate();
 
   // const [isServerSideError, setIsServerSideError] = useState(false);
   // const [serverSideError, setServerSideError] = useState([]);
 
   const {
     name, picture, basePrice, availableSlots, 
-    userId, isServerError, serverError,
+    userId
   } = useSelector((store) => store.flights);
 
   const handleSubmit = (e) => {
@@ -30,7 +30,7 @@ const AddFlight = () => {
     formData.append('flight[user_id]', userId);
 
     dispatch(postFlight(formData));
-    history('/');
+    // history('/');
   };
 
   return (
@@ -44,7 +44,6 @@ const AddFlight = () => {
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
             </div>
             <div className="modal-body">
-              {isServerError && <ServerSideError serverError={serverError} />}
               <input
                 className="form-control mt-3"
                 type="text"
