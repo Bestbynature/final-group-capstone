@@ -7,6 +7,7 @@ import ReserveFlight from './ReserveFlight';
 import Layout from './Layout';
 import Reservations from './Reservations';
 import FlightDetails from './FlightDetails';
+import AddFlight from './AddFlight';
 
 const App = () => (
   <div className="App">
@@ -19,6 +20,7 @@ const App = () => (
       <Route path="/details/:index" element={<FlightDetails />} />
       <Route path="/reservations" element={<Reservations />} />
       <Route path="/delete_flight" element={<DeleteFlight />} />
+      <Route path="/add_flight" exact element={<AddFlight />} />
     </Routes>
 
   </div>
