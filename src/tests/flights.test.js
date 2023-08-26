@@ -1,7 +1,7 @@
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import renderer from 'react-test-renderer';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import Flights from '../../app/javascript/components/Flights';
 import store from '../../app/javascript/redux/store';
 import reducer, {
