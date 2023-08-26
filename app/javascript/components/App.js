@@ -10,7 +10,6 @@ import FlightDetails from './FlightDetails';
 
 const App = () => (
   <div className="App">
-
     <Navbar />
     <Routes>
       <Route path="/" element={<Layout />} />
@@ -20,7 +19,6 @@ const App = () => (
       <Route path="/reservations" element={<Reservations />} />
       <Route path="/delete_flight" element={<DeleteFlight />} />
     </Routes>
-
   </div>
 );
 
