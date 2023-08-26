@@ -1,7 +1,6 @@
 {
   "name": "app",
   "private": "true",
-  "type": "module",
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "^7.3.0",

@@ -1,8 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Flight, type: :model do
-let(:user) { User.create(name: 'John Doe', email: 'john@example.com', password: 'password123') }
-
+  let(:user) { User.create(name: 'John Doe', email: 'john@example.com', password: 'password123') }
 
   it 'is valid with valid attributes' do
     flight = Flight.new(
@@ -10,7 +9,7 @@ let(:user) { User.create(name: 'John Doe', email: 'john@example.com', password: 
       picture: 'flight1.jpg',
       base_price: 100.0,
       available_slots: 150,
-      user: user,
+      user:,
       reserved: false
     )
     expect(flight).to be_valid
@@ -21,7 +20,7 @@ let(:user) { User.create(name: 'John Doe', email: 'john@example.com', password: 
       picture: 'flight1.jpg',
       base_price: 100.0,
       available_slots: 150,
-      user: user,
+      user:,
       reserved: false
     )
     expect(flight).to_not be_valid
@@ -32,7 +31,7 @@ let(:user) { User.create(name: 'John Doe', email: 'john@example.com', password: 
       name: 'Flight 1',
       base_price: 100.0,
       available_slots: 150,
-      user: user,
+      user:,
       reserved: false
     )
     expect(flight).to_not be_valid
@@ -43,7 +42,7 @@ let(:user) { User.create(name: 'John Doe', email: 'john@example.com', password: 
       name: 'Flight 1',
       picture: 'flight1.jpg',
       available_slots: 150,
-      user: user,
+      user:,
       reserved: false
     )
     expect(flight).to_not be_valid
@@ -54,7 +53,7 @@ let(:user) { User.create(name: 'John Doe', email: 'john@example.com', password: 
       name: 'Flight 1',
       picture: 'flight1.jpg',
       base_price: 100.0,
-      user: user,
+      user:,
       reserved: false
     )
     expect(flight).to_not be_valid
@@ -77,7 +76,7 @@ let(:user) { User.create(name: 'John Doe', email: 'john@example.com', password: 
       picture: 'flight1.jpg',
       base_price: 100.0,
       available_slots: 155,
-      user: user,
+      user:,
       reserved: 'invalid'
     )
     expect(flight).to be_valid
@@ -89,7 +88,7 @@ let(:user) { User.create(name: 'John Doe', email: 'john@example.com', password: 
       picture: 'flight1.jpg',
       base_price: 100.0,
       available_slots: 150,
-      user: user,
+      user:,
       reserved: false
     )
     flight = Flight.new(
@@ -97,7 +96,7 @@ let(:user) { User.create(name: 'John Doe', email: 'john@example.com', password: 
       picture: 'flight2.jpg',
       base_price: 120.0,
       available_slots: 120,
-      user: user,
+      user:,
       reserved: true
     )
     expect(flight).to_not be_valid
@@ -109,7 +108,7 @@ let(:user) { User.create(name: 'John Doe', email: 'john@example.com', password: 
       picture: 'flight1.jpg',
       base_price: 100.0,
       available_slots: 150,
-      user: user,
+      user:,
       reserved: false
     )
     expect(flight.user).to eq(user)

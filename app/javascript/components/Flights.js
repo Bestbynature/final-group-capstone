@@ -8,7 +8,9 @@ import AddFlight from './AddFlight';
 const Flights = () => {
   const carouselRef = useRef();
   const dispatch = useDispatch();
-  const { cwidth, active, flights, error } = useSelector((store) => store.flights);
+  const {
+    cwidth, active, flights,
+  } = useSelector((store) => store.flights);
 
   useEffect(() => {
     dispatch(fetchFlights());

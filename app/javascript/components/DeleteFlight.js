@@ -20,7 +20,7 @@ const DeleteFlight = () => {
   };
 
   useEffect(() => {
-    if (flights.length === 0){
+    if (flights.length === 0) {
       dispatch(fetchFlights());
     }
   }, [dispatch, flights.length]);
@@ -41,17 +41,17 @@ const DeleteFlight = () => {
       )}
       {flights.length > 0 ? (
         <ul>
-        <h2>Delete Flight</h2>
-        {flights.map((flight) => (
-          <li key={flight.id} data-testid="flight-item">
-            {flight.name}
-            <button className="btn-delete" type="button" onClick={() => handleDelete(flight.id)} data-testid="delete-button">Delete</button>
-          </li>
-        ))}
-      </ul>
-    ) : (
-      <p>No flights available</p>
-    )}
+          <h2>Delete Flight</h2>
+          {flights.map((flight) => (
+            <li key={flight.id} data-testid="flight-item">
+              {flight.name}
+              <button className="btn-delete" type="button" onClick={() => handleDelete(flight.id)} data-testid="delete-button">Delete</button>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>No flights available</p>
+      )}
     </div>
   );
 };

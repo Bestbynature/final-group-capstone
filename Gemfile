@@ -80,4 +80,4 @@ gem 'faker', '~> 2.18', require: false
 gem 'letter_opener', group: :development
 gem 'rswag', '~> 2.10', '>= 2.10.1'
 
-gem "database_cleaner", "~> 2.0"
+gem 'database_cleaner', '~> 2.0'

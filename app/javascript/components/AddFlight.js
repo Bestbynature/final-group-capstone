@@ -1,21 +1,17 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import {
   postFlight, setPicture, setAvailableSlots, setBasePrice, setName,
 } from '../redux/flights/flightsSlice';
-// import ServerSideError from './ServerSideError';
 
 const AddFlight = () => {
   const dispatch = useDispatch();
-  // const history = useNavigate();
-
-  // const [isServerSideError, setIsServerSideError] = useState(false);
-  // const [serverSideError, setServerSideError] = useState([]);
+  const history = useNavigate();
 
   const {
-    name, picture, basePrice, availableSlots, 
-    userId
+    name, picture, basePrice, availableSlots,
+    userId,
   } = useSelector((store) => store.flights);
 
   const handleSubmit = (e) => {
@@ -30,7 +26,7 @@ const AddFlight = () => {
     formData.append('flight[user_id]', userId);
 
     dispatch(postFlight(formData));
-    // history('/');
+    history('/');
   };
 
   return (
