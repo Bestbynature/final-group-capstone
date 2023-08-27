@@ -52,7 +52,7 @@ ul {
 .App {
   display: grid;
   grid-template-columns: 200px auto;
-  height: 95vh;
+  height: 91vh;
   overflow: hidden;
 
   /* border: 5px solid red; */
@@ -398,13 +398,12 @@ button[disabled] {
 .minus {
   display: flex;
   flex-direction: column;
-  color: #fff;
 }
 
 .minus > hr {
   width: 2rem;
-  border: 4px solid #fff;
-  margin-bottom: 5px;
+  border: 3px solid #fff;
+  margin-bottom: 0;
   border-radius: 0.2rem;
 }
 
@@ -457,6 +456,8 @@ button[disabled] {
 
 .form > form > button {
   cursor: pointer;
+  background-color: #fff;
+  color: #98bf11;
 }
 
 /* STYLES FOR MY RESERVATIONS */
@@ -522,10 +523,6 @@ button[disabled] {
 .width-full {
   width: 100%;
   border: 2px solid #98bf11;
-}
-
-.reserve-submit {
-  background-color: #98bf11;
 }
 
 /* ########satr DELETE FLIGHT COMPONENT */

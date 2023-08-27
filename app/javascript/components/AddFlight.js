@@ -10,7 +10,8 @@ const AddFlight = () => {
   const history = useNavigate();
 
   const {
-    name, picture, basePrice, availableSlots, userId,
+    name, picture, basePrice, availableSlots,
+    userId,
   } = useSelector((store) => store.flights);
 
   const handleSubmit = (e) => {

@@ -21,12 +21,12 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Airlin Frontend App<a name="about-project"></a>
+# 📖 Airline Frontend App<a name="about-project"></a>
 
-Welcome to the frontend of the Airline Reservation Project, a cutting-edge application built using React and Redux technologies. Here, you can easily browse and reserve flights of your choice by selecting your preferred flight date date and city city of origin and destination.
-Our user-friendly interface allows you to explore a diverse range of flights with detailed information. You can make informed decisions based on real-time availability, ensuring a seamless reservation process.
+Welcome to the Airline Reservation Project, a cutting-edge application built using React and Redux technologies. Here, you can easily browse and reserve flights of your choice by selecting your preferred flight date date and city city of origin and destination.
+Our user-friendly interface allows you to explore a diverse range of flights with detailed information. You can make informed decisions based on real-time availability, ensuring a seamless reservation process. The application is powered by Rails server on the backend.
 
-# [🤝Airlin Reservation Management System](https://github.com/Bestbynature/final-group-capstone.git) <a name="about-project-associated"></a>
+# [🤝Airline Reservation Management System](https://github.com/Bestbynature/final-group-capstone.git) <a name="about-project-associated"></a>
 
 [Air Reservation Management System Backend](https://github.com/Bestbynature/final-group-capstone.git) is just the end point of all the functionality on the Frontend app it is build on Ruby on rails using postgresql as a Database. Proper authorizations of users and authentication of user for creation reservations, flights and cancel them according to role 
 
@@ -82,11 +82,11 @@ In this project we utilize our skills and knowledge to create this project
 
 ## 💻 API Documentation <a name="api-doc"></a>
 
-To get to the API Documentation, go to the link above after starting rails server
+To get to the API Documentation, go to the link below after starting rails server
 
-```
-localhost:3000/api-docs
-```
+
+[API DOCUMENTATION](http://localhost:3000/api-docs/index.html)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -106,8 +106,7 @@ In order to run this project with the [Project Repo](https://github.com/Bestbyna
 - Ruby on Rails installed in your machine
 - Postgres installed and all password and user being setup
 - Any integrated terminal like 
-  - CMD `preferred`
-  - Bash`preferred`
+  - VS Code `preferred`
   - PowerShell
   - etc
 
@@ -119,28 +118,39 @@ for cloning follow this steps
 - or just download `ZIP` file
 - Create `.env` file in root directory and add this line there `port=8000` 
 
-*Note* for [Project repo](https://github.com/Bestbynature/final-group-capstone.git) follow there prerequisites
 ### Install
 
 Install this project with:
 
-for now you don't need any installation to run project if you already followed [Prerequisites](#prerequisites)
-
-just few dependency packages 
-
+```
 npm install
+```
+```
+bundle install
+```
 
 
 ### Usage
 
 To run the project, execute the following command:
 
-
+```
+On Windows Machine
 # To start the development server
 rails s
 
 # To build for production and watch for changes
 yarn build --watch
+```
+
+
+on Ubuntu, run
+
+```
+./bin/dev
+
+```
+to start the foreman 
 
 
 
@@ -156,12 +166,15 @@ yarn build --watch
 - Twitter: [@twitterhandle](https://twitter.com/Dammybest)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/damilareismailabestbynature/)
 
-## 👥 Authors <a name="authors"></a>
+## 👥 Author <a name="authors"></a>
 
 👤 **Naji Ali**
 
 - GitHub: [Naji Ali](https://github.com/naji-97)
 - LinkedIn: [Naji Ali](https://linkedin.com/in/abdennaji)
+
+
+## 👥 Author <a name="authors"></a>
 
 👤 **MarwanDev**
 
@@ -169,7 +182,8 @@ yarn build --watch
 - Twitter: [@marwanEg](https://twitter.com/marwaneg)
 - LinkedIn: [marwan-abdelsattar](https://www.linkedin.com/in/marwan-abdelsattar/)
 
-## 👥 Authors <a name="authors"></a>
+
+## 👥 Author <a name="authors"></a>
 
 
 👤 **Ndonyi Maurice Djam**
@@ -183,8 +197,8 @@ yarn build --watch
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] *Styling of various webpage*
-- [ ] *Better login and authorization*
+- [x] *Addition of different packages to the flights*
+- [x] *Feature to change a booking after it has been made*
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DeleteFlights renders flights correctly 1`] = `
+<div
+  className="delete-flight"
+>
+  <div
+    data-testid="add-flight-mock"
+  >
+    AddFlight Mock
+  </div>
+  <p>
+    No flights available
+  </p>
+</div>
+`;

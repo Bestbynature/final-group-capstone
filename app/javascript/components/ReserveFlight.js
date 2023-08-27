@@ -71,10 +71,11 @@ const ReserveFlight = () => {
             <form onSubmit={handleReserve}>
               <input type="text" value={user} readOnly />
 
-              <input type="date" onChange={(e) => dispatch(setDate(e.target.value))} />
+              <input type="date" onChange={(e) => dispatch(setDate(e.target.value))} required />
 
               <select
                 onChange={(e) => dispatch(setCity(e.target.value))}
+                required
               >
                 <option>Select a city</option>
                 {cities.map((city) => (
@@ -91,6 +92,7 @@ const ReserveFlight = () => {
               ) : (
                 <select
                   onChange={(e) => dispatch(setFlight(e.target.value))}
+                  required
                 >
                   <option>Destination</option>
                   {flights.map((flight) => (
@@ -98,7 +100,7 @@ const ReserveFlight = () => {
                   ))}
                 </select>
               )}
-              <button type="submit">Book Now</button>
+              <button type="submit" className="reserve_submit">Book Now</button>
             </form>
           </div>
         </div>
