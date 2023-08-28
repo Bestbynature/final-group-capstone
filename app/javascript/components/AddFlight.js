@@ -47,6 +47,8 @@ const AddFlight = () => {
                 placeholder="Flight Name"
                 onChange={(e) => dispatch(setName(e.target.value))}
                 required
+                data-testid="flight-name-input"
+
               />
 
               <input
@@ -56,6 +58,7 @@ const AddFlight = () => {
                 placeholder="Picture URL for the flight"
                 onChange={(e) => dispatch(setPicture(e.target.value))}
                 required
+                data-testid="flight-picture-input"
               />
 
               <input
@@ -65,6 +68,7 @@ const AddFlight = () => {
                 placeholder="Base Price for the destination"
                 onChange={(e) => dispatch(setBasePrice(e.target.value))}
                 required
+                data-testid="flight-base-price-input"
               />
 
               <input
@@ -74,11 +78,12 @@ const AddFlight = () => {
                 placeholder="Available Slots for the destination"
                 onChange={(e) => dispatch(setAvailableSlots(e.target.value))}
                 required
+                data-testid="flight-available-slots-input"
               />
             </div>
             <div className="modal-footer">
               <button type="button" className="btn btn-danger form-control mt-2" data-bs-dismiss="modal">Cancel</button>
-              <button type="submit" className="btn add-submit form-control mt-3" data-bs-dismiss="modal">Create a Flight</button>
+              <button type="submit" className="btn add-submit form-control mt-3" data-bs-dismiss="modal" data-testid="add-flight-form">Create a Flight</button>
             </div>
           </div>
         </div>

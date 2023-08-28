@@ -40,6 +40,7 @@ exports[`Reservations Component renders the component with reserved flights 1`] 
             >
               <input
                 class="form-control mt-3"
+                data-testid="flight-name-input"
                 placeholder="Flight Name"
                 required=""
                 type="text"
@@ -47,6 +48,7 @@ exports[`Reservations Component renders the component with reserved flights 1`] 
               />
               <input
                 class="form-control mt-3"
+                data-testid="flight-picture-input"
                 placeholder="Picture URL for the flight"
                 required=""
                 type="text"
@@ -54,6 +56,7 @@ exports[`Reservations Component renders the component with reserved flights 1`] 
               />
               <input
                 class="form-control mt-3"
+                data-testid="flight-base-price-input"
                 placeholder="Base Price for the destination"
                 required=""
                 type="number"
@@ -61,6 +64,7 @@ exports[`Reservations Component renders the component with reserved flights 1`] 
               />
               <input
                 class="form-control mt-3"
+                data-testid="flight-available-slots-input"
                 placeholder="Available Slots for the destination"
                 required=""
                 type="number"
@@ -80,6 +84,7 @@ exports[`Reservations Component renders the component with reserved flights 1`] 
               <button
                 class="btn add-submit form-control mt-3"
                 data-bs-dismiss="modal"
+                data-testid="add-flight-form"
                 type="submit"
               >
                 Create a Flight

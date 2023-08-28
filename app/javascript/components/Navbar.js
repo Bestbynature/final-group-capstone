@@ -22,11 +22,12 @@ const Navbar = () => {
         onKeyDown={handleMobileMenuKeyPress}
         tabIndex="0"
         role="button"
+        data-testid="mobile-menu-icon"
       >
         <i className="fas fa-bars" />
       </div>
 
-      <div className={`navbar ${mobileMenuOpen ? 'mobile-open' : ''}`}>
+      <div className={`navbar ${mobileMenuOpen ? 'mobile-open' : ''}`} data-testid="navbar">
         <div className="brand">
           <Link to="/" onClick={toggleMobileMenu} type="button">
             <h2>10-Gano</h2>
@@ -36,22 +37,22 @@ const Navbar = () => {
         <nav className={`nav-links ${mobileMenuOpen ? 'mobile-open' : ''}`}>
           <ul>
             <li>
-              <NavLink exact to="/" onClick={toggleMobileMenu} type="button" activeClassName="active">
+              <NavLink to="/" onClick={toggleMobileMenu} type="button" activeclassname="active" data-testid="flights-link">
                 Flights
               </NavLink>
             </li>
             <li>
-              <NavLink to="/delete_flight" onClick={toggleMobileMenu} type="button" activeClassName="active">
+              <NavLink to="/delete_flight" onClick={toggleMobileMenu} type="button" activeclassname="active" data-testid="delete-flights-link">
                 Delete Flights
               </NavLink>
             </li>
             <li>
-              <NavLink to="/reserve_flight" onClick={toggleMobileMenu} type="button" activeClassName="active">
+              <NavLink to="/reserve_flight" onClick={toggleMobileMenu} type="button" activeclassname="active" data-testid="reserve-flight-link">
                 Reserve
               </NavLink>
             </li>
             <li>
-              <NavLink to="/reservations" onClick={toggleMobileMenu} type="button" activeClassName="active">
+              <NavLink to="/reservations" onClick={toggleMobileMenu} type="button" activeclassname="active" data-testid="reservations-link">
                 Reservations
               </NavLink>
             </li>
@@ -60,9 +61,10 @@ const Navbar = () => {
                 onClick={toggleMobileMenu}
                 type="button"
                 to="/add"
-                activeClassName="active"
+                activeclassname="active"
                 data-bs-toggle="modal"
                 data-bs-target="#addModal"
+                data-testid="add-flight-link"
               >
                 Add Flight
               </NavLink>

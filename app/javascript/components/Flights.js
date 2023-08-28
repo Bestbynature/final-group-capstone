@@ -38,7 +38,7 @@ const Flights = () => {
 
   return (
     <div className="carousel">
-      <AddFlight />
+      <AddFlight data-testid="add-flight-component" />
       <div>&nbsp;</div>
       <div className="carousel-header">
         <h1>Flight Destinations</h1>

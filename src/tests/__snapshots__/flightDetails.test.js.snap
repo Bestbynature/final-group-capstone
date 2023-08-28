@@ -41,6 +41,7 @@ exports[`Flights renders flights correctly 1`] = `
           >
             <input
               className="form-control mt-3"
+              data-testid="flight-name-input"
               onChange={[Function]}
               placeholder="Flight Name"
               required={true}
@@ -49,6 +50,7 @@ exports[`Flights renders flights correctly 1`] = `
             />
             <input
               className="form-control mt-3"
+              data-testid="flight-picture-input"
               onChange={[Function]}
               placeholder="Picture URL for the flight"
               required={true}
@@ -57,6 +59,7 @@ exports[`Flights renders flights correctly 1`] = `
             />
             <input
               className="form-control mt-3"
+              data-testid="flight-base-price-input"
               onChange={[Function]}
               placeholder="Base Price for the destination"
               required={true}
@@ -65,6 +68,7 @@ exports[`Flights renders flights correctly 1`] = `
             />
             <input
               className="form-control mt-3"
+              data-testid="flight-available-slots-input"
               onChange={[Function]}
               placeholder="Available Slots for the destination"
               required={true}
@@ -85,6 +89,7 @@ exports[`Flights renders flights correctly 1`] = `
             <button
               className="btn add-submit form-control mt-3"
               data-bs-dismiss="modal"
+              data-testid="add-flight-form"
               type="submit"
             >
               Create a Flight
