@@ -23,6 +23,8 @@ class Api::V1::FlightsController < ApplicationController
     }
 
     render json: response_data, status: :ok
+  rescue StandardError => e
+    render json: { status: 'ERROR', message: e.message }, status: :internal_server_error
   end
 
   def show
@@ -41,6 +43,8 @@ class Api::V1::FlightsController < ApplicationController
     render json: response_data, status: :ok
   rescue ActiveRecord::RecordNotFound
     render json: { status: 'ERROR', message: 'Flight cannot be found' }, status: :not_found
+  rescue StandardError => e
+    render json: { status: 'ERROR', message: e.message }, status: :internal_server_error
   end
 
   def create
@@ -66,35 +70,24 @@ class Api::V1::FlightsController < ApplicationController
 
       render json: response_data, status: :ok
     else
-      render json: { status: 'ERROR', message: 'Flight not created', data: @flight.errors.full_messages },
-             status: :unprocessable_entity
+      render json: { status: 'failure', data: @flight.errors.full_messages }, status: :unprocessable_entity
     end
-  end
-
-  def update
-    respond_to do |format|
-      if @flight.update(flight_params)
-        format.html { redirect_to flight_url(@flight), notice: 'Flight was successfully updated.' }
-        format.json { render :show, status: :ok, location: @flight }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @flight.errors, status: :unprocessable_entity }
-      end
-    end
+  rescue StandardError => e
+    render json: { status: 'ERROR', message: e.message }, status: :internal_server_error
   end
 
   def destroy
     @flight = Flight.find(params[:id])
 
-    respond_to do |format|
-      if @flight.destroy
-        format.html { redirect_to '/delete_flight', notice: 'Flight was successfully destroyed.' }
-        format.json { head :no_content }
-      else
-        format.html { redirect_to delete_flight, alert: 'Failed to destroy flight.' }
-        format.json { render json: @flight.errors, status: :unprocessable_entity }
-      end
+    if @flight.destroy
+      head :no_content
+    else
+      render json: { status: 'ERROR', message: 'Failed to destroy flight.' }, status: :unprocessable_entity
     end
+  rescue ActiveRecord::RecordNotFound
+    render json: { status: 'ERROR', message: 'Flight cannot be found.' }, status: :not_found
+  rescue StandardError => e
+    render json: { status: 'ERROR', message: e.message }, status: :internal_server_error
   end
 
   private

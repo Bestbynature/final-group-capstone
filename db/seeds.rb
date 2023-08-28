@@ -19,6 +19,3 @@ Flight.create([
   ])
 
   puts "Database is successfully seeded"
-  
-  # {name: 'Morocco', picture: 'https://theroad-islife.com/wp-content/uploads/2020/07/Things-to-do-in-Chefchaouen-18.jpg', base_price: 1200, available_slots: 10, reserved: false, user: user},
-  # {name: 'Morocco', picture: 'https://media.tacdn.com/media/attractions-splice-spp-674x446/06/6a/f1/fc.jpg', base_price: 1200, available_slots: 10, reserved: false, user: user},
