@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reservations Component renders the component with reserved flights 1`] = `
+<div>
+  <div
+    class="reservations"
+  >
+    <div
+      aria-hidden="true"
+      aria-labelledby="addModalLabel"
+      class="modal fade"
+      id="addModal"
+      tabindex="-1"
+    >
+      <form>
+        <div
+          class="modal-dialog"
+        >
+          <div
+            class="modal-content"
+          >
+            <div
+              class="modal-header"
+            >
+              <h1
+                class="modal-title"
+                id="addModalLabel"
+              >
+                Add a New Flight
+              </h1>
+              <button
+                aria-label="Close"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                type="button"
+              />
+            </div>
+            <div
+              class="modal-body"
+            >
+              <input
+                class="form-control mt-3"
+                data-testid="flight-name-input"
+                placeholder="Flight Name"
+                required=""
+                type="text"
+                value=""
+              />
+              <input
+                class="form-control mt-3"
+                data-testid="flight-picture-input"
+                placeholder="Picture URL for the flight"
+                required=""
+                type="text"
+                value=""
+              />
+              <input
+                class="form-control mt-3"
+                data-testid="flight-base-price-input"
+                placeholder="Base Price for the destination"
+                required=""
+                type="number"
+                value=""
+              />
+              <input
+                class="form-control mt-3"
+                data-testid="flight-available-slots-input"
+                placeholder="Available Slots for the destination"
+                required=""
+                type="number"
+                value=""
+              />
+            </div>
+            <div
+              class="modal-footer"
+            >
+              <button
+                class="btn btn-danger form-control mt-2"
+                data-bs-dismiss="modal"
+                type="button"
+              >
+                Cancel
+              </button>
+              <button
+                class="btn add-submit form-control mt-3"
+                data-bs-dismiss="modal"
+                data-testid="add-flight-form"
+                type="submit"
+              >
+                Create a Flight
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <h2>
+      Reserved Destinations
+    </h2>
+    <hr />
+    <div
+      class="reserved-flights"
+    />
+  </div>
+</div>
+`;

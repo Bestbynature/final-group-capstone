@@ -370,6 +370,11 @@ button[disabled] {
   background-repeat: no-repeat;
 }
 
+.reserve-submit {
+  background-color: #98bf11;
+  color: #fff;
+}
+
 .overlay {
   background-color: rgba(152, 191, 17, 0.8);
   padding: 2rem;
