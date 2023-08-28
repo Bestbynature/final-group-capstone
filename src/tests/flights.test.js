@@ -40,7 +40,7 @@ describe('redux', () => {
       },
     ],
     isLoading: false,
-    error: null,
+    error: '',
   };
   expect(reducer(state, fetchFlights)).toEqual({
     flights: [
@@ -49,6 +49,6 @@ describe('redux', () => {
       },
     ],
     isLoading: false,
-    error: null,
+    error: ''
   });
 });
