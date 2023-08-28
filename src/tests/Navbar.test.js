@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom'
+import '@testing-library/jest-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Navbar from '../../app/javascript/components/Navbar';
 
@@ -10,7 +10,6 @@ test('renders navbar links correctly', () => {
       <Navbar />
     </Router>,
   );
-
 });
 
 test('should toggle mobile menu on icon click', () => {

@@ -11,7 +11,6 @@ import AddFlight from './AddFlight';
 
 const App = () => (
   <div className="App">
-
     <Navbar />
     <Routes>
       <Route path="/" element={<Layout />} />
@@ -22,7 +21,6 @@ const App = () => (
       <Route path="/delete_flight" element={<DeleteFlight />} />
       <Route path="/add_flight" exact element={<AddFlight />} />
     </Routes>
-
   </div>
 );
 
