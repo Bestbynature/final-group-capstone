@@ -4,14 +4,6 @@ import '@testing-library/jest-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Navbar from '../../app/javascript/components/Navbar';
 
-test('renders navbar links correctly', () => {
-  const { getByTestId } = render(
-    <Router>
-      <Navbar />
-    </Router>,
-  );
-});
-
 test('should toggle mobile menu on icon click', () => {
   const { getByTestId } = render(
     <Router>

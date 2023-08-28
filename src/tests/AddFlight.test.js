@@ -1,7 +1,7 @@
-import { render, fireEvent, waitFor } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import renderer from 'react-test-renderer'; // You can keep using this if you want
+import renderer from 'react-test-renderer';
 import AddFlight from '../../app/javascript/components/AddFlight';
 import store from '../../app/javascript/redux/store';
 
@@ -20,7 +20,7 @@ describe('AddFlight', () => {
   });
 
   it('submits new flight form and dispatches action correctly', async () => {
-    const { getByTestId, getByLabelText } = render(
+    const { getByTestId } = render(
       <BrowserRouter>
         <Provider store={store}>
           <AddFlight />

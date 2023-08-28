@@ -9,9 +9,4 @@ const config = {
   },
 };
 
-// In jest.config.js add (if you haven't already)
-['<rootDir>/jest-setup.js'];
-
-['node_modules/axios'];
-
 module.exports = config;
