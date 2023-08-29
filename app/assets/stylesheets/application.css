@@ -558,21 +558,28 @@ button[disabled] {
 /* #########  FLIGHT DETAILS  COMPONENT */
 
 .details {
-  display: grid;
+  /* display: grid;
   grid-template-columns: 5% 65% 30%;
-  grid-template-rows: 10% 80% 10%;
+  grid-template-rows: 10% 80% 10%; */
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-wrap: wrap;
   padding: 3rem 1rem 1rem 0.5rem;
 }
 
 .big-image {
-  width: 100%;
+  width: 50%;
   max-height: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   padding-right: 0.4rem;
+  margin-right: 20vw;
+}
+
+.more-details {
+  min-width: 20vw;
 }
 
 .image2 {

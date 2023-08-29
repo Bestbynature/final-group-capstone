@@ -7,6 +7,7 @@
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
   - [💻 API Documentation ](#-api-documentation-)
+  - [💻 Kanban Board ](#-kanban-board-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -96,6 +97,16 @@ localhost:3000/api-docs
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+
+## 💻 Kanban Board <a name="kanban-board"></a>
+
+- Click <a href="https://github.com/users/Bestbynature/projects/5">here</a> for the kanban board. Total Number of People in the team: 4 people: @MarwanDev @naji-97 @citec-47 @Bestbynature 
+
+- Github Repo <a href="https://github.com/Bestbynature/final-group-capstone">link</a>
+
+![Alt text](image.png)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
