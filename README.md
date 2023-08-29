@@ -85,7 +85,6 @@ In this project we utilize our skills and knowledge to create this project
 - Responsive
 - Book Flight
 - Reserve Flight
-- Cancel Reservation
 
 ## 💻 API Documentation <a name="api-doc"></a>
 
