@@ -104,7 +104,7 @@ localhost:3000/api-docs
 
 - Github Repo <a href="https://github.com/Bestbynature/final-group-capstone">link</a>
 
-![Alt text](image.png)
+![Kanban Board Image](./Kanban-Board-Original.jpeg)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -184,7 +184,7 @@ yarn build --watch
 
 ## 👥 Author <a name="authors"></a>
 
-👤 *Author: Damilare*
+👤 Author: Damilare
 
 - GitHub: [@githubhandle](https://github.com/Bestbynature)
 - Twitter: [@twitterhandle](https://twitter.com/Dammybest)
@@ -192,12 +192,12 @@ yarn build --watch
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 *Naji Ali*
+👤 Naji Ali
 
 - GitHub: [Naji Ali](https://github.com/naji-97)
 - LinkedIn: [Naji Ali](https://linkedin.com/in/abdennaji)
 
-👤 *MarwanDev*
+👤 MarwanDev
 
 - GitHub: [MarwanDev](https://github.com/MarwanDev)
 - Twitter: [@marwanEg](https://twitter.com/marwaneg)
@@ -206,7 +206,7 @@ yarn build --watch
 ## 👥 Authors <a name="authors"></a>
 
 
-👤 *Ndonyi Maurice Djam*
+👤 Ndonyi Maurice Djam
 
 - GitHub: [@citec-47](https://github.com/citec-47)
 - Twitter: [@Ndonyi4](https://twitter.com/Ndonyi4)

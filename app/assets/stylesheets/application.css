@@ -186,12 +186,25 @@ nav > ul > li:hover {
   color: black;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   background-color: #f2f2f2;
+  gap: 70px;
 }
 
 .splash-container img {
-  margin: auto;
   width: 200px;
   height: 200px;
+}
+
+.sign-up-in {
+  padding: 5px 20px;
+  background-color: #98bf11;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
 }
 
 .splash-buttons-container {
