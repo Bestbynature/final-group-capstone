@@ -104,7 +104,7 @@ localhost:3000/api-docs
 
 - Github Repo <a href="https://github.com/Bestbynature/final-group-capstone">link</a>
 
-![Alt text](image.png)
+![Kanban Board Image](./Kanban-Board-Original.jpeg)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
