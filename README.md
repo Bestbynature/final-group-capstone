@@ -115,6 +115,7 @@ In order to run this project with the [Project Repo](https://github.com/Bestbyna
   - CMD `preferred`
   - Bash`preferred`
   - PowerShell
+  - VsCode
   - etc
 
 ### Setup
