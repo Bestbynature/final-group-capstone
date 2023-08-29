@@ -14,14 +14,6 @@ development:
 test:
   <<: *default
   database: final_group_capstone_test
-  # username: postgres
-  # # password: admin
-  # host: localhost
-  # port: 5432
-
-  # # password: admin
-  # host: localhost
-  # port: 5432
 
 
 production:
