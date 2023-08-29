@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import {
@@ -8,9 +8,12 @@ import {
 import AddFlight from './AddFlight';
 
 const ReserveFlight = () => {
-  const { flightName } = useParams();
   const dispatch = useDispatch();
   const history = useNavigate();
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const flightName = queryParams.get('flightName');
+
   const {
     cities, user, flights, city, flight, date,
   } = useSelector((state) => state.flights);

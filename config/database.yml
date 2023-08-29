@@ -2,8 +2,6 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  # username: postgres
-  # password: admin
   username: <%= ENV["DB_USERNAME"] %>
   password: <%= ENV["DB_PASSWORD"] %>
 
@@ -12,26 +10,10 @@ default: &default
 development:
   <<: *default
   database: final_group_capstone_development
-  # username: postgres
-  # password: admin
-  # host: localhost
-  # port: 5432
-
-  # # password: admin
-  # host: localhost
-  # port: 5432
 
 test:
   <<: *default
   database: final_group_capstone_test
-  # username: postgres
-  # # password: admin
-  # host: localhost
-  # port: 5432
-
-  # # password: admin
-  # host: localhost
-  # port: 5432
 
 
 production:
@@ -39,5 +21,3 @@ production:
   database: final_group_capstone_production
   username: postgres
   password: admin
-  # host: localhost
-  # port: 5432

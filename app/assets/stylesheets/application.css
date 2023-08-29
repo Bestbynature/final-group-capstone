@@ -13,11 +13,6 @@
  *= require_tree .
  *= require_self
 
- font-family: 'Lato', sans-serif;
-font-family: 'Roboto Mono', monospace;
-font-family: 'Rubik', sans-serif;
-font-family: 'Tektur', cursive;
-
  */
 
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Roboto+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Rubik:ital,wght@0,300;1,300&family=Tektur:wght@400;500;600;700;800&display=swap");
@@ -208,7 +203,7 @@ nav > ul > li:hover {
 .sign-in-btn,
 .sign-up-btn {
   padding: 5px 15px;
-  font-family: "Proxima Nova Bold", sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 15px;
   width: 10vw;
   border-radius: 5px;
@@ -615,7 +610,7 @@ button[disabled] {
   border-radius: 5% 15% 5% 15%;
   color: black;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #f2f2f2;
+  background-color: rgb(226, 250, 139);
   text-align: center;
 }
 
@@ -660,19 +655,17 @@ label {
 /* For desktop view */
 .Aactions {
   display: flex;
-  gap: 1rem;
   justify-content: center;
-
-  /* margin-top: 20px; */
   margin: 1rem;
   align-items: center;
+  flex-direction: column;
 }
 
 /* Styling for submit button */
 input[type="submit"],
 .actions a {
   padding: 5px 20px;
-  width: 50%;
+  width: 40%;
   background-color: #98bf11;
   color: #fff;
   border: none;
@@ -726,6 +719,7 @@ em {
   text-decoration: none;
   margin-top: 10px;
   display: inline-block;
+  width: 40%;
 }
 
 /* Hover effect for styled links */
@@ -772,7 +766,7 @@ em {
   border-radius: 5% 15% 5% 15%;
   color: black;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #f2f2f2;
+  background-color: rgb(226, 250, 139);
 }
 
 .forgotpassword .field,
@@ -903,5 +897,5 @@ em {
 .sign-out-btn {
   border: none;
   cursor: pointer;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Lato", sans-serif;
 }
