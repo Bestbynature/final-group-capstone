@@ -7,6 +7,7 @@
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
   - [💻 API Documentation ](#-api-documentation-)
+  - [💻 Kanban Board ](#-kanban-board-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -97,6 +98,16 @@ localhost:3000/api-docs
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
+## 💻 Kanban Board <a name="kanban-board"></a>
+
+- Click <a href="https://github.com/users/Bestbynature/projects/5">here</a> for the kanban board. Total Number of People in the team: 4 people: @MarwanDev @naji-97 @citec-47 @Bestbynature 
+
+- Github Repo <a href="https://github.com/Bestbynature/final-group-capstone">link</a>
+
+![Alt text](image.png)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
@@ -173,7 +184,7 @@ yarn build --watch
 
 ## 👥 Author <a name="authors"></a>
 
-👤 *Author: Damilare*
+👤 Author: Damilare
 
 - GitHub: [@githubhandle](https://github.com/Bestbynature)
 - Twitter: [@twitterhandle](https://twitter.com/Dammybest)
@@ -181,12 +192,12 @@ yarn build --watch
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 *Naji Ali*
+👤 Naji Ali
 
 - GitHub: [Naji Ali](https://github.com/naji-97)
 - LinkedIn: [Naji Ali](https://linkedin.com/in/abdennaji)
 
-👤 *MarwanDev*
+👤 MarwanDev
 
 - GitHub: [MarwanDev](https://github.com/MarwanDev)
 - Twitter: [@marwanEg](https://twitter.com/marwaneg)
@@ -195,7 +206,7 @@ yarn build --watch
 ## 👥 Authors <a name="authors"></a>
 
 
-👤 *Ndonyi Maurice Djam*
+👤 Ndonyi Maurice Djam
 
 - GitHub: [@citec-47](https://github.com/citec-47)
 - Twitter: [@Ndonyi4](https://twitter.com/Ndonyi4)
