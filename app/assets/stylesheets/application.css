@@ -610,7 +610,7 @@ button[disabled] {
   border-radius: 5% 15% 5% 15%;
   color: black;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #f2f2f2;
+  background-color: rgb(226, 250, 139);
   text-align: center;
 }
 
@@ -655,19 +655,17 @@ label {
 /* For desktop view */
 .Aactions {
   display: flex;
-  gap: 1rem;
   justify-content: center;
-
-  /* margin-top: 20px; */
   margin: 1rem;
   align-items: center;
+  flex-direction: column;
 }
 
 /* Styling for submit button */
 input[type="submit"],
 .actions a {
   padding: 5px 20px;
-  width: 50%;
+  width: 40%;
   background-color: #98bf11;
   color: #fff;
   border: none;
@@ -721,6 +719,7 @@ em {
   text-decoration: none;
   margin-top: 10px;
   display: inline-block;
+  width: 40%;
 }
 
 /* Hover effect for styled links */
@@ -767,7 +766,7 @@ em {
   border-radius: 5% 15% 5% 15%;
   color: black;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #f2f2f2;
+  background-color: rgb(226, 250, 139);
 }
 
 .forgotpassword .field,
@@ -898,5 +897,5 @@ em {
 .sign-out-btn {
   border: none;
   cursor: pointer;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Lato", sans-serif;
 }
