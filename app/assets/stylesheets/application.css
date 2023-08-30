@@ -897,6 +897,18 @@ em {
   .mag > i {
     font-size: 17px;
   }
+
+  .details {
+    display: block;
+  }
+
+  .reserve {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #98bf11;
+    border-radius: 6px;
+  }
 }
 
 .sign-out-container {
