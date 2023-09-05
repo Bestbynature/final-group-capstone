@@ -77,8 +77,6 @@ In this project we utilize our skills and knowledge to create this project
   </ul>
 </details>
 
-<!-- Features -->
-
 ### Key Features <a name="key-features"></a>
 
 - log in
@@ -108,8 +106,6 @@ localhost:3000/api-docs
 ![Kanban Board Image](./screenshot_kanban_final_capstone2.JPG)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
