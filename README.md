@@ -29,6 +29,13 @@
 
 <!-- PROJECT DESCRIPTION -->
 
+![login](https://github.com/Bestbynature/final-group-capstone/assets/104390780/017a4051-1807-4f0f-a984-8199878e8863)
+![addAFlight](https://github.com/Bestbynature/final-group-capstone/assets/104390780/b11670b2-d1a3-4d4b-b80b-4ad5e1848681)
+![reserveForm_mobile](https://github.com/Bestbynature/final-group-capstone/assets/104390780/2a171dfc-1269-41e7-8931-d52cfad950f7)
+![reserveForm](https://github.com/Bestbynature/final-group-capstone/assets/104390780/a62c6e45-c6f0-427e-bdc9-ec783d4212c2)
+![mainPage](https://github.com/Bestbynature/final-group-capstone/assets/104390780/61a04064-cb02-43da-8dc9-a3481f94cdd2)
+
+
 # 📖 Airline Frontend App<a name="about-project"></a>
 
 Welcome to the frontend of the Airline Reservation Project, a cutting-edge application built using React and Redux technologies. Here, you can easily browse and reserve flights of your choice by selecting your preferred flight date date and city city of origin and destination.
